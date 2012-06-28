@@ -11,3 +11,11 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
+  
+  Javier:
+  Yesterday:
+  did research on sqlite3 database for android
+  and implemented a database helper class that would interact with sqlite3
+  
+  Today: 
+  will do research on android gui
