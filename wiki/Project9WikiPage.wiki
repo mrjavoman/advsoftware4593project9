@@ -17,7 +17,7 @@ Add your content here.
   Today: 
   will do research on android gui
   
-  **Brandon**
+  * *Brandon:*
   
   Yesterday:
   	--created a mian menu
