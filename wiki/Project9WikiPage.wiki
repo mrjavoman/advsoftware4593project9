@@ -16,3 +16,14 @@ Add your content here.
   
   Today: 
   will do research on android gui
+  
+  **Brandon**
+  
+  Yesterday:
+  	--created a mian menue
+  	--created page not impleneted message
+  	--created activity to display n number of buttons
+  
+  Today:
+  	--I will wrap the buttons on the page
+  	--I will create different button colors for word errors
