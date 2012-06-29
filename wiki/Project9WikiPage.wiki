@@ -8,7 +8,7 @@ Add your content here.
 = Details =
 
 
-  *bold* 
+  *bold* *
   
   Yesterday:
   did research on sqlite3 database for android
