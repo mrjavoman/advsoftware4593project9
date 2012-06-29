@@ -9,7 +9,7 @@ Add your content here.
 
 
   * *Javier:*
-  
+    
   Yesterday:
   did research on sqlite3 database for android
   and implemented a database helper class that would interact with sqlite3
