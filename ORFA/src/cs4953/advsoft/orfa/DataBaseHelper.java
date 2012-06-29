@@ -43,11 +43,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
     	boolean dbExist = checkDataBase();
  
-//    	File f = new File(DB_PATH);
-//		if (!f.exists()) {
-//			f.mkdir();
-//		}
-    	
+	
     	if(dbExist){
     		//do nothing - database already exist
     		//this.myDataBase = getReadableDatabase();

@@ -4,5 +4,5 @@
  <item android:state_checked="true"
        android:drawable="@color/yellow1" /> <!-- pressed -->
  <item android:state_checked="false"
-       android:drawable="@color/blue2" /> <!-- unchecked -->
+       android:drawable="@color/transparent" /> <!-- unchecked -->
 </selector>
