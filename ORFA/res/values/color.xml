@@ -7,5 +7,6 @@
     <color name="blue25">#000099</color>
     <color name="orange4">#ff9933</color>
     <color name="orange5">#ff9900</color>
+    <color name="transparent">#80000000</color>
     
 </resources>
