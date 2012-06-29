@@ -10,6 +10,7 @@ import android.content.res.Resources;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class ORFAActivity extends Activity {
     /** Called when the activity is first created. */
@@ -43,8 +44,15 @@ public class ORFAActivity extends Activity {
         CharSequence txt ="hello";
 
         try {
-        	((TextView)findViewById (R.id.text1)).setText(arrList.remove(1));
-        	((TextView)findViewById (R.id.word1)).setText(arrList.remove(1));
+        	String str = arrList.remove(1);
+        	((TextView)findViewById (R.id.text1)).setText(arrList.remove(0));
+        	((TextView)findViewById (R.id.word1)).setText(arrList.remove(0));
+        	//((TextView)findViewById (R.id.toggleButton1)).setText(arrList.remove(0));
+        	
+        	((ToggleButton)findViewById (R.id.toggleButton1)).setText(str);
+        	((ToggleButton)findViewById (R.id.toggleButton1)).setTextOn(str);
+        	((ToggleButton)findViewById (R.id.toggleButton1)).setTextOff(str);
+             
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
