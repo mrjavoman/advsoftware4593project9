@@ -20,8 +20,8 @@ Add your content here.
   * *Brandon:*
   
   Yesterday:
-  	--created a mian menu
-  	--created page not implented message
+  	--created a main menu
+  	--created page not implemented message
   	--created activity to display n number of buttons
   
   Today:
