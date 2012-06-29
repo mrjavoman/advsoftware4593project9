@@ -13,7 +13,7 @@ Add your content here.  Format your content with:
   * Automatic links to other wiki pages
   
 
-  Javier*
+  *Javier:
   
   Yesterday:
   did research on sqlite3 database for android
