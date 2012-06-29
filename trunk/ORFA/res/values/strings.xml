@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, ORFAActivity!</string>
     <string name="app_name">ORFA</string>
+    <string name="Word">Hey you</string>
 
 </resources>
