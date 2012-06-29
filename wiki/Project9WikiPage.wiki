@@ -12,7 +12,7 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
   
-  *Javier:*
+  *Javier*:
   
   Yesterday:
   did research on sqlite3 database for android
