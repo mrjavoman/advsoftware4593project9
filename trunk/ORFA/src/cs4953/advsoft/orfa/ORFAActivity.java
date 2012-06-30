@@ -1,62 +1,46 @@
 package cs4953.advsoft.orfa;
 
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.Resources;
-import android.database.SQLException;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.ToggleButton;
+import android.view.View;
 
 public class ORFAActivity extends Activity {
+	
+	public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
-        //crete an instance of a database
-        DataBaseHelper dbHelper = new DataBaseHelper(this);
-        ArrayList<String> arrList;
-        try {
-			dbHelper.createDataBase();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        try {
-        	dbHelper.openDataBase();
-       	}catch(SQLException sqle){
-       		throw sqle;
-       	}
-                
-        try {
-        	arrList = dbHelper.getWords();
-       	}catch(SQLException sqle){
-       		throw sqle;
-       	}
-        
-        CharSequence txt ="hello";
-
-        try {
-        	String str = arrList.remove(1);
-        	((TextView)findViewById (R.id.text1)).setText(arrList.remove(0));
-        	((TextView)findViewById (R.id.word1)).setText(arrList.remove(0));
-        	//((TextView)findViewById (R.id.toggleButton1)).setText(arrList.remove(0));
-        	
-        	((ToggleButton)findViewById (R.id.toggleButton1)).setText(str);
-        	((ToggleButton)findViewById (R.id.toggleButton1)).setTextOn(str);
-        	((ToggleButton)findViewById (R.id.toggleButton1)).setTextOff(str);
-             
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-          
     }
+    
+    public void onClickStartSession(View view){
+    	Intent myIntent = new Intent(ORFAActivity.this, StartStoryAvtivity.class);
+    	ORFAActivity.this.startActivity(myIntent);
+    }
+    
+    public void onClickEditStudent(View view){
+    	Intent myIntent = new Intent(ORFAActivity.this, EditStudentActivity.class);
+    	ORFAActivity.this.startActivity(myIntent);
+    }
+    public void onClickImportStory(View view){
+    	Intent myIntent = new Intent(ORFAActivity.this, ImportStoryActivity.class);
+    	ORFAActivity.this.startActivity(myIntent);
+    }
+    public void onClickAssignSounds(View view){
+    	Intent myIntent = new Intent(ORFAActivity.this, AssignSoundsActivity.class);
+    	ORFAActivity.this.startActivity(myIntent);
+    }
+    public void onClickStats(View view){
+    	Intent myIntent = new Intent(ORFAActivity.this, StatsActivity.class);
+    	ORFAActivity.this.startActivity(myIntent);
+    }
+    public void onClickDbTester(View view){
+    	Intent myIntent = new Intent(ORFAActivity.this, DbTesterActivity.class);
+    	ORFAActivity.this.startActivity(myIntent);
+    }
+    
 }
