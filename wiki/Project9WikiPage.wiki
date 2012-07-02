@@ -4,11 +4,12 @@
 
 ->Conduct a Daily Standup at the beginning of each class meeting during the sprint
     
+
 - "Yesterday": refers to all the days between today and the last class
+
 - "Today": refers to all the days between today and the next class meeting
+
 - "Impediments" are there any impediments in your way?
-
-
 
 = Details =
 
