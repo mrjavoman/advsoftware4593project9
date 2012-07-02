@@ -1,0 +1,28 @@
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/story_select_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+ 
+	   <TextView
+	            android:id="@+id/story_prompt"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/story_prompt" />
+	   <RadioGroup 
+	       android:orientation="vertical"
+	       android:id="@+id/story_group"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content">
+	       
+	   </RadioGroup>
+	   
+	   <Button
+	       	android:id="@+id/select_story"
+	       	android:layout_width="wrap_content"
+	       	android:layout_height="wrap_content"
+	       	android:text="Select"
+	       	android:onClick="onSelectButton"/>
+
+    </LinearLayout>

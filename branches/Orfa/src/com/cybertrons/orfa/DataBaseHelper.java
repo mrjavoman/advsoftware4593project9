@@ -1,6 +1,5 @@
 package com.cybertrons.orfa;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +12,10 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Button;
+import android.widget.RadioButton;
+
+
 
 public class DataBaseHelper extends SQLiteOpenHelper{
 	 
@@ -160,8 +163,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         Cursor aCursor;
         
         //query selects all words that have sound "eh", it uses the mapping table, the words are hello, fetch, set
-       String aSql = "SELECT word AS word FROM words WHERE _idx IN (SELECT uid_word AS uid_word FROM soundwordmap WHERE uid_sound = 1)";
-       // String aSql = "Select word AS word from words where _idx = 1";
+        String aSql = "SELECT word FROM words WHERE idx IN (SELECT uid_word FROM soundwordmap WHERE uid_sound = 1)";
         
         //a Cursor object stores the results rawQuery
         aCursor = myDataBase.rawQuery(aSql, null);
@@ -175,6 +177,90 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         //return the words hello, fetch, set
         return theWords; 
     }
+	
+	public ArrayList<RadioButton> getStories(Context tContext){
+
+		ArrayList<RadioButton> storiesList = new ArrayList<RadioButton>();
+		
+		String aSql = "SELECT uid_story, name FROM story";//a Cursor object stores the results rawQuery
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+        // moveToFirst moves the Cursor to the first row of the results
+        if(aCursor.moveToFirst()){
+            do{
+            	RadioButton btn = new RadioButton(tContext);
+                btn.setId(aCursor.getInt(0));
+                String label = aCursor.getString(1);
+                btn.setText(label);
+            	storiesList.add(btn);
+            }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
+        }
+		
+		return storiesList;
+	}
+	
+	
+	/*
+	 * TODO Need to create an XML file to set button background colors
+	 */	
+	
+	public ArrayList<Button> getStoryWords(int name, int session, Context tContext){
+
+		ArrayList<Button> storyWordsList = new ArrayList<Button>();
+		Cursor aCursor;
+
+		String aSql = "SELECT " +
+				" uid_story_content AS _id " +
+				", word " +
+				", COALESCE(punctuation, 0) AS punctuation " +
+				", name " +
+				", COALESCE(errors.type, 0) AS errType " +
+				"FROM story_content " +
+					"LEFT JOIN story " + 
+						"ON story_content.id_story = story.uid_story " +
+					"LEFT JOIN words  "+
+						"ON story_content.id_word = words.idx " +
+					"LEFT JOIN (SELECT  " +
+							"type " +
+							", id_story_content " +
+							", id_word " +
+						  "FROM errors_made " +
+						  "WHERE id_session = " + session +")errors  " +
+						"ON story_content.id_word = errors.id_word " +
+						"AND story_content.uid_story_content = errors.id_story_content " +
+
+				"WHERE uid_story = "+ name;
+		
+
+
+        //a Cursor object stores the results rawQuery
+        aCursor = myDataBase.rawQuery(aSql, null);
+        // moveToFirst moves the Cursor to the first row of the results
+        if(aCursor.moveToFirst()){
+            do{
+            	Button btn = new Button(tContext);
+                btn.setId(aCursor.getInt(0));
+                btn.setText(aCursor.getString(1));
+                if(aCursor.getInt(2) > 0){
+                	//TODO set background to transparent
+                }
+                else if(aCursor.getInt(4) > 0){
+                	//TODO set background to red
+                }
+                else{
+                	//TODO set background to default color
+                }
+            	storyWordsList.add(btn);
+            }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
+        }
+        
+        //return the words hello, fetch, set
+        return storyWordsList; 
+		
+	}
+	
+	/*
+	 * TODO add a method to assist in writing the session errors
+	 */
 
  
         // Add your public helper methods to access and get content from the database.
