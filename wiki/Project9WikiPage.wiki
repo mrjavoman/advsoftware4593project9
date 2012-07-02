@@ -2,28 +2,51 @@
 
 = Introduction =
 
-Add your content here.
+->Conduct a Daily Standup at the beginning of each class meeting during the sprint
+    
+- "Yesterday": refers to all the days between today and the last class
+- "Today": refers to all the days between today and the next class meeting
+- "Impediments" are there any impediments in your way?
+
 
 
 = Details =
 
+Sprint 1 Daily Standup (06/27/2012)
 
   * *Javier:*
     
   Yesterday:
-  did research on sqlite3 database for android
-  and implemented a database helper class that would interact with sqlite3
+  -- did research on sqlite3 database for android
+  -- implemented a database helper class that would interact with sqlite3
   
   Today: 
-  will do research on android gui
+  -- will do research on android gui
   
   * *Brandon:*
   
   Yesterday:
-  	--created a main menu
-  	--created page not implemented message
-  	--created activity to display n number of buttons
+  -- created a main menu
+  -- created page not implemented message
+  -- created activity to display n number of buttons
   
   Today:
-  	--I will wrap the buttons on the page
-  	--I will create different button colors for word errors
+  -- I will wrap the buttons on the page
+  -- I will create different button colors for word errors
+
+Sprint 1 Daily Standup(7/2/2012)
+
+  * *Lizeth:*
+
+  Yesterday:
+  -- Uploaded Sprint 1 Planning Meeting Notes (documentation)
+  -- Android Tutorials / Research
+
+  Today:
+  -- Typed Sprint 1 Backlog with Lauren
+  -- Will do more research to have a better understanding of android
+  -- will try to create ability for word button to be marked as last word read
+
+  Impediments:
+  -- Found the tutorials a lil confusing, but will keep practicing
+
