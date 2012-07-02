@@ -11,17 +11,12 @@ import android.support.v4.app.NavUtils;
 public class MainActivity extends Activity {
 	
 	public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
-
+	
+    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
+        setContentView(R.layout.main);
     }
     
     public void onClickStartSession(View view){
@@ -49,6 +44,5 @@ public class MainActivity extends Activity {
     	Intent myIntent = new Intent(MainActivity.this, DbTesterActivity.class);
     	MainActivity.this.startActivity(myIntent);
     }
-
     
 }

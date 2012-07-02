@@ -5,10 +5,10 @@
     <string name="app_name">ORFA</string>
     <string name="Word">Hey you</string>
     
-    <string name="number_prompt">Enter an integer in the field below.  The application will generate a screen with the number of buttons you enter</string>
+    <string name="story_prompt">Select a story from the list below</string>
     <string name="enter_number"># of desired buttons</string>
     <string name="button_number">Generate</string>
-    <string name="menu_welcome">Welcome to E-ORFA</string>
+    <string name="menu_welcome">Welcome to ORFA</string>
     <string name="menu_start_session">Start New Session</string>
     <string name="menu_edit_Student">Edit Students</string>
     <string name="menu_import_story">Import Story</string>
@@ -16,10 +16,6 @@
     <string name="menu_assign_sounds">Assign Sounds</string>
     <string name="menu_DbTester">Database Tester</string>
     <string name="unimplemented">This page is not currently implemented.  Please use the back button to navigate back to the main menu</string>
-    <string name="hello_world">Hello World!</string>
-    <string name="menu_settings">menu settings</string>
-    <string name="title_activity_main">Orfa</string>
-    
     
 
 </resources>

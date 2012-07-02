@@ -31,7 +31,7 @@ public class DbTesterActivity extends Activity {
        	}catch(SQLException sqle){
        		throw sqle;
        	}
-                
+             
         try {
         	arrList = dbHelper.getWords();
        	}catch(SQLException sqle){
@@ -54,6 +54,7 @@ public class DbTesterActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
           
     }
 }

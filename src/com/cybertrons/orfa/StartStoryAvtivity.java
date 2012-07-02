@@ -1,27 +1,72 @@
 package com.cybertrons.orfa;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class StartStoryAvtivity extends Activity {
 	
 	public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
-	
-    /** Called when the activity is first created. */
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.generate_prompt);
-    }
+        setContentView(R.layout.select_story);
     
-    public void onGenerateButton(View view){
+	    DataBaseHelper dbHelper = new DataBaseHelper(this);
+	    
+	    ArrayList<RadioButton> storiesList;
+	    
+	    RadioGroup storyOptions = (RadioGroup) findViewById(R.id.story_group);
+	    
+	    
+	    try {
+			dbHelper.createDataBase();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+	    try {
+	    	dbHelper.openDataBase();
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
+	    try {
+	    	storiesList = dbHelper.getStories(this);
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
+	    
+	    try {
+		  	dbHelper.openDataBase();
+	    }catch(SQLException sqle){
+		 		throw sqle;
+		}
+        
+        Iterator<RadioButton> itr = storiesList.iterator();
+        while (itr.hasNext())
+        {
+        	storyOptions.addView(itr.next());
+        }
+
+	}
+    
+    public void onSelectButton(View view){
+    	
+    	int radioButtonID = ((RadioGroup) findViewById(R.id.story_group)).getCheckedRadioButtonId();
     	Intent intent = new Intent(this, DisplayButtonsActivity.class);
-    	EditText editText = (EditText) findViewById(R.id.editCount);
-    	String message = editText.getText().toString();
-    	intent.putExtra(NUMBER, message);
+    	intent.putExtra(NUMBER, radioButtonID);
         startActivity(intent);
     }
 }
