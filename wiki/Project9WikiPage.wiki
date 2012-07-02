@@ -19,6 +19,7 @@ Sprint 1 Daily Standup (06/27/2012)
   Yesterday:
 
   -- did research on sqlite3 database for android
+
   -- implemented a database helper class that would interact with sqlite3
   
   Today: 
@@ -30,7 +31,9 @@ Sprint 1 Daily Standup (06/27/2012)
   Yesterday:
 
   -- created a main menu
+
   -- created page not implemented message
+
   -- created activity to display n number of buttons
   
   Today:
@@ -59,3 +62,19 @@ Sprint 1 Daily Standup(7/2/2012)
 
   Impediments:
   -- Found the tutorials a lil confusing, but will keep practicing
+
+  * *Lauren:*
+
+  Yesterday:
+
+  Today:
+  
+  Impediments:
+
+  * *Arthur:*
+  
+  Yesterday:
+  
+  Today:
+
+  Impediments:
