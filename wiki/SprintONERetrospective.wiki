@@ -8,7 +8,7 @@
 
 
 
-= What should we start doing? =
+= _What should we start doing?_ =
 
 *Arthur*
 
@@ -21,7 +21,7 @@
 *Lizeth*
 
 
-= What should we stop doing? =
+= _What should we stop doing?_ =
 
 *Arthur*
 
@@ -34,7 +34,7 @@
 *Lizeth*
 
 
-= What should we continuing doing? =
+= _What should we continuing doing?_ =
 
 *Arthur*
 
