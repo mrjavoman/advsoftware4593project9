@@ -62,6 +62,7 @@
   -- will try to create ability for word button to be marked as last word read
 
   Impediments:
+
   -- Found the tutorials a lil confusing, but will keep practicing
 
   * *Lauren:*
