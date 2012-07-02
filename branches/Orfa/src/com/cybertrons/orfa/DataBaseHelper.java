@@ -12,6 +12,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Color;
 import android.widget.Button;
 import android.widget.RadioButton;
 
@@ -199,10 +200,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	}
 	
 	
-	/*
-	 * TODO Need to create an XML file to set button background colors
-	 */	
-	
 	public ArrayList<Button> getStoryWords(int name, int session, Context tContext){
 
 		ArrayList<Button> storyWordsList = new ArrayList<Button>();
@@ -241,13 +238,13 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 btn.setId(aCursor.getInt(0));
                 btn.setText(aCursor.getString(1));
                 if(aCursor.getInt(2) > 0){
-                	//TODO set background to transparent
+                	btn.setBackgroundColor(Color.WHITE);
                 }
                 else if(aCursor.getInt(4) > 0){
-                	//TODO set background to red
+                	btn.setBackgroundColor(Color.RED);
                 }
                 else{
-                	//TODO set background to default color
+                	//leave button default color
                 }
             	storyWordsList.add(btn);
             }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
