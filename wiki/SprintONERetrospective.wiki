@@ -2,10 +2,6 @@
 
 = Introduction =
 
--> Conduct a Sprint Retrospective on the last day of the Sprint 
-
-(July 11th for 30 minutes)
-
 ->Each team member must enter at least one line under each section
 
 ->Do this before you get to class so you have ample time to discuss the items in the wiki in person
@@ -49,4 +45,3 @@
 *Lauren*
 
 *Lizeth*
-
