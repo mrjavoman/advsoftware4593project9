@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Conduct a Sprint Retrospective on the last day of the Sprint (July 11th for 30 minutes)
 
 = Introduction =
 
