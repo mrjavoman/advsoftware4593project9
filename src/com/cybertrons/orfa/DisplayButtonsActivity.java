@@ -70,8 +70,13 @@ public class DisplayButtonsActivity extends Activity{
     }
     
     /*
-     * TODO create and call the dialog or activity that allows the user to select an error and 
+     * TODO create and call the dialog that allows the user to select an error and 
      * call the method in the DataBaseHelper class that writes the error to the db
+     */
+    
+    /*
+     * TODO figure out how to add onClick handler that can get the button's ID and 
+     * pass it to the dialog to set an error
      */
     
     
