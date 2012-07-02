@@ -13,7 +13,7 @@
 
 = Details =
 
-_Sprint 1 Daily Standup (06/27/2012)_
+*_Sprint 1 Daily Standup (06/27/2012)_*
 
   * *Javier:*
     
@@ -43,7 +43,7 @@ _Sprint 1 Daily Standup (06/27/2012)_
 
   -- I will create different button colors for word errors
 
-_Sprint 1 Daily Standup(7/2/2012)_
+*_Sprint 1 Daily Standup(7/2/2012)_*
 
   * *Lizeth:*
 
