@@ -48,7 +48,7 @@
 
   -- Uploaded Sprint 1 Planning Meeting Notes (documentation)
 
-  -- Android Tutorials / Research
+  -- Android Tutorials / Research to prepare myself to start with the tasks
 
   Today:
 
@@ -56,7 +56,7 @@
 
   -- Will do more research to have a better understanding of android
 
-  -- will try to create ability for word button to be marked as last word read
+  -- work on the tasks!!! (will try to create ability for word button to be marked as last word read)
 
   Impediments:
 
