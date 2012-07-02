@@ -1,9 +1,6 @@
-#summary One-sentence summary of this page.
+#summary Conduct a Daily Standup at the beginning of each class meeting during the sprint
 
 = Introduction =
-
-->Conduct a Daily Standup at the beginning of each class meeting during the sprint
-    
 
 - "Yesterday": refers to all the days between today and the last class
 
