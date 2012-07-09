@@ -116,22 +116,16 @@
 
   -- I haven't gotten the code to work on the emulator on my work laptop.  I only have it working on my home desktop.  I need it to work on my work laptop too so that I can show my group things without committing any changes to svn.
 
- * *Lizeth:*
-
-  Yesterday:
-
-  --
-
 * *Brandon**
 
-Yesterday:
+    Yesterday:
 
---refactored the getWordsList method in the DbHelper class
---attempted to wrap the buttons on the screen
+  --refactored the getWordsList method in the DbHelper class
+  --attempted to wrap the buttons on the screen
 
-Today:
+    Today:
 
---continue trying to wrap buttons
+  --continue trying to wrap buttons
 
 * *Lizeth:**
 
