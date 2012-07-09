@@ -117,6 +117,20 @@ Today:
 
 --continue trying to wrap buttons
 
+* *Lizeth:*
+
+  Yesterday:
+
+  -- Worked on using a counter to count the words/buttons in the passage so that when user marks a word as last read, the app will count up the words and return the last word read
+
+  Today:
+
+  -- Keep working on the counter 
+
+  Impediments:
+
+  -- 
+
 *_Sprint 1 Daily Standup (07/11/2012)_* ... No Class / Sprint 1-Due
 
  
