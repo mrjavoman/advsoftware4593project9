@@ -104,7 +104,7 @@
 *_Sprint 1 Daily Standup (07/9/2012)_*
 
   * *Arthur*
-    Yesterday:
+  Yesterday:
   -- I did a lot of research on how to create a timer in android and the best idea yet is to use the handler class and not java.util.timer because the java.util.timer library will create another thread, and we don't want that because we want as little processing as possible. Handlers allow things to be done within the same thread and then will interrupt the thread to do something else.
 
   -- I have the code for the beginning of a timer already implemented and tested.  I can set how many seconds I want the timer to run as well.
@@ -118,12 +118,13 @@
 
   * *Brandon*
 
-    Yesterday:
+  Yesterday:
 
   --refactored the getWordsList method in the DbHelper class
+
   --attempted to wrap the buttons on the screen
 
-    Today:
+  Today:
 
   --continue trying to wrap buttons
 
@@ -136,10 +137,6 @@
   Today:
 
   -- Keep working on the counter 
-
-  Impediments:
-
-  -- 
 
 *_Sprint 1 Daily Standup (07/11/2012)_* ... No Class / Sprint 1-Due
 
