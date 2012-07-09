@@ -105,10 +105,19 @@
 
   * *Arthur*
     Yesterday:
-  -- 
-    Today:
+  -- I did a lot of research on how to create a timer in android
+and the best idea yet is to use the handler class and not java.util.timer because the java.util.timer library will create another
+thread, and we don't want that because we want as little processing
+as possible.  Handlers allow things to be done within the same thread and then will interrupt the thread to do something else.
+
   -- I have the code for the beginning of a timer already implemented and tested.  I can set how many seconds I want the timer to run as well.
+    Today:
+  -- I will talk to my group about exactly what next step will be after the timer is done.  
+
+  -- I will ask my group what's better, the timer showing (takes up room on the screen) or hiding the timer and have it just working in the background.
     Impediments:
+
+  -- I haven't gotten the code to work on the emulator on my work laptop.  I only have it working on my home desktop.  I need it to work on my work laptop too so that I can show my group things without committing any changes to svn.
 
  * *Lizeth:*
 
