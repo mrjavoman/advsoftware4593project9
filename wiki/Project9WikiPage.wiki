@@ -105,8 +105,7 @@
 
   * *Arthur*
     Yesterday:
-  -- I did a lot of research on how to create a timer in android and the best idea yet is to use the handler class and not java.util.timer because the java.util.timer library will create another thread, and we don't want that because we want as little processing
-as possible.  Handlers allow things to be done within the same thread and then will interrupt the thread to do something else.
+  -- I did a lot of research on how to create a timer in android and the best idea yet is to use the handler class and not java.util.timer because the java.util.timer library will create another thread, and we don't want that because we want as little processing as possible. Handlers allow things to be done within the same thread and then will interrupt the thread to do something else.
 
   -- I have the code for the beginning of a timer already implemented and tested.  I can set how many seconds I want the timer to run as well.
     Today:
