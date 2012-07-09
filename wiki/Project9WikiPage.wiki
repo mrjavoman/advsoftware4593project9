@@ -84,7 +84,7 @@
   
   -- I have chosen to take on the task of creating a timer for the android to count down from 1 minute to 0 seconds and display a message
 
-  -- I have the code for the beginning of a timer already implemented and tested.  I can set how many seconds I want the timer to run as well.
+ 
 
   Impediments:
 
@@ -94,8 +94,10 @@
 *_Sprint 1 Daily Standup (07/9/2012)_*
 
   * *Arthur*
-    Yesterday: 
+    Yesterday:
+  -- 
     Today:
+  -- I have the code for the beginning of a timer already implemented and tested.  I can set how many seconds I want the timer to run as well.
     Impediments:
 
  * *Lizeth:*
