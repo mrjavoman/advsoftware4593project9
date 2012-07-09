@@ -64,11 +64,21 @@
 
   * *Lauren:*
 
-  Yesterday:
+  Yesterday: 
+  
+  -- Worked on android tutorials and researched android topics
 
-  Today:
+  Today: 
+
+  -- Work on Sprint 1 Backlog with Lizeth
+
+  -- Will do more android research
+
+  -- Will begin work on getting the word buttons to wrap on the screen
   
   Impediments:
+
+  -- Learning the android sdk and how to work with it
 
   * *Arthur:*
   
