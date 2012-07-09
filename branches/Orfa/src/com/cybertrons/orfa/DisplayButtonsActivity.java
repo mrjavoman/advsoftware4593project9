@@ -26,7 +26,8 @@ public class DisplayButtonsActivity extends Activity{
         Intent intent = getIntent();
         int storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
         
-        LinearLayout buttonList = (LinearLayout) View.inflate(this, R.layout.reader, null);
+        //LinearLayout buttonList = (LinearLayout) View.inflate(this, R.layout.reader, null);
+        PredicateLayout layout = new PredicateLayout(this);
 
         
         
@@ -64,8 +65,10 @@ public class DisplayButtonsActivity extends Activity{
         Iterator<Button> itr = storyWordsList.iterator();
         while (itr.hasNext())
         {
-        	buttonList.addView(itr.next());       
-            setContentView(buttonList); 
+        	layout.addView(itr.next(), new PredicateLayout.LayoutParams(2, 0));
+        	//buttonList.addView(itr.next());
+        	setContentView(layout);
+            //setContentView(buttonList); 
         }
     }
     
