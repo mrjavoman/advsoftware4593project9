@@ -56,7 +56,7 @@ public class DbTesterActivity extends Activity {
 
 		final Handler handler = new Handler();
 		final Handler h = new Handler();
-		long time = 10000;
+		long time = 10000; //This is the amount of time in milliseconds to delay before saying "stop"
 		h.postDelayed(runnable, time);
 		//end arthur's clock
 		
