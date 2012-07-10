@@ -191,7 +191,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             	RadioButton btn = new RadioButton(tContext);
                 btn.setId(aCursor.getInt(0));
                 String label = aCursor.getString(1);
-                btn.setText(label);
+                btn.setText(label);                
             	storiesList.add(btn);
             }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
         }
@@ -237,6 +237,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             	Button btn = new Button(tContext);
                 btn.setId(aCursor.getInt(0));
                 btn.setText(aCursor.getString(1));
+                btn.setOnClickListener(DisplayButtonsActivity.markWord(btn)); //LJ
                 if(aCursor.getInt(2) > 0){
                 	btn.setBackgroundColor(Color.WHITE);
                 }
