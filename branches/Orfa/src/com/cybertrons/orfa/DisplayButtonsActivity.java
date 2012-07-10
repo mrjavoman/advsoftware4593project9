@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Display;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,145 +19,116 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class DisplayButtonsActivity extends Activity{
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+public class DisplayButtonsActivity extends Activity {
 
-        // Get the message from the intent
-        Intent intent = getIntent();
-        int storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
-        
-        //LinearLayout buttonList = (LinearLayout) View.inflate(this, R.layout.reader, null);
-        PredicateLayout layout = new PredicateLayout(this);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        
-        
-        DataBaseHelper dbHelper = new DataBaseHelper(this);
-        ArrayList<Button> storyWordsList;        
-        try {
+		// Get the message from the intent
+		Intent intent = getIntent();
+		final int storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
+
+		// LinearLayout buttonList = (LinearLayout) View.inflate(this,
+		// R.layout.reader, null);
+		PredicateLayout layout = new PredicateLayout(this);
+
+		DataBaseHelper dbHelper = new DataBaseHelper(this);
+		ArrayList<Button> storyWordsList;
+		try {
 			dbHelper.createDataBase();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
-        try {
-        	dbHelper.openDataBase();
-       	}catch(SQLException sqle){
-       		throw sqle;
-       	}
-        
-        /*
-         * TODO there is a one hard-coded in here, it needs to be replace with the 
-         * new session number that is unique to this session
-         */
-        try {
-        	storyWordsList = dbHelper.getStoryWords(storyName, 1, this);
-       	}catch(SQLException sqle){
-       		throw sqle;
-       	}
-        
-        try {
-		  	dbHelper.openDataBase();
-        }catch(SQLException sqle){
-		 		throw sqle;
+
+		try {
+			dbHelper.openDataBase();
+		} catch (SQLException sqle) {
+			throw sqle;
 		}
-        
-        Iterator<Button> itr = storyWordsList.iterator();
-        while (itr.hasNext())
-        {
-        	layout.addView(itr.next(), new PredicateLayout.LayoutParams(2, 0));
-        	//buttonList.addView(itr.next());
-        	setContentView(layout);
-            //setContentView(buttonList); 
-        }
-    }
-    
-    /*
-     * TODO create and call the dialog that allows the user to select an error and 
-     * call the method in the DataBaseHelper class that writes the error to the db
-     */
-    
-    /*
-     * TODO figure out how to add onClick handler that can get the button's ID and 
-     * pass it to the dialog to set an error
-     */
-    
-    
-    /*
-     * TODO wrap the buttons to fit the screen... see comment below
-     */
+
+		/*
+		 * TODO there is a one hard-coded in here, it needs to be replace with
+		 * the new session number that is unique to this session
+		 */
+		try {
+			storyWordsList = dbHelper.getStoryWords(storyName, 1, this);
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+
+		try {
+			dbHelper.openDataBase();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+
+		Iterator<Button> itr = storyWordsList.iterator();
+		while (itr.hasNext()) {
+			layout.addView(itr.next(), new PredicateLayout.LayoutParams(2, 0));			
+			setContentView(layout);			
+		}
+		
+		
+		
+
+		// Beginning Arthur's clock
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		Runnable runnable = new Runnable() {
+			public void run() {
+				builder.setMessage(
+						"Time is up! Please select the last word read!")
+						.setCancelable(true)
+						.setPositiveButton("Yes",
+								new DialogInterface.OnClickListener() {
+									public void onClick(int id) {
+									}
+									public void onClick(DialogInterface dialog,
+											int which) { //
+									}
+								})
+						.setNegativeButton("No",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int id) {
+										dialog.cancel();
+									}
+								});
+
+				AlertDialog alert = builder.create();
+				alert.show();
+			}
+		};
+		final Handler handler = new Handler();
+		final Handler h = new Handler();
+		long time = 10000;
+		h.postDelayed(runnable, time);
+		// end arthur's clock
+	}
+	
+	public static View.OnClickListener markWord(final Button button){ // -LJ
+		return new View.OnClickListener() {
+	        public void onClick(View v) {
+	        	Intent myIntent = new Intent(v.getContext(), MarkWordActivity.class);
+	        	v.getContext().startActivity(myIntent);
+	        	//MainActivity.this.startActivity(myIntent);
+	        }
+	    };
+	}
 
 	/*
-	 * this is a method I got from stack overflow that explains how to wrap the buttons so they fit on the screen'
-	 * The link is  http://stackoverflow.com/questions/2961777/android-linearlayout-horizontal-with-wrapping-children
-	 * obviously we will need to modify it to work in our application and avoid plagiarism
-	 * 
+	 * TODO create and call the dialog that allows the user to select an error
+	 * and call the method in the DataBaseHelper class that writes the error to
+	 * the db
 	 */
-    
-    /*
 
-    private void populateLinks(LinearLayout ll, ArrayList collection, String header) {
+	/*
+	 * TODO figure out how to add onClick handler that can get the button's ID
+	 * and pass it to the dialog to set an error
+	 */
 
-        Display display = getWindowManager().getDefaultDisplay();
-        int maxWidth = display.getWidth() - 10;
-
-        if (collection.size() > 0) {
-            LinearLayout llAlso = new LinearLayout(this);
-            llAlso.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
-                    LayoutParams.WRAP_CONTENT));
-            llAlso.setOrientation(LinearLayout.HORIZONTAL);
-
-            TextView txtSample = new TextView(this);
-            txtSample.setText(header);
-
-            llAlso.addView(txtSample);
-            txtSample.measure(0, 0);
-
-            int widthSoFar = txtSample.getMeasuredWidth();
-            for (Sample samItem : collection) {
-                TextView txtSamItem = new TextView(this, null,
-                        android.R.attr.textColorLink);
-                txtSamItem.setText(samItem.Sample);
-                txtSamItem.setPadding(10, 0, 0, 0);
-                txtSamItem.setTag(samItem);
-                txtSamItem.setOnClickListener(new OnClickListener() {
-                    public void onClick(View v) {
-                        TextView self = (TextView) v;
-                        Sample ds = (Sample) self.getTag();
-
-                        Intent myIntent = new Intent();
-                        myIntent.putExtra("link_info", ds.Sample);
-                        setResult("link_clicked", myIntent);
-                        finish();
-                    }
-                });
-
-                txtSamItem.measure(0, 0);
-                widthSoFar += txtSamItem.getMeasuredWidth();
-
-                if (widthSoFar >= maxWidth) {
-                    ll.addView(llAlso);
-
-                    llAlso = new LinearLayout(this);
-                    llAlso.setLayoutParams(new LayoutParams(
-                            LayoutParams.FILL_PARENT,
-                            LayoutParams.WRAP_CONTENT));
-                    llAlso.setOrientation(LinearLayout.HORIZONTAL);
-
-                    llAlso.addView(txtSamItem);
-                    widthSoFar = txtSamItem.getMeasuredWidth();
-                } else {
-                    llAlso.addView(txtSamItem);
-                }
-            }
-
-            ll.addView(llAlso);
-        }
-    }
-    */
-
+	/*
+	 * TODO wrap the buttons to fit the screen... see comment below
+	 */
 }
-
