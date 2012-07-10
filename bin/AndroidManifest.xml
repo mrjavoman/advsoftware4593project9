@@ -25,7 +25,7 @@
     	<activity android:name=".EditStudentActivity" />
     	<activity android:name=".ImportStoryActivity" />
     	<activity android:name=".AssignSoundsActivity" />
-    	<activity android:name=".StatsActivity" />
+    	<activity android:name=".MarkWordActivity" />
         <activity android:name=".DisplayButtonsActivity" />
     	<activity android:name=".DbTesterActivity" />
     </application>
