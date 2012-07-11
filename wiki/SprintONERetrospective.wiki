@@ -20,6 +20,9 @@ we should start working on implementing the error codes and the complete passage
 *Lizeth*
 We should start working at a faster speed so we can finish all the tasks & get an idea of what user stories we want to do for the next sprint & if possible update the code & hours frequently.
 
+*Lauren*
+It can be difficult to divy up the work evenly and cleanly among all group members, but doing so helps to make sure you dont have two people working on the same thing at the same time and making one person's work redundant.
+
 = _What should we stop doing?_ =
 
 *Arthur*
@@ -34,6 +37,9 @@ I agree with other comments we should stop letting time slip by and pick up the 
 *Lizeth*
 We should stop and analyze the user stories better.
 
+*Lauren*
+We should meet up and work together(even if we are just working solo in the same room more).  It is helpful to have others as resources and you can easily have two or three people working together on one thing.
+
 = _What should we continue doing?_ =
 
 *Arthur*
@@ -47,3 +53,6 @@ continue communicating with each about anything we do or implement.
 
 *Lizeth*
 We should continue working as a team and just communicate & let each other know of any updates since it will make the project easier to understand.
+
+*Lauren*
+Continue keeping the repository as up to date as possible and promoting good communication among team members.  We should continue the trend we have of everyone being a great contributor.
