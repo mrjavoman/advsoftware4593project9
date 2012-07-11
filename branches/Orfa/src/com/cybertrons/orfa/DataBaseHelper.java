@@ -51,12 +51,13 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     	if(dbExist){
     		//do nothing - database already exist
     		//this.myDataBase = getReadableDatabase();
+    		copyDataBase();
     	}else{
  
     		//By calling this method and empty database will be created into the default system path
                //of your application so we are gonna be able to overwrite that database with our database.
     		//this.myDataBase = getReadableDatabase();
-    		SQLiteDatabase tmpDB = this.getReadableDatabase();
+    		SQLiteDatabase tmpDB = this.getWritableDatabase();
     		tmpDB.close();
  
         	try {
