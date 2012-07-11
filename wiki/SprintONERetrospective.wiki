@@ -1,4 +1,4 @@
-#summary Conduct a Sprint Retrospective on the last day of the Sprint (July 11th for 30 minutes)
+#summary Conduct a Sprint Retrospective on the last day of Sprint 1 (July 11th for 30 minutes)
 
 = Introduction =
 
