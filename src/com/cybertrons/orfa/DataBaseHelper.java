@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -138,6 +140,14 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
     }
  
+    public void openDataBaseRW() throws SQLException{
+ 
+    	//Open the database
+        String myPath = DB_PATH + DB_NAME;
+    	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
+ 
+    }
+ 
     @Override
 	public synchronized void close() {
  
@@ -203,6 +213,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             	Button btn = new Button(tContext);
                 btn.setId(aCursor.getInt(0));
                 btn.setText(aCursor.getString(1));
+                btn.setTextColor(Color.BLACK);
                 
                 if(aCursor.getInt(2) > 0){
                 	btn.setBackgroundColor(Color.WHITE);
@@ -225,29 +236,78 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		
 	}
 	public void setCurrentSessionError(int uid, int error){
-
-		Cursor aCursor;
-
-		String aSql = "UPDATE current_session " +
-						"SET errorType = " + error +
-						"WHERE uid_current_session = " + uid;
+		
+		myDataBase.execSQL(" UPDATE current_session " +
+						" SET errType = " + error +
+						" WHERE uid_current_session = " + uid);
 	}
 	
 	public void populateCurrentSessionData(int story, int student ){
-		String aSql = "INSERT INTO current_session (id_word, word, "
+		
+		
+		myDataBase.execSQL("INSERT INTO current_session (id_word, word, "
 						+"punctuation, id_story, name, errType) "
 						+"SELECT id_word, word, COALESCE(punctuation, 0) "
 						+"AS punctuation,"+story+", "+student+",0 "
 						+"FROM story_content "
 						+"LEFT JOIN words on story_content.id_word = words.idx "
-						+"WHERE id_story = 1 ";
-
-
-		myDataBase.rawQuery(aSql, null);
+						+"WHERE id_story = 1 ");
 	}
 	
 	public void clearCurrentSessionData(){
-		String aSql = "DELETE FROM current_session";
-		myDataBase.rawQuery(aSql, null);
+		myDataBase.execSQL("DELETE FROM current_session");
+	}
+
+	public void updateWordButtons(ArrayList<Button> storyWordsList){
+		String aSql = "SELECT "
+				+"uid_current_session AS _id  "
+				+", word  "
+				+", punctuation  "
+				+", name  "
+				+", errType  "
+				+"FROM current_session ";
+ 
+		//a Cursor object stores the results rawQuery
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+        // moveToFirst moves the Cursor to the first row of the results
+        aCursor.moveToFirst();
+         
+		Iterator<Button> itr = storyWordsList.iterator();
+		while (itr.hasNext()) {
+			int errorCode = aCursor.getInt(4);
+			String word = aCursor.getString(1);
+			switch(errorCode){
+            case 0:  itr.next().setTextColor(Color.BLACK);
+            break;
+            case 1:  itr.next().setTextColor(Color.RED);
+            break;
+            case 2:  itr.next().setTextColor(Color.RED);
+            break;
+            case 3:  itr.next().setTextColor(Color.RED);
+            break;
+            case 4:  itr.next().setTextColor(Color.RED);
+            break;
+            case 5:  itr.next().setTextColor(Color.YELLOW);
+			}
+			aCursor.moveToNext();
+		}
+        return; 
+		
+	}
+
+	public int getWordsCorrectCount(int end){
+		int correctCount = 0;
+		
+		String aSql = "SELECT COUNT(uid_current_session)"
+				+"FROM current_session "
+				+"WHERE uid_current_session <= "+end+" AND "
+				+"punctuation > 0";
+ 
+		//a Cursor object stores the results rawQuery
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+        // moveToFirst moves the Cursor to the first row of the results
+        aCursor.moveToFirst();
+        correctCount = aCursor.getInt(0);
+        return correctCount; 
 	}
 }
