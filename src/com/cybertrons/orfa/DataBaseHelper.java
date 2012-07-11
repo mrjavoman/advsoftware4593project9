@@ -200,36 +200,23 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	}
 	
 	
-	public ArrayList<Button> getStoryWords(int name, int session, Context tContext){
+	public ArrayList<Button> getStoryWords(int story, Context tContext){
 
 		ArrayList<Button> storyWordsList = new ArrayList<Button>();
 		Cursor aCursor;
 
-		String aSql = "SELECT " +
-				" uid_story_content AS _id " +
-				", word " +
-				", COALESCE(punctuation, 0) AS punctuation " +
-				", name " +
-				", COALESCE(errors.type, 0) AS errType " +
-				"FROM story_content " +
-					"LEFT JOIN story " + 
-						"ON story_content.id_story = story.uid_story " +
-					"LEFT JOIN words  "+
-						"ON story_content.id_word = words.idx " +
-					"LEFT JOIN (SELECT  " +
-							"type " +
-							", id_story_content " +
-							", id_word " +
-						  "FROM errors_made " +
-						  "WHERE id_session = " + session +")errors  " +
-						"ON story_content.id_word = errors.id_word " +
-						"AND story_content.uid_story_content = errors.id_story_content " +
+		String aSql = "SELECT "
+				+"uid_current_session AS _id  "
+				+", word  "
+				+", punctuation  "
+				+", name  "
+				+", errType  "
+				+"FROM current_session "
+				+"WHERE id_story = "+ story;
+ 
 
-				"WHERE uid_story = "+ name;
 		
-
-
-        //a Cursor object stores the results rawQuery
+		//a Cursor object stores the results rawQuery
         aCursor = myDataBase.rawQuery(aSql, null);
         // moveToFirst moves the Cursor to the first row of the results
         if(aCursor.moveToFirst()){
@@ -258,7 +245,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return storyWordsList; 
 		
 	}
-	public void setCurrentSessionError(int uid, int error, Context tContext){
+	public void setCurrentSessionError(int uid, int error){
 
 		Cursor aCursor;
 
@@ -274,7 +261,11 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		String aSql = "INSERT INTO current_session (id_word, word, "
 						+"punctuation, id_story, name, errType) "
 						+"SELECT id_word, word, COALESCE(punctuation, 0) "
-						+"AS punctuation,“+story+”, “+student+”,0";
+						+"AS punctuation,"+story+", "+student+",0 "
+						+"FROM story_content "
+						+"LEFT JOIN words on story_content.id_word = words.idx "
+						+"WHERE id_story = 1 ";
+
 
 		myDataBase.rawQuery(aSql, null);
 	}
