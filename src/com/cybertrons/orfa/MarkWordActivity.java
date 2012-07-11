@@ -32,7 +32,7 @@ public class MarkWordActivity extends Activity {
 	public void onClickErrorOmit(View view){		
 		DataBaseHelper dbHelper = new DataBaseHelper(this);	
 		try {
-			dbHelper.openDataBase();
+			dbHelper.openDataBaseRW();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -48,7 +48,7 @@ public class MarkWordActivity extends Activity {
 	public void onClickErrorWordOrder(View view){		
 		DataBaseHelper dbHelper = new DataBaseHelper(this);	
 		try {
-			dbHelper.openDataBase();
+			dbHelper.openDataBaseRW();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -64,7 +64,7 @@ public class MarkWordActivity extends Activity {
 	public void onClickErrorMispronounce(View view){		
 		DataBaseHelper dbHelper = new DataBaseHelper(this);	
 		try {
-			dbHelper.openDataBase();
+			dbHelper.openDataBaseRW();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -80,7 +80,7 @@ public class MarkWordActivity extends Activity {
 	public void onClickErrorHesitate(View view){		
 		DataBaseHelper dbHelper = new DataBaseHelper(this);	
 		try {
-			dbHelper.openDataBase();
+			dbHelper.openDataBaseRW();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -93,16 +93,40 @@ public class MarkWordActivity extends Activity {
 		finish();
     }
 	
-	public void onClickErrorSelfCorrect(View view){
+	public void onClickErrorSelfCorrect(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 5);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
 		finish();
     }
 	
-	public void onClickMarkCorrect(View view){
+	public void onClickMarkCorrect(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 0);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
 		finish();
     }
 	
-	public void onClickLastRead(View view){
-		finish();
+	public void onClickLastReadRW(View view){	
+		//goto session stats page.
     }
 
 }
