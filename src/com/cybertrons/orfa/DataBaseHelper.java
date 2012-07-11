@@ -250,7 +250,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 						+"SELECT id_word, word, COALESCE(punctuation, 0) "
 						+"AS punctuation,"+story+", "+student+",0 "
 						+"FROM story_content "
-						+"LEFT JOIN words on story_content.id_word = words.idx "
+						+"LEFT JOIN words on story_content.id_word = words.uid_word "
 						+"WHERE id_story = 1 ");
 	}
 	
