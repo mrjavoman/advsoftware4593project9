@@ -54,25 +54,28 @@
 
   -- none
 
-*_Sprint 1 Daily Standup #2 (7/2/2012)_*
-
   * *Lizeth:*
 
   Yesterday:
 
-  -- Worked on writing code for a counter to count the words/buttons in the passage
+  -- Download the android sdk for eclipse
 
   Today:
+ 
+  -- Work on some tutorials in android webpage  
+  
+  -- conduct a planning meeting with the rest of the group & select user stories and divide them into tasks
+ 
+  -- Work on sprint backlog with Lauren
 
-  -- Continue working with the markWordActivity class (onClick listeners code)
-
-  -- Uploaded my part for the Sprint 1 Retrospective
-
-  -- work on the burn-down & velocity charts with Lauren
+  -- Work on the task that I was assigned
 
   Impediments:
 
-  --  Conflict understanding the database
+  -- getting familiarized with how android works
+
+*_Sprint 1 Daily Standup #2 (7/2/2012)_*
+
 
   * *Lauren:*
 
@@ -105,6 +108,22 @@
   Today:
   
   -- I have chosen to take on the task of creating a timer for the android to count down from 1 minute to 0 seconds and display a message
+
+  * *Lizeth:*
+  
+  Yesterday:
+ 
+  -- Got more familiarized with the android sdk 
+ 
+  -- Did some more android tutorials
+
+  Today: 
+  
+  -- I have chosen to work with the task of user story 13 & code to marks words as last read
+
+  Impediments:
+
+  -- Learning more about how android works
 
   * *Brandon:*
   
@@ -192,27 +211,27 @@
 
   -- just learning android
 
-*_Sprint 1 Daily Standup #5 (07/11/2012)_* ... No Class / Sprint 1-Due
 
   * *Lizeth:*
 
   Yesterday:
 
-  -- Stopped trying to make the counter code work & worked with Lauren (markWordActivity class)
+  -- Worked on writing code for a counter to count the words/buttons in the passage
 
   Today:
+
+  -- Continue working with the markWordActivity class (onClick listeners code)
 
   -- Uploaded my part for the Sprint 1 Retrospective
 
   -- work on the burn-down & velocity charts with Lauren
 
-  -- Continue working with the markWordActivity class (onClick listeners code)
-
   Impediments:
 
-  -- The code for the counter did not work (wrong idea)
+  --  Conflict understanding the database
 
-  -- The StatsActivity class stopped working after the markWordActivity  was implemented
+*_Sprint 1 Daily Standup #5 (07/11/2012)_* ... No Class / Sprint 1-Due
+
  
   * *Javier:*
 
