@@ -20,14 +20,9 @@ public class DisplayButtonsActivity extends Activity {
 	public final static String WORD = "cs4953.advsoft.orfa.WORD";
 	public final static String SESSION = "cs4953.advsoft.orfa.SESSION";
 	private static final int REQUEST_CODE = 0;
+	private ArrayList<Button> storyWordsList;
 
-/*
-	public void onResume(){
-		super.onResume();
-		//iterate through the buttons and set the background colors
-	}
-*/
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,24 +36,29 @@ public class DisplayButtonsActivity extends Activity {
 		PredicateLayout layout = new PredicateLayout(this);
 
 		DataBaseHelper dbHelper = new DataBaseHelper(this);
-		ArrayList<Button> storyWordsList;
 		try {
 			dbHelper.createDataBase();
-		} catch (IOException e) {
+		}catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
-			dbHelper.openDataBase();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
+	    	dbHelper.openDataBaseRW();
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
+		
+	    try {
+	    	dbHelper.populateCurrentSessionData(storyName, 1);
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
 
 		try {
 			storyWordsList = dbHelper.getStoryWords(storyName, this);
 			dbHelper.close();
-		} catch (SQLException sqle) {
+		}catch (SQLException sqle) {
 			throw sqle;
 		}
 
@@ -100,11 +100,10 @@ public class DisplayButtonsActivity extends Activity {
 					public void run(){
 						// Building the Alert
 						startBuilder.setMessage("Please read this (point) out loud.  If you get stuck," +
-								" I will tell you the word so you can keep reading.  When I say, \"stop\"" +
-								" I may ask you to tell me about what you read, so do your best reading.  " +
-								"Start here (point to the first word of the passage).  Begin.  " +
-								"\n\nPress start to begin the session. (Timer = " + time / 1000 + " seconds)\n")
-						
+                                " I will tell you the word so you can keep reading.  When I say, \"stop\"" +
+                                " I may ask you to tell me about what you read, so do your best reading.  " +
+                                "Start here (point to the first word of the passage).  Begin.  " +
+                                "\n\nPress start to begin the session. (Timer = " + time / 1000 + " seconds)\n")
 						.setPositiveButton("Start", new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog, int which) {
 									// Delay the "time is up" message for so many milliseconds after "start" is pressed.
@@ -136,4 +135,25 @@ public class DisplayButtonsActivity extends Activity {
 	        }
 	    };
 	}
+	
+	public void onResume(){
+		super.onResume();
+
+		DataBaseHelper dbHelper = new DataBaseHelper(this);
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+
+		try {
+			dbHelper.updateWordButtons(storyWordsList);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		
+
+	}
+	
 }
