@@ -235,6 +235,8 @@
    Today:
   -- I will focus more on the database and how it works so that I can help implement the statistics page.
 
+  -- I will work on creating the instructions that the teacher will read to the student before the reading session is started.
+
   Impediments:
 
   -- The problems I'm experiencing on my laptop is probably because I'm running Windows 8 on my laptop and Windows 7 on my desktop.
