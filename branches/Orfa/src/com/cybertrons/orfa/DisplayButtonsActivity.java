@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,17 +11,23 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Display;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-@SuppressLint({ "ParserError", "ParserError" })
 public class DisplayButtonsActivity extends Activity {
 
+	
+	public final static String WORD = "cs4953.advsoft.orfa.WORD";
+	public final static String SESSION = "cs4953.advsoft.orfa.SESSION";
+	private static final int REQUEST_CODE = 0;
+
+/*
+	public void onResume(){
+		super.onResume();
+		//iterate through the buttons and set the background colors
+	}
+*/
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -66,6 +71,12 @@ public class DisplayButtonsActivity extends Activity {
 			throw sqle;
 		}
 
+		try {
+			dbHelper.openDataBase();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+
 		Iterator<Button> itr = storyWordsList.iterator();
 		while (itr.hasNext()) {
 			layout.addView(itr.next(), new PredicateLayout.LayoutParams(2, 0));			
@@ -73,80 +84,67 @@ public class DisplayButtonsActivity extends Activity {
 		}
 		
 		
-		 
+		
 
 		// Beginning Arthur's clock
 		
-		final Handler handler = new Handler();
-		final Handler h = new Handler();
-		final long time = 15000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
+				final Handler handler = new Handler();
+				final Handler h = new Handler();
+				final long time = 15000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
 
-		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		final Runnable runnable = new Runnable() {
-			public void run() {
-				// Building the Alert.
-				builder.setMessage("Time is up! Please select the last word read.")
+				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				final Runnable runnable = new Runnable() {
+					public void run() {
+						// Building the Alert.
+						builder.setMessage("Time is up! Please select the last word read.")
+								
+								.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+											public void onClick(DialogInterface dialog, int which) {
+												
+											}
+										});
 						
-						.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog, int which) {
-										
-									}
-								});
+						AlertDialog alert = builder.create(); // Creating the Alert.
+						alert.show(); // Showing the Alert.
+					}
+				}; // The above AlertDialog alerts the user that time is up.
 				
-				AlertDialog alert = builder.create(); // Creating the Alert.
-				alert.show(); // Showing the Alert.
-			}
-		}; // The above AlertDialog alerts the user that time is up.
-		
-		
-		final AlertDialog.Builder startBuilder = new AlertDialog.Builder(this);
-		final Runnable runStartTimerPrompt = new Runnable(){
-			public void run(){
-				// Building the Alert
-				startBuilder.setMessage("Press start to begin the session. (Timer = " + time / 1000 + " seconds)")
 				
-				.setPositiveButton("Start", new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int which) {
-							// Delay the "time is up" message for so many milliseconds after "start" is pressed.
-							h.postDelayed(runnable, time); 
-						}
-					})
-				.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int id) {
-							finish();
-						}
-				});
-				AlertDialog alert2 = startBuilder.create(); // Creating the Alert.
-				alert2.show(); // Showing the Alert.
+				final AlertDialog.Builder startBuilder = new AlertDialog.Builder(this);
+				final Runnable runStartTimerPrompt = new Runnable(){
+					public void run(){
+						// Building the Alert
+						startBuilder.setMessage("Press start to begin the session. (Timer = " + time / 1000 + " seconds)")
+						
+						.setPositiveButton("Start", new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int which) {
+									// Delay the "time is up" message for so many milliseconds after "start" is pressed.
+									h.postDelayed(runnable, time); 
+								}
+							})
+						.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int id) {
+									finish();
+								}
+						});
+						AlertDialog alert2 = startBuilder.create(); // Creating the Alert.
+						alert2.show(); // Showing the Alert.
+					}
+				};
+				h.post(runStartTimerPrompt); // This executes the first prompt to start the timer (above).
+				
+				// end Arthur's clock
 			}
-		};
-		h.post(runStartTimerPrompt); // This executes the first prompt to start the timer (above).
-		
-		// end Arthur's clock
-	}
 	
 	public static View.OnClickListener markWord(final Button button){ // -LJ
 		return new View.OnClickListener() {
 	        public void onClick(View v) {
+	        	int buttonID = v.getId();
 	        	Intent myIntent = new Intent(v.getContext(), MarkWordActivity.class);
-	        	v.getContext().startActivity(myIntent);
+	        	myIntent.putExtra(WORD, buttonID);
+	        	myIntent.putExtra(SESSION, 1);
 	        	//MainActivity.this.startActivity(myIntent);
 	        }
 	    };
 	}
-
-	/*
-	 * TODO create and call the dialog that allows the user to select an error
-	 * and call the method in the DataBaseHelper class that writes the error to
-	 * the db
-	 */
-
-	/*
-	 * TODO figure out how to add onClick handler that can get the button's ID
-	 * and pass it to the dialog to set an error
-	 */
-
-	/*
-	 * TODO wrap the buttons to fit the screen... see comment below
-	 */
 }
