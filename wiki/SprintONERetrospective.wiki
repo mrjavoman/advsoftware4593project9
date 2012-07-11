@@ -41,7 +41,7 @@ We should stop allowing a lot of time to pass between the days when we are actua
 = _What should we continue doing?_ =
 
 *Arthur*
-
+We should continue working on the basics and foundations of the app so that we can have a strong core to build other features on top of if we have time. 
 
 *Brandon*
 Continue  submitting all changes as soon as we implement a new feature.  Keeping the repository up to date really helps us build on one another's progress.
