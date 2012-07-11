@@ -177,6 +177,22 @@ Once the timer is started, it will time for 15 seconds currently, but that's jus
   --  Can not get the counter to work 
   --  Conflict understanding the database
 
+* *Javier:*
+    
+  Yesterday:
+
+  -- Did research on how to import a dump file into the android  aplication
+
+  -- Implemented a class for uploading a dump file
+  
+  Today: 
+
+  -- Make sure the import of the dump file works
+
+  Impediments.
+  -- I have an error in the implementation that is crashing the aplication
+
+
 *_Sprint 1 Daily Standup (07/11/2012)_* ... No Class / Sprint 1-Due
 
   * *Lizeth:*
