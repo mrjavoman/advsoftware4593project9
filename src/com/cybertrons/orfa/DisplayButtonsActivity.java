@@ -55,24 +55,9 @@ public class DisplayButtonsActivity extends Activity {
 			throw sqle;
 		}
 
-		/*
-		 * TODO there is a one hard-coded in here, it needs to be replace with
-		 * the new session number that is unique to this session
-		 */
 		try {
-			storyWordsList = dbHelper.getStoryWords(storyName, 1, this);
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-
-		try {
-			dbHelper.openDataBase();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-
-		try {
-			dbHelper.openDataBase();
+			storyWordsList = dbHelper.getStoryWords(storyName, this);
+			dbHelper.close();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -143,7 +128,7 @@ public class DisplayButtonsActivity extends Activity {
 	        	Intent myIntent = new Intent(v.getContext(), MarkWordActivity.class);
 	        	myIntent.putExtra(WORD, buttonID);
 	        	myIntent.putExtra(SESSION, 1);
-	        	//MainActivity.this.startActivity(myIntent);
+	        	v.getContext().startActivity(myIntent);
 	        }
 	    };
 	}

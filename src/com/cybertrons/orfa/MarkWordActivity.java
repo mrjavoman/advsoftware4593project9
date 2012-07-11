@@ -14,6 +14,7 @@ public class MarkWordActivity extends Activity {
 	
 	public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
 	private static final int REQUEST_CODE = 99;
+	public final static String SESSION = "cs4953.advsoft.orfa.SESSION";
 	
 	public int uidWord;
 	
@@ -37,6 +38,7 @@ public class MarkWordActivity extends Activity {
 		}
 		try {
 			dbHelper.setCurrentSessionError(uidWord, 1);
+			dbHelper.close();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -52,6 +54,7 @@ public class MarkWordActivity extends Activity {
 		}
 		try {
 			dbHelper.setCurrentSessionError(uidWord, 2);
+			dbHelper.close();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -67,6 +70,7 @@ public class MarkWordActivity extends Activity {
 		}
 		try {
 			dbHelper.setCurrentSessionError(uidWord, 3);
+			dbHelper.close();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
@@ -82,6 +86,7 @@ public class MarkWordActivity extends Activity {
 		}
 		try {
 			dbHelper.setCurrentSessionError(uidWord, 4);
+			dbHelper.close();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
