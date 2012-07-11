@@ -1,0 +1,34 @@
+#summary Conduct a Daily Standup at the beginning of each class meeting during the sprint
+
+= Introduction =
+
+- "Yesterday": refers to all the days between today and the last class
+
+- "Today": refers to all the days between today and the next class meeting
+
+- "Impediments" are there any impediments in your way?
+
+= Details =
+
+*_Sprint 2 Daily Standup (07/11/2012)_* ... no class
+
+
+*_Sprint 2 Daily Standup (07/16/2012)_*
+
+  * *Javier:*
+
+  * *Javier:*
+
+  * *Javier:* 
+
+  * *Javier:*
+
+
+*_Sprint 2 Daily Standup (07/18/2012)_*
+
+
+*_Sprint 2 Daily Standup (07/23/2012)_*
+  
+
+
+*_Sprint 2 Daily Standup (07/25/2012)_*
