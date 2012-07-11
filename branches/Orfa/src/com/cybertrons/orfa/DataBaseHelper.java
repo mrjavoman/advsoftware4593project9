@@ -255,14 +255,29 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return storyWordsList; 
 		
 	}
-	
-	/*
-	 * TODO add a method to assist in writing the session errors
-	 */
+	public void setCurrentSessionError(int uid, int error, Context tContext){
 
- 
-        // Add your public helper methods to access and get content from the database.
-       // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
-       // to you to create adapters for your views.
- 
+		Cursor aCursor;
+
+		String aSql = "UPDATE current_session " +
+						"SET errorType = " + error +
+						"WHERE uid_current_session = " + uid;
+		
+
+		
+	}
+	
+	public void populateCurrentSessionData(int story, int student ){
+		String aSql = "INSERT INTO current_session (id_word, word, "
+						+"punctuation, id_story, name, errType) "
+						+"SELECT id_word, word, COALESCE(punctuation, 0) "
+						+"AS punctuation,“+story+”, “+student+”,0";
+
+		myDataBase.rawQuery(aSql, null);
+	}
+	
+	public void clearCurrentSessionData(){
+		String aSql = "DELETE FROM current_session";
+		myDataBase.rawQuery(aSql, null);
+	}
 }
