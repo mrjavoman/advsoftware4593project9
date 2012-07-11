@@ -6,43 +6,43 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/buttonErrorOne"
+        android:id="@+id/buttonErrorOmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:onClick="onClickErrorOne"
+        android:onClick="onClickErrorOmit"
         android:text="@string/error1" />
 
     <Button
-        android:id="@+id/buttonErrorTwo"
+        android:id="@+id/buttonErrorWordOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:onClick="onClickErrorTwo"
+        android:onClick="onClickErrorWordOrder"
         android:text="@string/error2" />
 
     <Button
-        android:id="@+id/buttonErrorThree"
+        android:id="@+id/buttonErrorMispronounce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:onClick="onClickErrorThree"
+        android:onClick="onClickErrorMispronounce"
         android:text="@string/error3" />
 
     <Button
-        android:id="@+id/buttonErrorFour"
+        android:id="@+id/buttonErrorHesitate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:onClick="onClickErrorFour"
+        android:onClick="onClickErrorHesitate"
         android:text="@string/error4" />
 
     <Button
-        android:id="@+id/buttonErrorFive"
+        android:id="@+id/buttonErrorSelfCorrect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:onClick="onClickErrorFive"
+        android:onClick="onClickErrorSelfCorrect"
         android:text="@string/error5" />
 
     <Button
