@@ -13,6 +13,7 @@
 *Arthur*
 
 *Brandon*
+We need to start being more intentional about minimizing file size and memory usage for our application
 
 *Javier*
 
@@ -26,6 +27,7 @@
 *Arthur*
 
 *Brandon*
+We should stop allowing a lot of time to pass between the days when we are actually coding.
 
 *Javier*
 
@@ -39,6 +41,7 @@
 *Arthur*
 
 *Brandon*
+Continue  submitting all changes as soon as we implement a new feature.  Keeping the repository up to date really helps us build on one another's progress.
 
 *Javier*
 
