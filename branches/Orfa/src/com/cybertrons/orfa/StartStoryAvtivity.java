@@ -38,7 +38,7 @@ public class StartStoryAvtivity extends Activity {
 		}
 	    
 	    try {
-	    	dbHelper.openDataBase();
+	    	dbHelper.openDataBaseRW();
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
@@ -47,12 +47,12 @@ public class StartStoryAvtivity extends Activity {
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
-	    
 	    try {
-		  	dbHelper.openDataBase();
-	    }catch(SQLException sqle){
-		 		throw sqle;
-		}
+	    	dbHelper.clearCurrentSessionData();
+	    	dbHelper.close();
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
         
         Iterator<RadioButton> itr = storiesList.iterator();
         while (itr.hasNext())
@@ -67,6 +67,7 @@ public class StartStoryAvtivity extends Activity {
     	int radioButtonID = ((RadioGroup) findViewById(R.id.story_group)).getCheckedRadioButtonId();
     	Intent intent = new Intent(this, DisplayButtonsActivity.class);
     	intent.putExtra(NUMBER, radioButtonID);
+    	
         startActivity(intent);
     }
 }
