@@ -147,6 +147,8 @@ Once the timer is started, it will time for 15 seconds currently, but that's jus
 
   -- I haven't gotten the code to work on the emulator on my work laptop.  I only have it working on my home desktop.  I need it to work on my work laptop too so that I can show my group things without committing any changes to svn.
 
+  -- ** Update (7/11/2012) ** The problems I'm experiencing on my laptop is probably because I'm running Windows 8 on my laptop and Windows 7 on my desktop.
+
   * *Brandon*
 
   Yesterday:
