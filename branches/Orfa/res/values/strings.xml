@@ -16,12 +16,12 @@
     <string name="menu_assign_sounds">Assign Sounds</string>
     <string name="menu_DbTester">Database Tester</string>
     <string name="unimplemented">This page is not currently implemented.  Please use the back button to navigate back to the main menu</string>
-    <string name="error1">Error 1</string>
-    <string name="error2">Error 2</string>
-    <string name="error3">Error 3</string>
-    <string name="error4">Error 4</string>
-    <string name="error5">Error 5</string>
-    <string name="clear_incorrect">Mark Correct</string>
+    <string name="error1">Omit</string>
+    <string name="error2">Word Order</string>
+    <string name="error3">Mispronounce</string>
+    <string name="error4">Hesitate</string>
+    <string name="error5">Self-Correct</string>
+    <string name="clear_incorrect">Clear Error</string>
     <string name="last_read">Last Word Read</string>
     
 
