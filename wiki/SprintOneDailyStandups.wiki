@@ -10,7 +10,7 @@
 
 = Details =
 
-*_Sprint 1 Daily Standup (06/27/2012)_*
+*_Sprint 1 Daily Standup #1 (06/27/2012)_*
 
   * *Javier:*
     
@@ -40,7 +40,7 @@
 
   -- I will create different button colors for word errors
 
-*_Sprint 1 Daily Standup (7/2/2012)_*
+*_Sprint 1 Daily Standup #2 (7/2/2012)_*
 
   * *Lizeth:*
 
@@ -107,7 +107,7 @@
 
   -- I will create different button colors for word errors
 
-*_Sprint 1 Daily Standup (07/4/2012)_* ... No Class  
+*_Sprint 1 Daily Standup #3 (07/4/2012)_* ... No Class  
 
   * *Brandon:*
   
@@ -123,7 +123,7 @@
   -- I will add more words to the database story_content table
 
 
-*_Sprint 1 Daily Standup (07/9/2012)_*
+*_Sprint 1 Daily Standup #4 (07/9/2012)_*
 
   * *Arthur*
 
@@ -138,8 +138,6 @@
   -- I will talk to my group about exactly what next step will be after the timer is done.  
 
   -- I will ask my group what's better, the timer showing (takes up room on the screen) or hiding the timer and have it just working in the background.
-
-
 
     Impediments:
 
@@ -176,7 +174,7 @@
   --  Can not get the counter to work 
   --  Conflict understanding the database
 
-* *Javier:*
+  * *Javier:*
     
   Yesterday:
 
@@ -192,7 +190,7 @@
   -- I have an error in the implementation that is crashing the aplication
 
 
-*_Sprint 1 Daily Standup (07/11/2012)_* ... No Class / Sprint 1-Due
+*_Sprint 1 Daily Standup #5 (07/11/2012)_* ... No Class / Sprint 1-Due
 
   * *Lizeth:*
 
@@ -213,20 +211,6 @@
   -- The code for the counter did not work (wrong idea)
 
   -- The StatsActivity class stopped working after the markWordActivity  was implemented
-
-  * *Lauren:*
-
-  Yesterday: 
-  
-  -- 
-
-  Today: 
-
-  -- 
-
-  Impediments:
-
-  -- 
  
   * *Javier:*
 
@@ -237,19 +221,13 @@
   Today: 
 
   -- will work on creating methods for inserting records into the database
-
-  Impediments:
-
-  -- 
  
   * *Arthur:*
 
   Yesterday:
 
   -- I got the timer working completely.  The timer asks the user to press "Start" to begin the timer.  If the user presses cancel, it goes back to the story selection list.  
-Once the timer is started, it will time for 15 seconds currently, but that's just a variable that can be easily changed.  15 seconds because I don't want us having to wait a whole minute to see it work.  Then the user will get a prompt to select the last word read.  It works in between activities also, so we don't have to worry about interruptions.
-
-  Today:
+  -- Once the timer is started, it will time for 15 seconds currently, but that's just a variable that can be easily changed.  15 seconds because I don't want us having to wait a whole minute to see it work.  Then the user will get a prompt to select the last word read.  It works in between activities also, so we don't have to worry about interruptions.
 
   Impediments:
   -- The problems I'm experiencing on my laptop is probably because I'm running Windows 8 on my laptop and Windows 7 on my desktop.
