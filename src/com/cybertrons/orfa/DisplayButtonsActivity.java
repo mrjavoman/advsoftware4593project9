@@ -75,34 +75,41 @@ public class DisplayButtonsActivity extends Activity {
 
 		// Beginning Arthur's clock
 		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Are you ready to start the timer?");
 		Runnable runnable = new Runnable() {
 			public void run() {
 				builder.setMessage(
-						"Time is up! Please select the last word read!")
-						.setCancelable(true)
-						.setPositiveButton("Yes",
+						"Time is up! Please select the last word read.")
+						.setPositiveButton("OK",
 								new DialogInterface.OnClickListener() {
 									public void onClick(int id) {
 									}
 									public void onClick(DialogInterface dialog,
 											int which) { //
 									}
-								})
-						.setNegativeButton("No",
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-											int id) {
-										dialog.cancel();
-									}
 								});
+
 
 				AlertDialog alert = builder.create();
 				alert.show();
 			}
 		};
+		
+		/*.setNegativeButton("No",
+		new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog,
+					int id) {
+				dialog.cancel();
+			}
+		});*/
+		
+		//Runnable runStartTimerPrompt = new Runnable(){
+			
+		//}
 		final Handler handler = new Handler();
 		final Handler h = new Handler();
 		long time = 10000;
+		
 		h.postDelayed(runnable, time);
 		// end arthur's clock
 	}
