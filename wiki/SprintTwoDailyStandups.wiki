@@ -1,4 +1,4 @@
-#summary Conduct a Daily Standup at the beginning of each class meeting during the sprint
+#summary Conduct a Daily Standup at the beginning of each class meeting during Sprint 2
 
 = Introduction =
 
