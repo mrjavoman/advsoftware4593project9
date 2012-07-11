@@ -176,6 +176,21 @@
 
   -- I have an error in the implementation that is crashing the aplication
 
+  * *Lauren:*
+
+  Yesterday:
+
+  -- researched android interface stuff and worked with liz on documentation of the sprint
+
+  Today:
+
+  -- got the word wrap to work
+
+  -- will work with liz on the last word read, and counter aspects and interfaces and layouts related to that
+
+  Impediments:
+
+  -- just learning android
 
 *_Sprint 1 Daily Standup #5 (07/11/2012)_* ... No Class / Sprint 1-Due
 
