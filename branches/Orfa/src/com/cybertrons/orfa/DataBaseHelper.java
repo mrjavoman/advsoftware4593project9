@@ -237,16 +237,19 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             	Button btn = new Button(tContext);
                 btn.setId(aCursor.getInt(0));
                 btn.setText(aCursor.getString(1));
-                btn.setOnClickListener(DisplayButtonsActivity.markWord(btn)); //LJ
+                
                 if(aCursor.getInt(2) > 0){
                 	btn.setBackgroundColor(Color.WHITE);
+                }else{
+                	btn.setOnClickListener(DisplayButtonsActivity.markWord(btn));
+                }/*
                 }
                 else if(aCursor.getInt(4) > 0){
                 	btn.setBackgroundColor(Color.RED);
                 }
                 else{
                 	//leave button default color
-                }
+                }*/
             	storyWordsList.add(btn);
             }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
         }
