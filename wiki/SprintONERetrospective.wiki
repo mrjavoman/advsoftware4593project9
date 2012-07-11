@@ -21,7 +21,7 @@ We need to start being more intentional about minimizing file size and memory us
 *Lauren*
 
 *Lizeth*
-
+We should start working at a faster speed so we can finish all the tasks & get an idea of what user stories we want to do for the next sprint & if possible update the code & hours frequently.
 
 = _What should we stop doing?_ =
 
@@ -36,7 +36,7 @@ We should stop allowing a lot of time to pass between the days when we are actua
 *Lauren*
 
 *Lizeth*
-
+We should stop and analyze the user stories better.
 
 = _What should we continue doing?_ =
 
@@ -51,3 +51,4 @@ Continue  submitting all changes as soon as we implement a new feature.  Keeping
 *Lauren*
 
 *Lizeth*
+We should continue working as a team and just communicate & let each other know of any updates since it will make the project easier to understand.
