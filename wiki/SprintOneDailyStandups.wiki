@@ -233,4 +233,5 @@
   -- Once the timer is started, it will time for 15 seconds currently, but that's just a variable that can be easily changed.  15 seconds because I don't want us having to wait a whole minute to see it work.  Then the user will get a prompt to select the last word read.  It works in between activities also, so we don't have to worry about interruptions.
 
   Impediments:
+
   -- The problems I'm experiencing on my laptop is probably because I'm running Windows 8 on my laptop and Windows 7 on my desktop.
