@@ -205,7 +205,7 @@ Once the timer is started, it will time for 15 seconds currently, but that's jus
 
   -- Uploaded my part for the Sprint 1 Retrospective
 
-  -- do the burn-down & velocity charts
+  -- work on the burn-down & velocity charts with Lauren
 
   -- Continue working with the markWordActivity class (onClick listeners code)
 
