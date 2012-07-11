@@ -11,6 +11,7 @@
 = _What should we start doing?_ =
 
 *Arthur*
+We should let each other know what changes we have made to the repository so that if somebody implements a new feature, everyone will know about it instead of stumbling upon a new feature we didn't know had been implemented yet.
 
 *Brandon*
 We need to start being more intentional about minimizing file size and memory usage for our application
@@ -25,6 +26,7 @@ We need to start being more intentional about minimizing file size and memory us
 = _What should we stop doing?_ =
 
 *Arthur*
+Other than what Brandon said below, I think we're on the right track and we're not doing anything that we should stop doing.  We're doing a great job guys!
 
 *Brandon*
 We should stop allowing a lot of time to pass between the days when we are actually coding.
@@ -39,6 +41,7 @@ We should stop allowing a lot of time to pass between the days when we are actua
 = _What should we continue doing?_ =
 
 *Arthur*
+
 
 *Brandon*
 Continue  submitting all changes as soon as we implement a new feature.  Keeping the repository up to date really helps us build on one another's progress.
