@@ -167,12 +167,64 @@ Once the timer is started, it will time for 15 seconds currently, but that's jus
 
   Yesterday:
 
-  -- Worked on using a counter to count the words/buttons in the passage so that when user marks a word as last read, the app will count up the words and return the last word read
+  -- Worked on writing code for a counter to count the words/buttons in the passage so that when user marks a word as last read, the app will count up the words and return the last word read
 
   Today:
 
   -- Keep working on the counter 
 
+  Impediments:
+  
+  --  Can not get the counter to work 
+  --  Conflict understanding the database
+
 *_Sprint 1 Daily Standup (07/11/2012)_* ... No Class / Sprint 1-Due
 
+* *Lizeth:*
+
+  Yesterday:
+
+  -- Stopped trying to make the counter code work & worked with Lauren (markWordActivity class)
+
+  Today:
+
+  -- Uploaded my part for the Sprint 1 Retrospective
+
+  -- do the burn-down & velocity charts
+
+  -- Continue working with the markWordActivity class (onClick listeners code)
+
+  Impediments:
+
+  -- The code for the counter did not work (wrong idea)
+
+  -- The StatsActivity class stopped working after the markWordActivity  was implemented
+
+  * *Lauren:*
+
+  Yesterday: 
+  
+  -- 
+
+  Today: 
+
+  -- 
+
+  Impediments:
+
+  -- 
+ 
+  * *Javier:*
+
+  Yesterday: 
+  
+  -- 
+
+  Today: 
+
+  -- 
+
+  Impediments:
+
+  -- 
  
