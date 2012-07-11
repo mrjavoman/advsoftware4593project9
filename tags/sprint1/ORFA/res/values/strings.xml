@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ORFAActivity!</string>
+    <string name="app_name">ORFA</string>
+    <string name="Word">Hey you</string>
+    
+    <string name="number_prompt">Enter an integer in the field below.  The application will generate a screen with the number of buttons you enter</string>
+    <string name="enter_number"># of desired buttons</string>
+    <string name="button_number">Generate</string>
+    <string name="menu_welcome">Welcome to E-ORFA</string>
+    <string name="menu_start_session">Start New Session</string>
+    <string name="menu_edit_Student">Edit Students</string>
+    <string name="menu_import_story">Import Story</string>
+    <string name="menu_stats">View Statistics</string>
+    <string name="menu_assign_sounds">Assign Sounds</string>
+    <string name="menu_DbTester">Database Tester</string>
+    <string name="unimplemented">This page is not currently implemented.  Please use the back button to navigate back to the main menu</string>
+    
+    
+
+</resources>
