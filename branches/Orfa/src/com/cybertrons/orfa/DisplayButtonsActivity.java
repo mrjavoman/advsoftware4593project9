@@ -99,7 +99,11 @@ public class DisplayButtonsActivity extends Activity {
 				final Runnable runStartTimerPrompt = new Runnable(){
 					public void run(){
 						// Building the Alert
-						startBuilder.setMessage("Press start to begin the session. (Timer = " + time / 1000 + " seconds)")
+						startBuilder.setMessage("Please read this (point) out loud.  If you get stuck," +
+								" I will tell you the word so you can keep reading.  When I say, \"stop\"" +
+								" I may ask you to tell me about what you read, so do your best reading.  " +
+								"Start here (point to the first word of the passage).  Begin.  " +
+								"\n\nPress start to begin the session. (Timer = " + time / 1000 + " seconds)\n")
 						
 						.setPositiveButton("Start", new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog, int which) {
