@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+@SuppressLint({ "ParserError", "ParserError" })
 public class DisplayButtonsActivity extends Activity {
 
 	@Override
@@ -71,47 +73,56 @@ public class DisplayButtonsActivity extends Activity {
 		}
 		
 		
-		
+		 
 
 		// Beginning Arthur's clock
-		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("Are you ready to start the timer?");
-		Runnable runnable = new Runnable() {
-			public void run() {
-				builder.setMessage(
-						"Time is up! Please select the last word read.")
-						.setPositiveButton("OK",
-								new DialogInterface.OnClickListener() {
-									public void onClick(int id) {
-									}
-									public void onClick(DialogInterface dialog,
-											int which) { //
-									}
-								});
-
-
-				AlertDialog alert = builder.create();
-				alert.show();
-			}
-		};
 		
-		/*.setNegativeButton("No",
-		new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog,
-					int id) {
-				dialog.cancel();
-			}
-		});*/
-		
-		//Runnable runStartTimerPrompt = new Runnable(){
-			
-		//}
 		final Handler handler = new Handler();
 		final Handler h = new Handler();
-		long time = 10000;
+		final long time = 15000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
+
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		final Runnable runnable = new Runnable() {
+			public void run() {
+				// Building the Alert.
+				builder.setMessage("Time is up! Please select the last word read.")
+						
+						.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog, int which) {
+										
+									}
+								});
+				
+				AlertDialog alert = builder.create(); // Creating the Alert.
+				alert.show(); // Showing the Alert.
+			}
+		}; // The above AlertDialog alerts the user that time is up.
 		
-		h.postDelayed(runnable, time);
-		// end arthur's clock
+		
+		final AlertDialog.Builder startBuilder = new AlertDialog.Builder(this);
+		final Runnable runStartTimerPrompt = new Runnable(){
+			public void run(){
+				// Building the Alert
+				startBuilder.setMessage("Press start to begin the session. (Timer = " + time / 1000 + " seconds)")
+				
+				.setPositiveButton("Start", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							// Delay the "time is up" message for so many milliseconds after "start" is pressed.
+							h.postDelayed(runnable, time); 
+						}
+					})
+				.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							finish();
+						}
+				});
+				AlertDialog alert2 = startBuilder.create(); // Creating the Alert.
+				alert2.show(); // Showing the Alert.
+			}
+		};
+		h.post(runStartTimerPrompt); // This executes the first prompt to start the timer (above).
+		
+		// end Arthur's clock
 	}
 	
 	public static View.OnClickListener markWord(final Button button){ // -LJ
