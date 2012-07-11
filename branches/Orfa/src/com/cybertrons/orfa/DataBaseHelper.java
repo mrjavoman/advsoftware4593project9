@@ -157,28 +157,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
 	}
 	
-	//this method returns all the words that have a given sound, at this point the sound is hardcoded on the query but it can easily passed as a parameter if needed
-	public ArrayList<String> getWords(){
-        //store the words in an ArrayList
-        ArrayList<String> theWords = new ArrayList<String>();
-        Cursor aCursor;
-        
-        //query selects all words that have sound "eh", it uses the mapping table, the words are hello, fetch, set
-        String aSql = "SELECT word FROM words WHERE idx IN (SELECT uid_word FROM soundwordmap WHERE uid_sound = 1)";
-        
-        //a Cursor object stores the results rawQuery
-        aCursor = myDataBase.rawQuery(aSql, null);
-        // moveToFirst moves the Cursor to the first row of the results
-        if(aCursor.moveToFirst()){
-            do{
-                theWords.add(aCursor.getString(0)); // getString() returns the value of the given column index
-            }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
-        }
-        
-        //return the words hello, fetch, set
-        return theWords; 
-    }
-	
 	public ArrayList<RadioButton> getStories(Context tContext){
 
 		ArrayList<RadioButton> storiesList = new ArrayList<RadioButton>();
@@ -252,9 +230,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		String aSql = "UPDATE current_session " +
 						"SET errorType = " + error +
 						"WHERE uid_current_session = " + uid;
-		
-
-		
 	}
 	
 	public void populateCurrentSessionData(int story, int student ){
