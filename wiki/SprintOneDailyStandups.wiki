@@ -60,21 +60,19 @@
 
   Yesterday:
 
-  -- Uploaded Sprint 1 Planning Meeting Notes (documentation)
-
-  -- Android Tutorials / Research to prepare myself to start with the tasks
+  -- Worked on writing code for a counter to count the words/buttons in the passage
 
   Today:
 
-  -- Typed Sprint 1 Backlog with Lauren
+  -- Continue working with the markWordActivity class (onClick listeners code)
 
-  -- Will do more research to have a better understanding of android
+  -- Uploaded my part for the Sprint 1 Retrospective
 
-  -- work on the tasks!!! (will try to create ability for word button to be marked as last word read)
+  -- work on the burn-down & velocity charts with Lauren
 
   Impediments:
 
-  -- Found the tutorials a lil confusing, but will keep practicing
+  --  Conflict understanding the database
 
   * *Lauren:*
 
@@ -161,22 +159,6 @@
   Today:
 
   --research ways to regenerate the layout when an error is selected so that the button with an error will turn red
-
-  * *Lizeth:*
-
-  Yesterday:
-
-  -- Worked on writing code for a counter to count the words/buttons in the passage so that when user marks a word as last read, the app will count up the words and return the last word read
-
-  Today:
-
-  -- Keep working on the counter 
-
-  Impediments:
-  
-  --  Can not get the counter to work 
-
-  --  Conflict understanding the database
 
   * *Javier:*
     
