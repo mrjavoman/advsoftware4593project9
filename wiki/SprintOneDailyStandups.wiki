@@ -233,11 +233,11 @@ Once the timer is started, it will time for 15 seconds currently, but that's jus
 
   Yesterday: 
   
-  -- 
+  -- Made the application accept a dump file for recreating and updating the database
 
   Today: 
 
-  -- 
+  -- will work on creating methods for inserting records into the database
 
   Impediments:
 
