@@ -26,6 +26,7 @@
     	<activity android:name=".ImportStoryActivity" />
     	<activity android:name=".AssignSoundsActivity" />
     	<activity android:name=".MarkWordActivity" />
+    	<activity android:name=".StatsActivity" />
         <activity android:name=".DisplayButtonsActivity" />
     	<activity android:name=".DbTesterActivity" />
     </application>
