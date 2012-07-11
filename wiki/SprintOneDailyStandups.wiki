@@ -109,19 +109,6 @@
 
 *_Sprint 1 Daily Standup #3 (07/4/2012)_* ... No Class  
 
-  * *Brandon:*
-  
-  Yesterday:
-
-  -- got the buttons to change colors based on if they had errors or were punctuation
-
-  
-  Today:
-
-  -- I will continue researching wrapping buttons on a page
-
-  -- I will add more words to the database story_content table
-
 
 *_Sprint 1 Daily Standup #4 (07/9/2012)_*
 
@@ -148,6 +135,8 @@
   * *Brandon*
 
   Yesterday:
+
+  -- got the buttons to change colors based on if they had errors or were punctuation
 
   --refactored the getWordsList method in the DbHelper class
 
