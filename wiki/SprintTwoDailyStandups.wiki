@@ -20,6 +20,8 @@
 
   Today:
 
+  -- Turn in Sprint 1 Deliverables
+  
   -- Conduct a Sprint 2 Planning Meeting & select user stories
 
 *_Sprint 2 Daily Standup #2 (07/16/2012)_*
