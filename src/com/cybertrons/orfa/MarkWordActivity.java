@@ -14,23 +14,23 @@ public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
         
     }
 	
-	public void onClickErrorOne(View view){
+	public void onClickErrorOmit(View view){
 		finish();
     }
 	
-	public void onClickErrorTwo(View view){
+	public void onClickErrorWordOrder(View view){
 		finish();
     }
 	
-	public void onClickErrorThree(View view){
+	public void onClickErrorMispronounce(View view){
 		finish();
     }
 	
-	public void onClickErrorFour(View view){
+	public void onClickErrorHesitate(View view){
 		finish();
     }
 	
-	public void onClickErrorFive(View view){
+	public void onClickErrorSelfCorrect(View view){
 		finish();
     }
 	
