@@ -139,8 +139,7 @@
 
   -- I will ask my group what's better, the timer showing (takes up room on the screen) or hiding the timer and have it just working in the background.
 
-  -- ** Update (7/11/2012) ** I got the timer working completely.  The timer asks the user to press "Start" to begin the timer.  If the user presses cancel, it goes back to the story selection list.  
-Once the timer is started, it will time for 15 seconds currently, but that's just a variable that can be easily changed.  15 seconds because I don't want us having to wait a whole minute to see it work.  Then the user will get a prompt to select the last word read.  It works in between activities also, so we don't have to worry about interruptions.
+
 
     Impediments:
 
@@ -243,3 +242,7 @@ Once the timer is started, it will time for 15 seconds currently, but that's jus
 
   -- 
  
+  * *Arthur:*
+
+  -- I got the timer working completely.  The timer asks the user to press "Start" to begin the timer.  If the user presses cancel, it goes back to the story selection list.  
+Once the timer is started, it will time for 15 seconds currently, but that's just a variable that can be easily changed.  15 seconds because I don't want us having to wait a whole minute to see it work.  Then the user will get a prompt to select the last word read.  It works in between activities also, so we don't have to worry about interruptions.
