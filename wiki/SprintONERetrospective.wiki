@@ -16,7 +16,7 @@ We should let each other know what changes we have made to the repository so tha
 *Brandon*
 We need to start being more intentional about minimizing file size and memory usage for our application
 
-*Javier*
+*Javier* we should start working on implementing the error codes and the complete passage so that by next end of the sprint we can have semi-complete application.
 
 *Lauren*
 
@@ -31,7 +31,7 @@ Other than what Brandon said below, I think we're on the right track and we're n
 *Brandon*
 We should stop allowing a lot of time to pass between the days when we are actually coding.
 
-*Javier*
+*Javier* I agree with other comments we should stop letting time slip by and pick up the pace so that we finish this in time
 
 *Lauren*
 
@@ -46,7 +46,7 @@ We should continue working on the basics and foundations of the app so that we c
 *Brandon*
 Continue  submitting all changes as soon as we implement a new feature.  Keeping the repository up to date really helps us build on one another's progress.
 
-*Javier*
+*Javier* continue communicating with each about anything we do or implement. 
 
 *Lauren*
 
