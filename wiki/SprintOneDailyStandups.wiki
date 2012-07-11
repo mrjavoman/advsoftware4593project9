@@ -148,7 +148,9 @@
   Yesterday:
 
   --refactored the getWordsList method in the DbHelper class
+
   --added more words to the database 
+
   --attempted to wrap the buttons on the screen
 
   Today:
