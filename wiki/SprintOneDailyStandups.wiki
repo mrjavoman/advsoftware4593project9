@@ -214,7 +214,7 @@
 
   Yesterday:
 
-  -- Worked on writing code for a counter to count the words/buttons in the passage
+  -- Worked on writing code for the tasks 
 
   Today:
 
