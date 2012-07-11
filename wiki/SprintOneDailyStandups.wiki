@@ -40,6 +40,20 @@
 
   -- I will create different button colors for word errors
 
+  * *Lauren:*
+
+  Yesterday:
+
+  -- read up on sqlite and android
+
+  Today:
+
+  -- will work thru android tutorials and learn how to work with the android sdk and libraries
+
+  Impediments:
+
+  -- none
+
 *_Sprint 1 Daily Standup #2 (7/2/2012)_*
 
   * *Lizeth:*
