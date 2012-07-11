@@ -68,8 +68,6 @@
  
   -- Work on sprint backlog with Lauren
 
-  -- Work on the task that I was assigned
-
   Impediments:
 
   -- getting familiarized with how android works
@@ -119,7 +117,7 @@
 
   Today: 
   
-  -- I have chosen to work with the task of user story 13 & code to marks words as last read
+  -- Work with the tasks of user story 13 & code to marks words as last read
 
   Impediments:
 
