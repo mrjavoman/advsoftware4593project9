@@ -9,8 +9,6 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -63,11 +61,9 @@ public class StartStoryAvtivity extends Activity {
 	}
     
     public void onSelectButton(View view){
-    	
-    	int radioButtonID = ((RadioGroup) findViewById(R.id.story_group)).getCheckedRadioButtonId();
+     	int radioButtonID = ((RadioGroup) findViewById(R.id.story_group)).getCheckedRadioButtonId();
     	Intent intent = new Intent(this, DisplayButtonsActivity.class);
     	intent.putExtra(NUMBER, radioButtonID);
-    	
-        startActivity(intent);
+    	startActivity(intent);
     }
 }

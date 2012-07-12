@@ -7,7 +7,6 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -275,7 +274,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		Iterator<Button> itr = storyWordsList.iterator();
 		while (itr.hasNext()) {
 			int errorCode = aCursor.getInt(4);
-			String word = aCursor.getString(1);
 			switch(errorCode){
             case 0:  itr.next().setTextColor(Color.BLACK);
             break;
@@ -302,6 +300,22 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				+"FROM current_session "
 				+"WHERE uid_current_session <= "+end+" AND "
 				+"punctuation > 0";
+ 
+		//a Cursor object stores the results rawQuery
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+        // moveToFirst moves the Cursor to the first row of the results
+        aCursor.moveToFirst();
+        correctCount = aCursor.getInt(0);
+        return correctCount; 
+	}
+
+	public int getWordsIncorrectCount(int end){
+		int correctCount = 0;
+		
+		String aSql = "SELECT COUNT(uid_current_session)"
+				+"FROM current_session "
+				+"WHERE uid_current_session <= "+end+" AND "
+				+"punctuation < 0";
  
 		//a Cursor object stores the results rawQuery
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);

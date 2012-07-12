@@ -1,22 +1,19 @@
 package com.cybertrons.orfa;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.RadioGroup;
 
 public class MarkWordActivity extends Activity {
 	
 	public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
-	private static final int REQUEST_CODE = 99;
 	public final static String SESSION = "cs4953.advsoft.orfa.SESSION";
+	public static final String UID_WORD = "cs4953.advsoft.orfa.UID_WORD";
 	
-	public int uidWord;
+	private int uidWord;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,8 +122,10 @@ public class MarkWordActivity extends Activity {
 		finish();
     }
 	
-	public void onClickLastReadRW(View view){	
-		//goto session stats page.
+	public void onClickLastRead(View view){	
+    	Intent intent = new Intent(this, SessionStats.class);
+    	intent.putExtra("uid_word", uidWord);
+    	startActivity(intent);
     }
 
 }
