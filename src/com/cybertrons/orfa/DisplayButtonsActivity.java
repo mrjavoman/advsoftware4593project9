@@ -19,7 +19,6 @@ public class DisplayButtonsActivity extends Activity {
 	
 	public final static String WORD = "cs4953.advsoft.orfa.WORD";
 	public final static String SESSION = "cs4953.advsoft.orfa.SESSION";
-	private static final int REQUEST_CODE = 0;
 	private ArrayList<Button> storyWordsList;
 
 
@@ -50,7 +49,6 @@ public class DisplayButtonsActivity extends Activity {
 	   	}
 		
 	    try {
-	    	//dbHelper.clearCurrentSessionData();
 	    	dbHelper.populateCurrentSessionData(storyName, 1);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
@@ -74,7 +72,6 @@ public class DisplayButtonsActivity extends Activity {
 
 		// Beginning Arthur's clock
 		
-				final Handler handler = new Handler();
 				final Handler h = new Handler();
 				final long time = 15000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
 
