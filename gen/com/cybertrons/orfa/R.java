@@ -11,19 +11,19 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int blue2=0x7f040003;
-        public static final int blue25=0x7f040004;
-        public static final int grey05=0x7f040002;
-        public static final int orange4=0x7f040005;
-        public static final int orange5=0x7f040006;
-        public static final int transparent=0x7f040007;
-        public static final int yellow1=0x7f040000;
-        public static final int yellow2=0x7f040001;
+        public static final int blue2=0x7f050003;
+        public static final int blue25=0x7f050004;
+        public static final int grey05=0x7f050002;
+        public static final int orange4=0x7f050005;
+        public static final int orange5=0x7f050006;
+        public static final int transparent=0x7f050007;
+        public static final int yellow1=0x7f050000;
+        public static final int yellow2=0x7f050001;
     }
     public static final class dimen {
-        public static final int padding_large=0x7f050002;
-        public static final int padding_medium=0x7f050001;
-        public static final int padding_small=0x7f050000;
+        public static final int padding_large=0x7f060002;
+        public static final int padding_medium=0x7f060001;
+        public static final int padding_small=0x7f060000;
     }
     public static final class drawable {
         public static final int button_pressed=0x7f020000;
@@ -33,62 +33,69 @@ public final class R {
         public static final int toggle_background=0x7f020004;
     }
     public static final class id {
-        public static final int buttonAssignSounds=0x7f080007;
-        public static final int buttonEditStudent=0x7f080005;
-        public static final int buttonErrorHesitate=0x7f080013;
-        public static final int buttonErrorMispronounce=0x7f080012;
-        public static final int buttonErrorOmit=0x7f080010;
-        public static final int buttonErrorSelfCorrect=0x7f080014;
-        public static final int buttonErrorWordOrder=0x7f080011;
-        public static final int buttonImportStory=0x7f080006;
-        public static final int buttonLastRead=0x7f080016;
-        public static final int buttonMarkCorrect=0x7f080015;
-        public static final int buttonMenuDbTester=0x7f080009;
-        public static final int buttonMenuStats=0x7f080008;
-        public static final int buttonStartSession=0x7f080004;
-        public static final int dispButtons=0x7f08000a;
-        public static final int select_story=0x7f08000e;
-        public static final int story_group=0x7f08000d;
-        public static final int story_prompt=0x7f08000c;
-        public static final int story_select_layout=0x7f08000b;
-        public static final int text1=0x7f080000;
-        public static final int toggleButton1=0x7f080002;
-        public static final int unimplemented=0x7f08000f;
-        public static final int welcomeText=0x7f080003;
-        public static final int word1=0x7f080001;
+        public static final int buttonAssignSounds=0x7f090007;
+        public static final int buttonEditStudent=0x7f090005;
+        public static final int buttonErrorHesitate=0x7f090016;
+        public static final int buttonErrorMispronounce=0x7f090015;
+        public static final int buttonErrorOmit=0x7f090013;
+        public static final int buttonErrorSelfCorrect=0x7f090017;
+        public static final int buttonErrorWordOrder=0x7f090014;
+        public static final int buttonImportStory=0x7f090006;
+        public static final int buttonLastRead=0x7f090019;
+        public static final int buttonMarkCorrect=0x7f090018;
+        public static final int buttonMenuDbTester=0x7f090009;
+        public static final int buttonMenuStats=0x7f090008;
+        public static final int buttonStartSession=0x7f090004;
+        public static final int corr_words=0x7f09000f;
+        public static final int dispButtons=0x7f09000a;
+        public static final int incorr_words=0x7f090010;
+        public static final int select_story=0x7f09000e;
+        public static final int story_group=0x7f09000d;
+        public static final int story_prompt=0x7f09000c;
+        public static final int story_select_layout=0x7f09000b;
+        public static final int text1=0x7f090000;
+        public static final int textView3=0x7f090011;
+        public static final int toggleButton1=0x7f090002;
+        public static final int unimplemented=0x7f090012;
+        public static final int welcomeText=0x7f090003;
+        public static final int word1=0x7f090001;
     }
     public static final class layout {
         public static final int db_tester=0x7f030000;
         public static final int main=0x7f030001;
         public static final int reader=0x7f030002;
         public static final int select_story=0x7f030003;
-        public static final int unimplemented_msg=0x7f030004;
-        public static final int word_mark=0x7f030005;
+        public static final int session_stats=0x7f030004;
+        public static final int unimplemented_msg=0x7f030005;
+        public static final int word_mark=0x7f030006;
+    }
+    public static final class raw {
+        public static final int alarmpositive=0x7f040000;
     }
     public static final class string {
-        public static final int Word=0x7f060002;
-        public static final int app_name=0x7f060001;
-        public static final int button_number=0x7f060005;
-        public static final int clear_incorrect=0x7f060013;
-        public static final int enter_number=0x7f060004;
-        public static final int error1=0x7f06000e;
-        public static final int error2=0x7f06000f;
-        public static final int error3=0x7f060010;
-        public static final int error4=0x7f060011;
-        public static final int error5=0x7f060012;
-        public static final int hello=0x7f060000;
-        public static final int last_read=0x7f060014;
-        public static final int menu_DbTester=0x7f06000c;
-        public static final int menu_assign_sounds=0x7f06000b;
-        public static final int menu_edit_Student=0x7f060008;
-        public static final int menu_import_story=0x7f060009;
-        public static final int menu_start_session=0x7f060007;
-        public static final int menu_stats=0x7f06000a;
-        public static final int menu_welcome=0x7f060006;
-        public static final int story_prompt=0x7f060003;
-        public static final int unimplemented=0x7f06000d;
+        public static final int Word=0x7f070002;
+        public static final int app_name=0x7f070001;
+        public static final int button_number=0x7f070005;
+        public static final int clear_incorrect=0x7f070013;
+        public static final int enter_number=0x7f070004;
+        public static final int error1=0x7f07000e;
+        public static final int error2=0x7f07000f;
+        public static final int error3=0x7f070010;
+        public static final int error4=0x7f070011;
+        public static final int error5=0x7f070012;
+        public static final int hello=0x7f070000;
+        public static final int last_read=0x7f070014;
+        public static final int menu_DbTester=0x7f07000c;
+        public static final int menu_assign_sounds=0x7f07000b;
+        public static final int menu_edit_Student=0x7f070008;
+        public static final int menu_import_story=0x7f070009;
+        public static final int menu_start_session=0x7f070007;
+        public static final int menu_stats=0x7f07000a;
+        public static final int menu_welcome=0x7f070006;
+        public static final int story_prompt=0x7f070003;
+        public static final int unimplemented=0x7f07000d;
     }
     public static final class style {
-        public static final int AppTheme=0x7f070000;
+        public static final int AppTheme=0x7f080000;
     }
 }
