@@ -95,6 +95,7 @@ public class DisplayButtonsActivity extends Activity {
 						
 						AlertDialog alert = builder.create(); // Creating the Alert.
 						alert.show(); // Showing the Alert.
+						sounds.play(sAlert, 1.0f, 1.0f, 0, 0, 1.5f);
 					}
 				}; // The above AlertDialog alerts the user that time is up.
 				
@@ -121,7 +122,6 @@ public class DisplayButtonsActivity extends Activity {
 						});
 						AlertDialog alert2 = startBuilder.create(); // Creating the Alert.
 						alert2.show(); // Showing the Alert.
-						sounds.play(sAlert, 1.0f, 1.0f, 0, 0, 1.5f);
 					}
 				};
 				h.post(runStartTimerPrompt); // This executes the first prompt to start the timer (above).
