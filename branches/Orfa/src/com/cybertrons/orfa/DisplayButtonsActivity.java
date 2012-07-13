@@ -9,6 +9,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.SQLException;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -20,11 +22,15 @@ public class DisplayButtonsActivity extends Activity {
 	public final static String WORD = "cs4953.advsoft.orfa.WORD";
 	public final static String SESSION = "cs4953.advsoft.orfa.SESSION";
 	private ArrayList<Button> storyWordsList;
-
+	private SoundPool sounds;
+	private int sAlert;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
+		sAlert = sounds.load(getBaseContext(), R.raw.alarmpositive, 1);
 
 		// Get the message from the intent
 		Intent intent = getIntent();
@@ -115,6 +121,7 @@ public class DisplayButtonsActivity extends Activity {
 						});
 						AlertDialog alert2 = startBuilder.create(); // Creating the Alert.
 						alert2.show(); // Showing the Alert.
+						sounds.play(sAlert, 1.0f, 1.0f, 0, 0, 1.5f);
 					}
 				};
 				h.post(runStartTimerPrompt); // This executes the first prompt to start the timer (above).
