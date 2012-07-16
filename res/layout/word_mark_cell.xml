@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/buttonErrorWordOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickErrorWordOrder"
+            android:text="@string/error2" />
+
+        <Button
+            android:id="@+id/buttonErrorOmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickErrorOmit"
+            android:text="@string/error1" />
+
+        <Button
+            android:id="@+id/buttonErrorMispronounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickErrorMispronounce"
+            android:text="@string/error3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/buttonErrorHesitate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickErrorHesitate"
+            android:text="@string/error4" />
+
+        <Button
+            android:id="@+id/buttonErrorSelfCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickErrorSelfCorrect"
+            android:text="@string/error5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp" >
+
+        <Button
+            android:id="@+id/buttonMarkCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginRight="260dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="5.0"
+            android:onClick="onClickMarkCorrect"
+            android:text="@string/clear_incorrect" />
+
+        <Button
+            android:id="@+id/buttonLastRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginTop="10dp"
+            android:layout_weight="5.0"
+            android:onClick="onClickLastRead"
+            android:text="@string/last_read" />
+    </LinearLayout>
+
+</LinearLayout>
