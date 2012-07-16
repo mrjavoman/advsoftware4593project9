@@ -55,6 +55,7 @@ public class DisplayButtonsActivity extends Activity {
 	   	}
 		
 	    try {
+	    	dbHelper.clearCurrentSessionData();
 	    	dbHelper.populateCurrentSessionData(storyName, 1);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
