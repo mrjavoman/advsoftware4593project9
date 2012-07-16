@@ -1,8 +1,6 @@
 package com.cybertrons.orfa;
 
-import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,8 +14,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
-import android.os.Environment;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioButton;
 
@@ -187,6 +183,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             	storiesList.add(btn);
             }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
         }
+        aCursor.close();
 		
 		return storiesList;
 	}
@@ -233,7 +230,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             	storyWordsList.add(btn);
             }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
         }
-        
+        aCursor.close();
         //return the words hello, fetch, set
         return storyWordsList; 
 		
@@ -281,18 +278,22 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			switch(errorCode){
             case 0:  itr.next().setTextColor(Color.BLACK);
             break;
-            case 1:  itr.next().setTextColor(Color.RED);
+            case 1:  itr.next().setTextColor(Color.GREEN);
             break;
-            case 2:  itr.next().setTextColor(Color.RED);
+            case 2:  itr.next().setTextColor(Color.YELLOW);
             break;
             case 3:  itr.next().setTextColor(Color.RED);
             break;
             case 4:  itr.next().setTextColor(Color.RED);
             break;
-            case 5:  itr.next().setTextColor(Color.YELLOW);
+            case 5:  itr.next().setTextColor(Color.RED);
+            break;
+            case 6:  itr.next().setTextColor(Color.RED);
 			}
 			aCursor.moveToNext();
 		}
+
+        aCursor.close();
         return; 
 		
 	}
@@ -300,90 +301,32 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	public int getWordsCorrectCount(int end){
 		int correctCount = 0;
 		
-		String aSql = "SELECT COUNT(uid_current_session)"
-				+"FROM current_session "
-				+"WHERE uid_current_session <= "+end+" AND "
-				+"punctuation > 0";
- 
-		//a Cursor object stores the results rawQuery
+		String aSql = "SELECT *"
+				+" FROM current_session"
+				+" WHERE uid_current_session <= "+end
+				+" AND  punctuation = 0"
+				+" AND errType < 3";
+			
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
-        // moveToFirst moves the Cursor to the first row of the results
-        aCursor.moveToFirst();
-        correctCount = aCursor.getInt(0);
+        correctCount = aCursor.getCount();
+        aCursor.close();
         return correctCount; 
 	}
 
 	public int getWordsIncorrectCount(int end){
-		int correctCount = 0;
+		int incorrectCount = 0;
 		
-		String aSql = "SELECT COUNT(uid_current_session)"
-				+"FROM current_session "
-				+"WHERE uid_current_session <= "+end+" AND "
-				+"punctuation < 0";
+		String aSql = "SELECT *"
+				+" FROM current_session"
+				+" WHERE uid_current_session <= "+end
+				+" AND  punctuation = 0"
+				+" AND errType >= 3";
  
-		//a Cursor object stores the results rawQuery
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
-        // moveToFirst moves the Cursor to the first row of the results
         aCursor.moveToFirst();
-        correctCount = aCursor.getInt(0);
-        return correctCount; 
-	}
-	
-	//Export a csv file with table sqlite table contents
-	public void writeCSV() {
+        incorrectCount = aCursor.getCount();
+        aCursor.close();
 
-		File exportDir = new File(Environment.getExternalStorageDirectory(), "");        
-		if (!exportDir.exists()) {
-			exportDir.mkdirs();
-		}
-		File file = new File(exportDir, "dibblesDB.csv");
-	
-		try {
-			file.createNewFile();                
-			CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
-			Cursor curCSV = myDataBase.rawQuery("SELECT * FROM student",null);
-			csvWrite.writeNext(curCSV.getColumnNames());
-			while(curCSV.moveToNext())	{
-				String arrStr[] ={curCSV.getString(0),curCSV.getString(1),
-						curCSV.getString(2)};
-				csvWrite.writeNext(arrStr);
-			}
-			String arrStr[] = {""};
-			csvWrite.writeNext(arrStr);
-			curCSV = myDataBase.rawQuery("SELECT * FROM session",null);
-			csvWrite.writeNext(curCSV.getColumnNames());
-			while(curCSV.moveToNext())	{
-				String arrStr2[] ={curCSV.getString(0),curCSV.getString(1),
-						curCSV.getString(2),curCSV.getString(3),curCSV.getString(4),curCSV.getString(5)};
-				csvWrite.writeNext(arrStr2);
-			}
-					
-			csvWrite.close();
-			curCSV.close();
-		}
-		catch(SQLException sqlEx) {
-			Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
-		}
-		catch (IOException e) {
-			Log.e("Database Helper Class", e.getMessage(), e);
-		}
-
+        return incorrectCount; 
 	}
-	
-	//return a curosr object with the results of the students table
-		public Cursor getStudents(){
-			
-			Cursor std = null;
-			try {
-				openDataBase();
-				String sql = "select uid_student as _id, first_name as firstName, last_name as LastName from student";
-				std = myDataBase.rawQuery(sql,null);
-				close();
-			}catch(SQLException sqlEx){
-				Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
-			}
-					
-			return std;
-		}
-	
 }
