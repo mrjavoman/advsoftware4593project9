@@ -30,12 +30,15 @@
   * *Lizeth:*
 
   Yesterday:
+
   -- Worked on the layout word_mark.xml
 
   Today:
+
   -- Commit the project with two layouts (word_mark_cell.xml & word_mark_tablet.xml) to the repository
 
   Impediments:
+
   -- The layout worked differently in the screen of a tablet and a cellphone ... so I needed to do a different layout for each
 
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
