@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioGroup;
 
 public class MarkWordActivity extends Activity {
 	
@@ -21,8 +20,9 @@ public class MarkWordActivity extends Activity {
 		// Get the message from the intent
 		Intent intent = getIntent();
 		uidWord = intent.getIntExtra(DisplayButtonsActivity.WORD, 0);
-        setContentView(R.layout.word_mark);
-        
+       // setContentView(R.layout.word_mark);
+        //setContentView(R.layout.word_mark_cell); //runs with cell screen
+		setContentView(R.layout.word_mark_tablet); //runs with tablet screen
         
     }
 	
