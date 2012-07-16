@@ -21,37 +21,33 @@ public class SessionStats extends Activity {
 		// Get the message from the intent
 		Intent intent = getIntent();
 		lastWord = intent.getIntExtra(MarkWordActivity.UID_WORD, 0);
-	  
-		   //setContentView(R.layout.word_mark_cell); //runs with cell screen
-		setContentView(R.layout.word_mark_tablet); //runs with tablet screen
-		   
+	    
+	    
 	   TextView correctBlank = (TextView) findViewById(R.id.corr_words);
-	   TextView incorrectBlank = (TextView) findViewById(R.id.corr_words);
+	   TextView incorrectBlank = (TextView) findViewById(R.id.incorr_words);
 	    
-	    try {
-			dbHelper.createDataBase();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    
+ 
 	    try {
 	    	dbHelper.openDataBaseRW();
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
-	    
+	    	    
 	    try {
-	    	correctBlank.setText(dbHelper.getWordsCorrectCount(lastWord));
+	    	int rightCount = dbHelper.getWordsCorrectCount(lastWord);
+	    	correctBlank.setText( new Integer(rightCount).toString());
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
-	    
+    
 	    try {
-	    	incorrectBlank.setText(dbHelper.getWordsIncorrectCount(lastWord));
+	    	int wrongCount = dbHelper.getWordsIncorrectCount(lastWord);
+	    	incorrectBlank.setText( new Integer(wrongCount).toString());
+//	    	incorrectBlank.setText( Integer.valueOf(wrongCount));
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
 	    dbHelper.close();
+
     }
 }
