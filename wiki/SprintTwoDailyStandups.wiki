@@ -46,6 +46,7 @@
   Yesterday:
 
   -- I added the instructional text to the timer pop up
+
   -- I added a sound to the timer when it goes off
 
   Today:
