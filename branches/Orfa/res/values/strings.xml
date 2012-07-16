@@ -21,7 +21,7 @@
     <string name="error3">Mispronounce</string>
     <string name="error4">Hesitate</string>
     <string name="error5">Self-Correct</string>
-    <string name="clear_incorrect">Clear Error</string>
+    <string name="clear_incorrect">Undo</string>
     <string name="last_read">Last Word Read</string>
     
 

@@ -21,8 +21,10 @@ public class SessionStats extends Activity {
 		// Get the message from the intent
 		Intent intent = getIntent();
 		lastWord = intent.getIntExtra(MarkWordActivity.UID_WORD, 0);
-	    setContentView(R.layout.word_mark);
-
+	    //setContentView(R.layout.word_mark);
+		   //setContentView(R.layout.word_mark_cell); //runs with cell screen
+		setContentView(R.layout.word_mark_tablet); //runs with tablet screen
+		   
 	   TextView correctBlank = (TextView) findViewById(R.id.corr_words);
 	   TextView incorrectBlank = (TextView) findViewById(R.id.corr_words);
 	    
