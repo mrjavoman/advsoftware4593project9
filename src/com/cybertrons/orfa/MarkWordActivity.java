@@ -20,90 +20,10 @@ public class MarkWordActivity extends Activity {
 		// Get the message from the intent
 		Intent intent = getIntent();
 		uidWord = intent.getIntExtra(DisplayButtonsActivity.WORD, 0);
-		
-        //setContentView(R.layout.word_mark_cell); //runs with cell screen
-		setContentView(R.layout.word_mark_tablet); //runs with tablet screen
+        setContentView(R.layout.word_mark);
+//        setContentView(R.layout.word_mark_cell); //runs with cell screen
+//		setContentView(R.layout.word_mark_tablet); //runs with tablet screen
         
-    }
-	
-	public void onClickErrorOmit(View view){		
-		DataBaseHelper dbHelper = new DataBaseHelper(this);	
-		try {
-			dbHelper.openDataBaseRW();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		try {
-			dbHelper.setCurrentSessionError(uidWord, 1);
-			dbHelper.close();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		finish();
-	}
-	
-	public void onClickErrorWordOrder(View view){		
-		DataBaseHelper dbHelper = new DataBaseHelper(this);	
-		try {
-			dbHelper.openDataBaseRW();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		try {
-			dbHelper.setCurrentSessionError(uidWord, 2);
-			dbHelper.close();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		finish();
-    }
-	
-	public void onClickErrorMispronounce(View view){		
-		DataBaseHelper dbHelper = new DataBaseHelper(this);	
-		try {
-			dbHelper.openDataBaseRW();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		try {
-			dbHelper.setCurrentSessionError(uidWord, 3);
-			dbHelper.close();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		finish();
-    }
-	
-	public void onClickErrorHesitate(View view){		
-		DataBaseHelper dbHelper = new DataBaseHelper(this);	
-		try {
-			dbHelper.openDataBaseRW();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		try {
-			dbHelper.setCurrentSessionError(uidWord, 4);
-			dbHelper.close();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		finish();
-    }
-	
-	public void onClickErrorSelfCorrect(View view){		
-		DataBaseHelper dbHelper = new DataBaseHelper(this);	
-		try {
-			dbHelper.openDataBaseRW();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		try {
-			dbHelper.setCurrentSessionError(uidWord, 5);
-			dbHelper.close();
-		} catch (SQLException sqle) {
-			throw sqle;
-		}
-		finish();
     }
 	
 	public void onClickMarkCorrect(View view){		
@@ -122,10 +42,102 @@ public class MarkWordActivity extends Activity {
 		finish();
     }
 	
-	public void onClickLastRead(View view){	
+	public void onClickLastRead(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 1);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
     	Intent intent = new Intent(this, SessionStats.class);
-    	intent.putExtra("uid_word", uidWord);
+    	intent.putExtra(UID_WORD, uidWord);
     	startActivity(intent);
+    }
+	
+	public void onClickErrorSelfCorrect(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 2);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		finish();
+    }
+	
+	public void onClickErrorOmit(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 3);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		finish();
+	}
+	
+	public void onClickErrorWordOrder(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 4);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		finish();
+    }
+	
+	public void onClickErrorMispronounce(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 5);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		finish();
+    }
+	
+	public void onClickErrorHesitate(View view){		
+		DataBaseHelper dbHelper = new DataBaseHelper(this);	
+		try {
+			dbHelper.openDataBaseRW();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		try {
+			dbHelper.setCurrentSessionError(uidWord, 6);
+			dbHelper.close();
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+		finish();
     }
 
 }
