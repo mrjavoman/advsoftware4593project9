@@ -41,6 +41,21 @@
 
   -- The layout worked differently in the screen of a tablet and a cellphone ... so I needed to do a different layout for each
 
+  * *Lauren:*
+  
+  Yesterday:
+
+  -- I added the instructional text to the timer pop up
+  -- I added a sound to the timer when it goes off
+
+  Today:
+
+  -- I plan on exploring options for importing a new file into the database as a new story
+
+  Impediments:
+
+  -- I need to learn more about sql commands
+
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
 
 
