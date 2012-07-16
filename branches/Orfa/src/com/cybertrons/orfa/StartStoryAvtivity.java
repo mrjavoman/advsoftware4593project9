@@ -46,7 +46,6 @@ public class StartStoryAvtivity extends Activity {
 	   		throw sqle;
 	   	}
 	    try {
-	    	dbHelper.clearCurrentSessionData();
 	    	dbHelper.close();
 	   	}catch(SQLException sqle){
 	   		throw sqle;
