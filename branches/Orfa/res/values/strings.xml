@@ -23,6 +23,7 @@
     <string name="error5">Self-Correct</string>
     <string name="clear_incorrect">Undo</string>
     <string name="last_read">Last Word Read</string>
+    <string name="package_str">com.cybertrons.orfa</string>
     
 
 </resources>
