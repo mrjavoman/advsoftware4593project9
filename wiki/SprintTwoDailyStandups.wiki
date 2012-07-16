@@ -36,6 +36,8 @@
   Today:
 
   -- Commit the project with two layouts (word_mark_cell.xml & word_mark_tablet.xml) to the repository
+  
+  -- Figure out 'code' so when the device runs the app, it will know which layout to use
 
   Impediments:
 
