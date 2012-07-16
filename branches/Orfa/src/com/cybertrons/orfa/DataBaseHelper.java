@@ -1,6 +1,8 @@
 package com.cybertrons.orfa;
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -14,6 +16,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
+import android.os.Environment;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioButton;
 
@@ -324,4 +328,62 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         correctCount = aCursor.getInt(0);
         return correctCount; 
 	}
+	
+	//Export a csv file with table sqlite table contents
+	public void writeCSV() {
+
+		File exportDir = new File(Environment.getExternalStorageDirectory(), "");        
+		if (!exportDir.exists()) {
+			exportDir.mkdirs();
+		}
+		File file = new File(exportDir, "dibblesDB.csv");
+	
+		try {
+			file.createNewFile();                
+			CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
+			Cursor curCSV = myDataBase.rawQuery("SELECT * FROM student",null);
+			csvWrite.writeNext(curCSV.getColumnNames());
+			while(curCSV.moveToNext())	{
+				String arrStr[] ={curCSV.getString(0),curCSV.getString(1),
+						curCSV.getString(2)};
+				csvWrite.writeNext(arrStr);
+			}
+			String arrStr[] = {""};
+			csvWrite.writeNext(arrStr);
+			curCSV = myDataBase.rawQuery("SELECT * FROM session",null);
+			csvWrite.writeNext(curCSV.getColumnNames());
+			while(curCSV.moveToNext())	{
+				String arrStr2[] ={curCSV.getString(0),curCSV.getString(1),
+						curCSV.getString(2),curCSV.getString(3),curCSV.getString(4),curCSV.getString(5)};
+				csvWrite.writeNext(arrStr2);
+			}
+					
+			csvWrite.close();
+			curCSV.close();
+		}
+		catch(SQLException sqlEx) {
+			Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
+		}
+		catch (IOException e) {
+			Log.e("Database Helper Class", e.getMessage(), e);
+		}
+
+	}
+	
+	//return a curosr object with the results of the students table
+		public Cursor getStudents(){
+			
+			Cursor std = null;
+			try {
+				openDataBase();
+				String sql = "select uid_student as _id, first_name as firstName, last_name as LastName from student";
+				std = myDataBase.rawQuery(sql,null);
+				close();
+			}catch(SQLException sqlEx){
+				Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
+			}
+					
+			return std;
+		}
+	
 }
