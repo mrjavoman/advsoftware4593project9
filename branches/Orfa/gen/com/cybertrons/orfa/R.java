@@ -50,7 +50,10 @@ public final class R {
         public static final int buttonStartSession=0x7f09000e;
         public static final int corr_words=0x7f090019;
         public static final int dispButtons=0x7f090014;
+        public static final int first=0x7f09001d;
         public static final int incorr_words=0x7f09001a;
+        public static final int last=0x7f09001f;
+        public static final int middle=0x7f09001e;
         public static final int select_story=0x7f090018;
         public static final int story_group=0x7f090017;
         public static final int story_prompt=0x7f090016;
