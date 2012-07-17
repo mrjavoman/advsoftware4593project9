@@ -59,6 +59,17 @@
 
   -- I need to learn more about sql commands
 
+ * *Arthur:*
+
+Yesterday:
+
+  -- I got the transformer device to work with the eclipse project.  Previously I was only working with an emulator, but now that the project is in landscape mode, the emulator won't cut it.
+
+  Today:
+
+  -- I plan on exploring options for importing a new file into the database as a new story
+
+
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
 
 
