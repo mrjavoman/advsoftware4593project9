@@ -67,7 +67,7 @@ Yesterday:
 
   Today:
 
-  -- I plan on exploring options for importing a new file into the database as a new story
+  -- I plan on working on the ability to scroll the page that has the passage that the student is reading.  Possibly enabling scrolling with two fingers.
 
 
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
