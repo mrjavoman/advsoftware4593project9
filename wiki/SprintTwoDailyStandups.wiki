@@ -61,7 +61,7 @@
 
  * *Arthur:*
 
-Yesterday:
+  Yesterday:
 
   -- I got the transformer device to work with the eclipse project.  Previously I was only working with an emulator, but now that the project is in landscape mode, the emulator won't cut it.
 
@@ -103,7 +103,7 @@ Yesterday:
 
  * *Arthur:*
 
-Yesterday:
+  Yesterday:
 
   -- I tried getting the scroll view to work with the app.  The app still isn't scrolling correctly though.  See impediments.
 
