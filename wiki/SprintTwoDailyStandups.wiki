@@ -69,6 +69,21 @@ Yesterday:
 
   -- I plan on working on the ability to scroll the page that has the passage that the student is reading.  Possibly enabling scrolling with two fingers.
 
+* *Javier:*
+    
+  Yesterday:
+
+  -- Implemented a Method on how to export a csv file
+
+  -- Did research on how to create a list view layout
+  
+  Today: 
+
+  -- Make sure the list view layout displays students on the database
+
+  Impediments.
+  -- I'm having a but when working with list view and using an adaptor to populate the list view
+
 
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
 
@@ -99,6 +114,20 @@ Yesterday:
   Impediments:
 
   -- The Predicate Layout Class is not combining well with the scrollview.
+
+* *Javier:*
+    
+  Yesterday:
+
+  -- Implemented a list view layout that pull data from the database
+
+    
+  Today: 
+
+  -- finish Implementing list view layout and add a layout for adding students to edit student
+
+  Impediments.
+
 
 
 *_Sprint 2 Daily Standup #4 (07/23/2012)_*  
