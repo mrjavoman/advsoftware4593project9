@@ -72,6 +72,20 @@ Yesterday:
 
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
 
+ * *Arthur:*
+
+Yesterday:
+
+  -- I tried getting the scroll view to work with the app.  The app still isn't scrolling correctly though.  See impediments.
+
+  Today:
+
+  -- I will continue working on getting the ScrollView to work on the PredicateLayout or possibly starting from scratch all over and forgetting about the Predicate Layout.
+
+  Impediments:
+
+  -- The Predicate Layout Class is not combining well with the scrollview.
+
 
 *_Sprint 2 Daily Standup #4 (07/23/2012)_*  
 
