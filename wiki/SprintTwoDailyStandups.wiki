@@ -69,7 +69,7 @@ Yesterday:
 
   -- I plan on working on the ability to scroll the page that has the passage that the student is reading.  Possibly enabling scrolling with two fingers.
 
-* *Javier:*
+  * *Javier:*
     
   Yesterday:
 
