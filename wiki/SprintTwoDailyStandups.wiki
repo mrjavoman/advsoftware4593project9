@@ -87,7 +87,7 @@ Yesterday:
 
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
 
-* *Lauren:*
+ * *Lauren:*
   
   Yesterday:
 
@@ -115,20 +115,29 @@ Yesterday:
 
   -- The Predicate Layout Class is not combining well with the scrollview.
 
-* *Javier:*
+ * *Javier:*
     
   Yesterday:
 
   -- Implemented a list view layout that pull data from the database
-
     
   Today: 
 
   -- finish Implementing list view layout and add a layout for adding students to edit student
 
-  Impediments.
+ * *Lizeth:*
+    
+  Yesterday:
 
+  -- Work on the layout to save/end session
+    
+  Today: 
 
+  -- Work on the InSessionActivity class and make it work with the database
+
+  Impediments:
+  
+  -- Knowing what code to add so that the program detects what device is being used
 
 *_Sprint 2 Daily Standup #4 (07/23/2012)_*  
 
