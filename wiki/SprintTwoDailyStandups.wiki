@@ -71,7 +71,7 @@ Yesterday:
 
 * *Javier:*
     
-  Yesterday:
+Yesterday:
 
   -- Implemented a Method on how to export a csv file
 
