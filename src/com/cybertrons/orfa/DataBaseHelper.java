@@ -1,8 +1,6 @@
 package com.cybertrons.orfa;
 
-import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,8 +14,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
-import android.os.Environment;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioButton;
 
@@ -212,26 +208,28 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		//a Cursor object stores the results rawQuery
         aCursor = myDataBase.rawQuery(aSql, null);
         // moveToFirst moves the Cursor to the first row of the results
+        
+        int currentButton = 0;
+        int previousButton = -1;
         if(aCursor.moveToFirst()){
             do{
-            	Button btn = new Button(tContext);
-                btn.setId(aCursor.getInt(0));
-                btn.setText(aCursor.getString(1));
-                btn.setTextColor(Color.BLACK);
                 
-                if(aCursor.getInt(2) > 0){
-                	btn.setBackgroundColor(Color.WHITE);
+                if(aCursor.getInt(2) == 1 && previousButton >= 0){
+                	Button prevBtn = storyWordsList.get(previousButton);
+                	CharSequence prevButtonLabel = prevBtn.getText();
+                	storyWordsList.get(previousButton).setText(prevButtonLabel + aCursor.getString(1));
+//                	btn.setBackgroundColor(Color.WHITE);
                 }else{
+                	Button btn = new Button(tContext);
+                    btn.setId(aCursor.getInt(0));
+                    btn.setText(aCursor.getString(1));
+                    btn.setTextColor(Color.BLACK);
                 	btn.setOnClickListener(DisplayButtonsActivity.markWord(btn));
-                }/*
+                	btn.setBackgroundColor(Color.WHITE);
+                    currentButton++;
+                    previousButton++;
+                	storyWordsList.add(btn);
                 }
-                else if(aCursor.getInt(4) > 0){
-                	btn.setBackgroundColor(Color.RED);
-                }
-                else{
-                	//leave button default color
-                }*/
-            	storyWordsList.add(btn);
             }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
         }
         aCursor.close();
