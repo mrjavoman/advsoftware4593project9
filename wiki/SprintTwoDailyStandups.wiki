@@ -72,6 +72,20 @@ Yesterday:
 
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
 
+* *Lauren:*
+  
+  Yesterday:
+
+  -- I worked on getting the scrolling to work on the page that displays the actual story
+
+  Today:
+
+  -- I plan on continuing to try to get the scroll to work and also look at implementing the import function
+
+  Impediments:
+
+  -- The layout we used to wrap the buttons doesnt want to play well with the scroll view
+
  * *Arthur:*
 
 Yesterday:
