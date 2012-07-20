@@ -13,53 +13,76 @@
         android:text="@string/menu_welcome"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#4169e1" />
-
-    <Button
-        android:id="@+id/buttonStartSession"
+    
+    <LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:onClick="onClickStartSession"
-        android:text="@string/menu_start_session" />
+    	android:gravity="center_horizontal"
+	    	android:layout_marginTop="20dp"
+    	android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/buttonEditStudent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickEditStudent"
-        android:text="@string/menu_edit_Student" />
-
-    <Button
-        android:id="@+id/buttonImportStory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickImportStory"
-        android:text="@string/menu_import_story" />
-
-    <Button
-        android:id="@+id/buttonAssignSounds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickAssignSounds"
-        android:text="@string/menu_assign_sounds" />
-
-    <Button
-        android:id="@+id/buttonMenuStats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickStats"
-        android:text="@string/menu_stats" />
-
-    <Button
-        android:id="@+id/buttonMenuDbTester"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickDbTester"
-        android:text="@string/menu_DbTester" />
+	    <Button
+	        android:id="@+id/buttonStartSession"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:onClick="onClickStartSession"
+	        android:text="@string/menu_start_session"
+	        android:minWidth="150dp" />
+	
+	    <Button
+	        android:id="@+id/buttonEditStudent"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:onClick="onClickEditStudent"
+	        android:text="@string/menu_edit_Student"
+	        android:minWidth="150dp" />
+	
+	    <Button
+	        android:id="@+id/buttonImportStory"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:onClick="onClickImportStory"
+	        android:text="@string/menu_import_story"
+	        android:minWidth="150dp"  />
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	    	android:gravity="center_horizontal"
+	    	android:layout_marginTop="20dp"
+	    	android:orientation="horizontal" >
+	    
+	
+	    <Button
+	        android:id="@+id/buttonAssignSounds"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:onClick="onClickAssignSounds"
+	        android:text="@string/menu_assign_sounds"
+	        android:minWidth="150dp" />
+	
+	    <Button
+	        android:id="@+id/buttonMenuStats"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:onClick="onClickStats"
+	        android:text="@string/menu_stats"
+	        android:minWidth="150dp" />
+	
+	    <Button
+	        android:id="@+id/buttonMenuDbTester"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:onClick="onClickDbTester"
+	        android:text="@string/menu_DbTester"
+	        android:minWidth="150dp" />
+	    </LinearLayout>
 
 </LinearLayout>
