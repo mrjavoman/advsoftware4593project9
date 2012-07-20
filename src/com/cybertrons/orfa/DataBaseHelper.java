@@ -218,11 +218,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 	Button prevBtn = storyWordsList.get(previousButton);
                 	CharSequence prevButtonLabel = prevBtn.getText();
                 	storyWordsList.get(previousButton).setText(prevButtonLabel + aCursor.getString(1));
-//                	btn.setBackgroundColor(Color.WHITE);
+                	
+                	Button btn = new Button(tContext);
+                    btn.setId(aCursor.getInt(0));
+                	btn.setBackgroundColor(Color.WHITE);
+                    currentButton++;
+                    previousButton++;
+                	storyWordsList.add(btn);
                 }else{
                 	Button btn = new Button(tContext);
                     btn.setId(aCursor.getInt(0));
-                    btn.setText(aCursor.getString(1));
+                    btn.setText(aCursor.getString(1)); //+ " " + new Integer(aCursor.getInt(0)).toString() +" " + btn.getId());
                     btn.setTextColor(Color.BLACK);
                 	btn.setOnClickListener(DisplayButtonsActivity.markWord(btn));
                 	btn.setBackgroundColor(Color.WHITE);
@@ -253,7 +259,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 						+"AS punctuation,"+story+", "+student+",0 "
 						+"FROM story_content "
 						+"LEFT JOIN words on story_content.id_word = words.uid_word "
-						+"WHERE id_story = 1 ");
+						+"WHERE id_story = "+story);
 	}
 	
 	public void clearCurrentSessionData(){
@@ -331,7 +337,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
         return incorrectCount; 
 	}
-	
+/*	
 	//Export a csv file with table sqlite table contents
 	public void writeCSV() {
 
@@ -388,4 +394,5 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 					
 			return std;
 		}
+*/
 }
