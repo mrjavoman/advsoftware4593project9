@@ -24,6 +24,7 @@ public class DisplayButtonsActivity extends Activity {
 	private ArrayList<Button> storyWordsList;
 	private SoundPool sounds;
 	private int sAlert;
+	private int storyName = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class DisplayButtonsActivity extends Activity {
 
 		// Get the message from the intent
 		Intent intent = getIntent();
-		final int storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
+		this.storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
 
 		// LinearLayout buttonList = (LinearLayout) View.inflate(this,
 		// R.layout.reader, null);
@@ -56,13 +57,13 @@ public class DisplayButtonsActivity extends Activity {
 		
 	    try {
 	    	dbHelper.clearCurrentSessionData();
-	    	dbHelper.populateCurrentSessionData(storyName, 1);
+	    	dbHelper.populateCurrentSessionData(this.storyName, 1);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
 
 		try {
-			storyWordsList = dbHelper.getStoryWords(storyName, this);
+			storyWordsList = dbHelper.getStoryWords(this.storyName, this);
 			dbHelper.close();
 		}catch (SQLException sqle) {
 			throw sqle;
