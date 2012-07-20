@@ -3,6 +3,7 @@ package com.cybertrons.orfa;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.SQLException;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,6 +17,8 @@ public class MarkWordActivity extends Activity {
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        getWindow().setBackgroundDrawable(new ColorDrawable(0));
         
 		// Get the message from the intent
 		Intent intent = getIntent();
