@@ -209,7 +209,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         aCursor = myDataBase.rawQuery(aSql, null);
         // moveToFirst moves the Cursor to the first row of the results
         
-        int currentButton = 0;
         int previousButton = -1;
         if(aCursor.moveToFirst()){
             do{
@@ -222,7 +221,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 	Button btn = new Button(tContext);
                     btn.setId(aCursor.getInt(0));
                 	btn.setBackgroundColor(Color.WHITE);
-                    currentButton++;
                     previousButton++;
                 	storyWordsList.add(btn);
                 }else{
@@ -232,7 +230,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                     btn.setTextColor(Color.BLACK);
                 	btn.setOnClickListener(DisplayButtonsActivity.markWord(btn));
                 	btn.setBackgroundColor(Color.WHITE);
-                    currentButton++;
                     previousButton++;
                 	storyWordsList.add(btn);
                 }
@@ -305,7 +302,54 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return; 
 		
 	}
+	
+	//This method gets the five largest words that were missed in the 
+	//passage arranged in descending length order
+	public ArrayList<String> getWordsIncorrect(ArrayList<String> list){
+		String aSql = " SELECT word"
+				+" 		FROM current_session"
+				+" 		WHERE errType <= 3"
+				+" 		ORDER BY LENGTH(word) DESC"
+				+" 		LIMIT 5";
+			
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+		if(aCursor.moveToFirst()){
+            do{
+            	list.add(aCursor.getString(0));
+            }while(aCursor.moveToNext());
+		}
+        aCursor.close();
+        return list; 
+	}
 
+	//This method returns the five most frequently missed rules in a session
+	public ArrayList<String> getRulesIncorrect(ArrayList<String> list){
+		String aSql = " SELECT S.sound, C.cnt" 
+					+"  FROM (current_session"
+					+" 			LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
+					+" 			LEFT JOIN sounds on soundwordmap.id_word = sounds._idx) S"
+					+" 			LEFT JOIN (	SELECT sounds.sound, COUNT(sounds.sound) AS cnt"
+					+" 						FROM current_session"
+					+" 							LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
+					+" 							LEFT JOIN sounds on soundwordmap.id_word = sounds._idx"
+					+" 						WHERE errType > 2"
+					+" 						GROUP BY sounds.sound) C ON S.sound = C.sound"
+					+" 	WHERE errType > 2"
+					+" 	GROUP BY S.sound"
+					+" 	ORDER BY C.cnt DESC"
+					+" 	LIMIT 5";
+			
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+		if(aCursor.moveToFirst()){
+            do{
+            	list.add(aCursor.getString(0));
+            }while(aCursor.moveToNext());
+		}
+        aCursor.close();
+        return list; 
+	}
+
+	//This method returns the number of Correct words from a session
 	public int getWordsCorrectCount(int end){
 		int correctCount = 0;
 		
