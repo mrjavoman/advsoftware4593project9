@@ -5,7 +5,8 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" 
         android:layout_gravity="center"
         android:orientation="horizontal" >
 
@@ -25,6 +26,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" 
         android:layout_gravity="center"
         android:orientation="horizontal" >
 
@@ -41,6 +43,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
     
+    <View
+    	android:layout_width="fill_parent"
+    	android:layout_height="1dp"
+   		android:background="@android:color/darker_gray"/>
+    
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,102 +57,132 @@
 	    <LinearLayout
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+        	android:layout_marginTop="10dp" 
 	        android:layout_gravity="center"
 	        android:orientation="vertical" >
 
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="Top 5 Incorrect Words: "
+	        android:text="Word Errors: "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
 	    <TextView
-        	android:id="@+id/incorr_word_one"
+	        android:id="@+id/incorr_word_one"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="10dp"
 	        android:gravity="center"
 	        android:text="Word 1: "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
 	    <TextView
-        	android:id="@+id/incorr_word_two"
+	        android:id="@+id/incorr_word_two"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="5dp"
 	        android:gravity="center"
 	        android:text="Word 2: "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
 	    <TextView
-        	android:id="@+id/incorr_word_three"
+	        android:id="@+id/incorr_word_three"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="5dp"
 	        android:gravity="center"
 	        android:text="Word 3: "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
 	    <TextView
-        	android:id="@+id/incorr_word_four"
+	        android:id="@+id/incorr_word_four"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="5dp"
 	        android:gravity="center"
 	        android:text="Word 4: "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
 	    <TextView
-        	android:id="@+id/incorr_word_five"
+	        android:id="@+id/incorr_word_five"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="5dp"
 	        android:gravity="center"
 	        android:text="Word 5: "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
+
 	    </LinearLayout>
     
 	    <LinearLayout
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+        	android:layout_marginTop="10dp" 
 	        android:layout_gravity="center"
 	        android:orientation="vertical" >
 
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="Top 5 Incorrect Rules: : "
+        	android:layout_marginLeft="10dp" 
+	        android:text="Rule Errors: : "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
-	
+	
 	    <TextView
-        	android:id="@+id/incorr_sound_one"
+	        android:id="@+id/incorr_rule_one"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="Sound 1: "
+	        android:layout_gravity="center"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginTop="5dp"
+	        android:text="Rule 1: "
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	    <TextView
+	        android:id="@+id/incorr_rule_two"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginTop="5dp"
+	        android:text="Rule 2: "
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	    <TextView
+	        android:id="@+id/incorr_rule_three"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginTop="5dp"
+	        android:text="Rule 3: "
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	    <TextView
+	        android:id="@+id/incorr_rule_four"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginTop="5dp"
+	        android:text="Rule 4: "
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	    <TextView
+	        android:id="@+id/incorr_rule_five"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginTop="5dp"
+	        android:text="Rule 5: "
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-	    <TextView
-        	android:id="@+id/incorr_sound_two"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="Sound 2: "
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-	    <TextView
-        	android:id="@+id/incorr_sound_three"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="Sound 3: "
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-	    <TextView
-        	android:id="@+id/incorr_sound_four"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="Sound 4: "
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-	    <TextView
-        	android:id="@+id/incorr_sound_five"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="Sound 5: "
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
 	    </LinearLayout>
     </LinearLayout>
     
