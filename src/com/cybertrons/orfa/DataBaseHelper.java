@@ -331,7 +331,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		String aSql = " SELECT S.sound, C.cnt" 
 					+"  FROM (current_session"
 					+" 			LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
-					+" 			LEFT JOIN sounds on soundwordmap.id_word = sounds._idx) S"
+					+" 			LEFT JOIN sounds on soundwordmap.id_word = sounds.uid_sound) S"
 					+" 			LEFT JOIN (	SELECT sounds.sound, COUNT(sounds.sound) AS cnt"
 					+" 						FROM current_session"
 					+" 							LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
