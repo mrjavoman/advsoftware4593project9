@@ -59,19 +59,29 @@ public class SessionStats extends Activity {
 	    	if(!wordsList.isEmpty()){
 	    		numWords = wordsList.size();
 	    		word1.setText(wordsList.get(0));
+	    	}else{
+	    		word1.setText("-");
 	    	}
 	    	if(numWords > 1){
 	    		word2.setText(wordsList.get(1));
+	    	}else{
+	    		word2.setText("-");
 	    	}
 	    	if(numWords > 2){
 	    		word3.setText(wordsList.get(2));
-			}
+			}else{
+	    		word3.setText("-");
+	    	}
 	    	if(numWords > 3){
 	    		word4.setText(wordsList.get(3));
-			}
+			}else{
+	    		word4.setText("-");
+	    	}
 	    	if(numWords > 4){
 	    		word5.setText(wordsList.get(4));
-			}
+			}else{
+	    		word5.setText("-");
+	    	}
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
@@ -83,19 +93,29 @@ public class SessionStats extends Activity {
 	    	if(!rulesList.isEmpty()){
 	    		numRules = rulesList.size();
 	    		rule1.setText(rulesList.get(0));
+	    	}else{
+	    		rule1.setText("-");
 	    	}
 	    	if(numRules > 1){
 	    		rule2.setText(rulesList.get(1));
+	    	}else{
+	    		rule2.setText("-");
 	    	}
 	    	if(numRules > 2){
 	    		rule3.setText(rulesList.get(2));
-			}
+			}else{
+	    		rule3.setText("-");
+	    	}
 	    	if(numRules > 3){
 	    		rule4.setText(rulesList.get(3));
-			}
+			}else{
+	    		rule4.setText("-");
+	    	}
 	    	if(numRules > 4){
 	    		rule5.setText(rulesList.get(4));
-			}
+			}else{
+	    		rule5.setText("-");
+	    	}
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
