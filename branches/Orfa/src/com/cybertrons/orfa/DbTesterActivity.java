@@ -23,7 +23,7 @@ public class DbTesterActivity extends Activity {
 		try  {
 			dbHelper.createDataBase();
 			dbHelper.openDataBase();
-			dbHelper.writeCSV();
+//			dbHelper.writeCSV();
 			dbHelper.close();
 		}
 		catch(Exception ex)  {
