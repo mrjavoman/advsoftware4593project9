@@ -24,6 +24,9 @@
     <string name="clear_incorrect">Undo</string>
     <string name="last_read">Last Word Read</string>
     <string name="package_str">com.cybertrons.orfa</string>
+    <string name="check_box">Do not show this message again, just start the timer next time.</string>
+    <string name="check_box_main_settings">Show instructions page at the start of a reading passage.</string>
+    <string name="menu_settings">Settings</string>
     
 
 </resources>

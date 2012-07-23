@@ -439,4 +439,14 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			return std;
 		}
 */
+
+	public void writeCSV() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Cursor getStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
