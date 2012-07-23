@@ -24,6 +24,7 @@ public class SessionStats extends Activity {
 	    
 	   TextView correctBlank = (TextView) findViewById(R.id.corr_words);
 	   TextView incorrectBlank = (TextView) findViewById(R.id.incorr_words);
+	   TextView avgIncorrBlank = (TextView) findViewById(R.id.avg_length);
 	   TextView word1 = (TextView) findViewById(R.id.incorr_word_one);
 	   TextView word2 = (TextView) findViewById(R.id.incorr_word_two);
 	   TextView word3 = (TextView) findViewById(R.id.incorr_word_three);
@@ -35,8 +36,20 @@ public class SessionStats extends Activity {
 	   TextView rule4 = (TextView) findViewById(R.id.incorr_rule_four);
 	   TextView rule5 = (TextView) findViewById(R.id.incorr_rule_five);
 	   
+	   TextView errTypeOne = (TextView) findViewById(R.id.errType_one);
+	   TextView errTypeTwo = (TextView) findViewById(R.id.errType_two);
+	   TextView errTypeThree = (TextView) findViewById(R.id.errType_three);
+	   TextView errTypeFour = (TextView) findViewById(R.id.errType_four);
+	   TextView errTypeFive = (TextView) findViewById(R.id.errType_five);	   
+	   TextView errCountOne = (TextView) findViewById(R.id.errType_one_count);
+	   TextView errCountTwo = (TextView) findViewById(R.id.errType_two_count);
+	   TextView errCountThree = (TextView) findViewById(R.id.errType_three_count);
+	   TextView errCountFour = (TextView) findViewById(R.id.errType_four_count);
+	   TextView errCountFive = (TextView) findViewById(R.id.errType_five_count);
+	   
 	   ArrayList<String> wordsList = new ArrayList<String>();	   
 	   ArrayList<String> rulesList = new ArrayList<String>();
+	   ArrayList<String> errorList = new ArrayList<String>();
 	    
 	    
  
@@ -49,6 +62,59 @@ public class SessionStats extends Activity {
 		try {
 			int rightCount = dbHelper.getWordsCorrectCount(lastWord);
 			correctBlank.setText( new Integer(rightCount).toString());
+		}catch(SQLException sqle){
+			throw sqle;
+		}
+	    
+		try {
+			int rightCount = dbHelper.getAverageLenghtIncorrect();
+			avgIncorrBlank.setText( new Integer(rightCount).toString());
+		}catch(SQLException sqle){
+			throw sqle;
+		}
+
+	    
+		try {
+			errorList = dbHelper.getErrorStats();
+			int numwords = 0;
+	    	if(!errorList.isEmpty()){
+	    		numwords = errorList.size() / 2;
+	    		errTypeOne.setText(errorList.get(0));
+	    		errCountOne.setText(errorList.get(1));
+	    	}else{
+
+	    		errTypeOne.setText("");
+	    		errCountOne.setText("");
+	    	}
+	    	if(numwords > 1){
+	    		errTypeTwo.setText(errorList.get(2));
+	    		errCountTwo.setText(errorList.get(3));
+	    	}else{
+	    		errTypeTwo.setText("");
+	    		errCountTwo.setText("");
+	    	}
+	    	if(numwords > 2){
+	    		errTypeThree.setText(errorList.get(4));
+	    		errCountThree.setText(errorList.get(5));
+			}else{
+	    		errTypeThree.setText("");
+	    		errCountThree.setText("");
+	    	}
+	    	if(numwords > 3){
+	    		errTypeFour.setText(errorList.get(6));
+	    		errCountFour.setText(errorList.get(7));
+			}else{
+	    		errTypeFour.setText("");
+	    		errCountFour.setText("");
+	    	}
+	    	if(numwords > 4){
+	    		errTypeFive.setText(errorList.get(8));
+	    		errCountFive.setText(errorList.get(9));
+			}else{
+	    		errTypeFive.setText("");
+	    		errCountFive.setText("");
+	    	}
+			
 		}catch(SQLException sqle){
 			throw sqle;
 		}
