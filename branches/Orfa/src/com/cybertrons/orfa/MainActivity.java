@@ -41,5 +41,8 @@ public class MainActivity extends Activity {
     	Intent myIntent = new Intent(MainActivity.this, DbTesterActivity.class);
     	MainActivity.this.startActivity(myIntent);
     }
-    
+    public void onClickSettings(View view){
+    	Intent myIntent = new Intent(MainActivity.this, SettingsActivity.class);
+    	MainActivity.this.startActivity(myIntent);
+    }
 }

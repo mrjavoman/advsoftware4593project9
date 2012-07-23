@@ -83,6 +83,23 @@
 	        android:onClick="onClickDbTester"
 	        android:text="@string/menu_DbTester"
 	        android:minWidth="150dp" />
+	    
 	    </LinearLayout>
-
+	    
+	    <LinearLayout
+	         android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	    	android:gravity="center_horizontal"
+	    	android:layout_marginTop="20dp"
+	    	android:orientation="horizontal">
+		    <Button
+		        android:id="@+id/mainSettings"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:onClick="onClickSettings"
+		        android:text="@string/menu_settings"
+		        android:minWidth="150dp" />    
+	    </LinearLayout>
+	    
 </LinearLayout>
