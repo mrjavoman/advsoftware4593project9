@@ -1,6 +1,8 @@
 package com.cybertrons.orfa;
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -14,6 +16,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
+import android.os.Environment;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioButton;
 
@@ -308,7 +312,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	public ArrayList<String> getWordsIncorrect(ArrayList<String> list){
 		String aSql = " SELECT word"
 				+" 		FROM current_session"
-				+" 		WHERE errType <= 3"
+				+" 		WHERE errType >= 3"
 				+" 		ORDER BY LENGTH(word) DESC"
 				+" 		LIMIT 5";
 			
@@ -331,10 +335,10 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 					+" 			LEFT JOIN (	SELECT sounds.sound, COUNT(sounds.sound) AS cnt"
 					+" 						FROM current_session"
 					+" 							LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
-					+" 							LEFT JOIN sounds on soundwordmap.id_word = sounds._idx"
-					+" 						WHERE errType > 2"
+					+" 							LEFT JOIN sounds on soundwordmap.id_word = sounds.uid_sound"
+					+" 						WHERE errType >=3"
 					+" 						GROUP BY sounds.sound) C ON S.sound = C.sound"
-					+" 	WHERE errType > 2"
+					+" 	WHERE errType >= 3"
 					+" 	GROUP BY S.sound"
 					+" 	ORDER BY C.cnt DESC"
 					+" 	LIMIT 5";
@@ -381,7 +385,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
         return incorrectCount; 
 	}
-/*	
+	
 	//Export a csv file with table sqlite table contents
 	public void writeCSV() {
 
@@ -438,15 +442,5 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 					
 			return std;
 		}
-*/
 
-	public void writeCSV() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Cursor getStudents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
