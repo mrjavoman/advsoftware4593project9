@@ -326,23 +326,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return list; 
 	}
 
-	//This method returns the five most frequently missed rules in a session
+	//This method returns the five most frequently missed rules in a session sorted by
+	//descending string length
 	public ArrayList<String> getRulesIncorrect(ArrayList<String> list){
-		String aSql = " SELECT S.sound, C.cnt" 
-					+"  FROM (current_session"
-					+" 			LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
-					+" 			LEFT JOIN sounds on soundwordmap.id_word = sounds.uid_sound) S"
-					+" 			LEFT JOIN (	SELECT sounds.sound, COUNT(sounds.sound) AS cnt"
-					+" 						FROM current_session"
-					+" 							LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
-					+" 							LEFT JOIN sounds on soundwordmap.id_word = sounds.uid_sound"
-					+" 						WHERE errType >=3"
-					+" 						GROUP BY sounds.sound) C ON S.sound = C.sound"
-					+" 	WHERE errType >= 3"
-					+" 	GROUP BY S.sound"
-					+" 	ORDER BY C.cnt DESC"
-					+" 	LIMIT 5";
-			
+		String aSql =" SELECT sounds.sound, COUNT(sounds.sound) AS cnt"
+				+"     FROM current_session"
+				+"     LEFT JOIN soundwordmap on current_session.id_word = soundwordmap.id_word"
+				+"     LEFT JOIN sounds on soundwordmap.id_sound = sounds.uid_sound"
+				+"     WHERE errType >=3"
+				+"     GROUP BY sounds.sound"
+				+"     ORDER BY cnt DESC, LENGTH(sound) DESC"
+				+"     LIMIT 5";
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
 		if(aCursor.moveToFirst()){
             do{
@@ -384,6 +378,39 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         aCursor.close();
 
         return incorrectCount; 
+	}
+	public int getAverageLenghtIncorrect(){
+		int average = 0;
+		
+		String aSql = " SELECT AVG(LENGTH(WORD)) AS average"
+				+"      FROM current_session"
+				+"      WHERE errType >= 3";
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+		if(aCursor.moveToFirst()){
+			average = aCursor.getInt(0);
+		}
+        aCursor.close();
+		return average;
+	}
+
+	//this method returns the error type and count of that error in current session
+	public ArrayList<String> getErrorStats(){
+		ArrayList<String> list = new ArrayList<String>();
+		String aSql = " SELECT error_name, COUNT(errType)"
+					+"  FROM current_session"
+					+"  LEFT JOIN errors ON errType = errors._uid_error"
+					+"  WHERE errType >= 2"	
+					+"  GROUP BY errType";
+
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+		if(aCursor.moveToFirst()){
+            do{
+            	list.add(aCursor.getString(0));
+            	list.add(Integer.toString(aCursor.getInt(1)));
+            }while(aCursor.moveToNext());
+		}
+        aCursor.close();
+        return list;
 	}
 	
 	//Export a csv file with table sqlite table contents
