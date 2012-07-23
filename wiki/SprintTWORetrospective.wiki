@@ -1,0 +1,10 @@
+#summary Conduct a Sprint Retrospective on the last day of Sprint 2 (July 25th for 30 minutes)
+
+= Introduction =
+
+->Each team member must enter at least one line under each section
+
+->Do this before you get to class so you have ample time to discuss the items in the wiki in person
+
+= _What should we start doing?_ == _What should we stop doing?_ =*
+= _What should we continue doing?_ =
