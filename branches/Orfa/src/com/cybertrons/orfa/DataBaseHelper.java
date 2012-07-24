@@ -470,9 +470,20 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			return std;
 		}
 
-		public void writeSession(int finalErrors, int finalScore,
-				String finalNotes) {
-			// TODO Auto-generated method stub
+		public void writeSession(int finalErrors, int finalScore, String finalNotes) {
+			int student = 0;
+			
+			String aSql = "SELECT name"
+					+" FROM current_session"
+					+" GROUP BY name";
+	 
+			Cursor aCursor = myDataBase.rawQuery(aSql, null);
+	        aCursor.moveToFirst();
+	        student = aCursor.getInt(0);
+	        aCursor.close();
+	        
+	        myDataBase.execSQL("INSERT INTO session (notes, id_student, incorrect_count, score)"
+	        	+" VALUES ( " + finalNotes + ", "+ student + ", "+ finalErrors  + ", "+ finalScore+ ")");
 			
 		}
 
