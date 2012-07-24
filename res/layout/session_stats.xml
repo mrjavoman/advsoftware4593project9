@@ -335,8 +335,10 @@
     </LinearLayout>
 
     <Button 
+	    android:id="@+id/buttonSaveSession"
         android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:text="Done"  />
+    	android:text="Done"
+	    android:onClick="onSaveSession"/>
 
 </LinearLayout>
