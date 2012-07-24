@@ -5,10 +5,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class SessionStats extends Activity {
 	
+	private static final String UID_WORD = "cs4953.advsoft.orfa.UID_WORD";
 	private int lastWord;
 
     @Override
@@ -193,6 +195,11 @@ public class SessionStats extends Activity {
 	   		throw sqle;
 	   	}
 	    dbHelper.close();
-
+    }
+    
+    public void onSaveSession(View view){
+    	Intent intent = new Intent(this, SaveSessionActivity.class);
+    	intent.putExtra(UID_WORD, lastWord);
+    	startActivity(intent);
     }
 }
