@@ -3,62 +3,79 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_horizontal"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
+    <LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="80dp"
+	    android:layout_marginTop="5dp" >
 
-    <Button
-        android:id="@+id/buttonErrorOmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:onClick="onClickErrorOmit"
-        android:text="@string/error1" />
+	    <Button
+	        android:id="@+id/buttonErrorOmit"
+	        android:layout_width="158dp"
+    		android:layout_height="fill_parent"
+	        android:onClick="onClickErrorOmit"
+	        android:text="@string/error1" />
 
-    <Button
-        android:id="@+id/buttonErrorWordOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickErrorWordOrder"
-        android:text="@string/error2" />
+	    <Button
+	        android:id="@+id/buttonErrorWordOrder"
+	        android:layout_width="158dp"
+    		android:layout_height="fill_parent"
+	        android:layout_marginLeft="25dp"
+	        android:onClick="onClickErrorWordOrder"
+	        android:text="@string/error2" />
+	
+	    <Button
+	        android:id="@+id/buttonErrorMispronounce"
+	        android:layout_width="158dp"
+    		android:layout_height="fill_parent"
+	        android:layout_marginLeft="25dp"
+	        android:onClick="onClickErrorMispronounce"
+	        android:text="@string/error3" />
+	</LinearLayout>
+    <LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="80dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/buttonErrorMispronounce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickErrorMispronounce"
-        android:text="@string/error3" />
+		<Button
+		    android:id="@+id/buttonErrorHesitate"
+		    android:layout_width="200dp"
+    		android:layout_height="fill_parent"
+		    android:onClick="onClickErrorHesitate"
+		    android:text="@string/error4" />
+	
+	    <Button
+	        android:id="@+id/buttonErrorSelfCorrect"
+	        android:layout_width="185dp"
+    		android:layout_height="fill_parent"
+	        android:layout_marginLeft="25dp"
+	        android:onClick="onClickErrorSelfCorrect"
+	        android:text="@string/error5" />
 
-    <Button
-        android:id="@+id/buttonErrorHesitate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickErrorHesitate"
-        android:text="@string/error4" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonErrorSelfCorrect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickErrorSelfCorrect"
-        android:text="@string/error5" />
+    <LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="35dp" >
+	
+	    <Button
+	        android:id="@+id/buttonMarkCorrect"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="bottom|left"
+	        android:onClick="onClickMarkCorrect"
+	        android:text="@string/clear_incorrect" />
 
-    <Button
-        android:id="@+id/buttonMarkCorrect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickMarkCorrect"
-        android:text="@string/clear_incorrect" />
+		<Button
+		    android:id="@+id/buttonLastRead"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+	        android:layout_gravity="bottom|right"
+		    android:onClick="onClickLastRead"
+		    android:text="@string/last_read" />
 
-    <Button
-        android:id="@+id/buttonLastRead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickLastRead"
-        android:text="@string/last_read" />
+		</LinearLayout>
 
 </LinearLayout>
