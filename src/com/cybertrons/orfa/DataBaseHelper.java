@@ -470,4 +470,10 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			return std;
 		}
 
+		public void writeSession(int finalErrors, int finalScore,
+				String finalNotes) {
+			// TODO Auto-generated method stub
+			
+		}
+
 }
