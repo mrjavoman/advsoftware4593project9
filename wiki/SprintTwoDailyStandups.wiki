@@ -225,7 +225,7 @@ the stats page
     
   Yesterday:
 
-  -- solved the list view layout problems I was having and was able to do exactly what i was hoping for, It still lacks some functionality but it is nothing we have not done before
+  -- solved the list view layout problems I was having and was I was able to make it do exactly what I was hoping for, It still lacks some functionality but it is nothing we have not done before
 
     
   Today: 
@@ -234,6 +234,6 @@ the stats page
 
   Impediments.
 
-  -- It took me a long time to understand how to work with a list view, it requires the use of a custom adapter class, at some point I even decided not to use this approach for building the edit student list and instead use a different list like a radio group button but the new approach also presented its own challenges like the inability to scroll, so I finally decided to just stick with the original approach and make it work.
+  -- It took me a long time to understand how to work with a list view, it requires the use of a custom adapter class which then gets passed into the list view itself, at some point I even decided not to use this approach for building the edit student list and instead use a different list like a radio group button but the new approach also presented its own challenges like the inability to scroll, so I finally decided to just stick with the original approach and make it work.
 
 *_Sprint 2 Daily Standup #5 (07/25/2012)_*
