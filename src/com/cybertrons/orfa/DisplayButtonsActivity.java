@@ -40,10 +40,8 @@ public class DisplayButtonsActivity extends Activity {
 		
 		sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
 		sAlert = sounds.load(getBaseContext(), R.raw.alarmpositive, 1);
-		
-		
-		
-		
+
+
 		// Get the message from the intent
 		Intent intent = getIntent();
 		this.storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
@@ -72,6 +70,7 @@ public class DisplayButtonsActivity extends Activity {
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
+	    
 
 		try {
 			storyWordsList = dbHelper.getStoryWords(this.storyName, this);
@@ -85,8 +84,7 @@ public class DisplayButtonsActivity extends Activity {
 			layout.addView(itr.next(), new PredicateLayout.LayoutParams(2, 0));			
 			setContentView(layout);			
 		}
-		
-		
+	
 		
 
 		// Beginning Arthur's clock
@@ -188,11 +186,12 @@ public class DisplayButtonsActivity extends Activity {
 	}
 	
 	public void onResume(){
-		super.onResume();
+		super.onResume();// Get the message from the intent
 
 		DataBaseHelper dbHelper = new DataBaseHelper(this);
+
 		try {
-			dbHelper.openDataBaseRW();
+			dbHelper.openDataBase();
 		} catch (SQLException sqle) {
 			throw sqle;
 		}

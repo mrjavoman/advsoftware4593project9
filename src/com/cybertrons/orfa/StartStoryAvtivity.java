@@ -36,7 +36,7 @@ public class StartStoryAvtivity extends Activity {
 		}
 	    
 	    try {
-	    	dbHelper.openDataBaseRW();
+	    	dbHelper.openDataBase();
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}

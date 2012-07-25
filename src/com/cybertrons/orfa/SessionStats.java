@@ -10,8 +10,11 @@ import android.widget.TextView;
 
 public class SessionStats extends Activity {
 	
-	private static final String UID_WORD = "cs4953.advsoft.orfa.UID_WORD";
+	static final String ERRORS = "cs4953.advsoft.orfa.ERRORS";
+	static final String SCORE = "cs4953.advsoft.orfa.SCORE";
 	private int lastWord;
+	private int score;
+	private int errors;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,14 +59,14 @@ public class SessionStats extends Activity {
 	    
  
 	    try {
-	    	dbHelper.openDataBaseRW();
+	    	dbHelper.openDataBase();
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
 	    
 		try {
-			int rightCount = dbHelper.getWordsCorrectCount(lastWord);
-			correctBlank.setText( new Integer(rightCount).toString());
+			score = dbHelper.getWordsCorrectCount(lastWord);
+			correctBlank.setText( new Integer(score).toString());
 		}catch(SQLException sqle){
 			throw sqle;
 		}
@@ -123,29 +126,28 @@ public class SessionStats extends Activity {
 	    	    
 	    try {
 	    	wordsList = dbHelper.getWordsIncorrect(wordsList);
-	    	int numWords = 0;
 	    	if(!wordsList.isEmpty()){
-	    		numWords = wordsList.size();
+	    		errors = wordsList.size();
 	    		word1.setText(wordsList.get(0));
 	    	}else{
 	    		word1.setText("-");
 	    	}
-	    	if(numWords > 1){
+	    	if(errors > 1){
 	    		word2.setText(wordsList.get(1));
 	    	}else{
 	    		word2.setText("-");
 	    	}
-	    	if(numWords > 2){
+	    	if(errors > 2){
 	    		word3.setText(wordsList.get(2));
 			}else{
 	    		word3.setText("-");
 	    	}
-	    	if(numWords > 3){
+	    	if(errors > 3){
 	    		word4.setText(wordsList.get(3));
 			}else{
 	    		word4.setText("-");
 	    	}
-	    	if(numWords > 4){
+	    	if(errors > 4){
 	    		word5.setText(wordsList.get(4));
 			}else{
 	    		word5.setText("-");
@@ -199,7 +201,8 @@ public class SessionStats extends Activity {
     
     public void onSaveSession(View view){
     	Intent intent = new Intent(this, SaveSessionActivity.class);
-    	intent.putExtra(UID_WORD, lastWord);
+    	intent.putExtra(SCORE, score);
+    	intent.putExtra(ERRORS, errors);
     	startActivity(intent);
     }
 }
