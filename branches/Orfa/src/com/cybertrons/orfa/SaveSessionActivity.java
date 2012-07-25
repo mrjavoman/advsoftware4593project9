@@ -11,7 +11,6 @@ import android.widget.EditText;
 
 public class SaveSessionActivity extends Activity {
 	
-	private int lastWord;
 	private int finalScore;
 	private int finalErrors;
 	private String finalNotes;
@@ -22,45 +21,14 @@ public class SaveSessionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.save_session);
 		Intent intent = getIntent();
-		lastWord = intent.getIntExtra(MarkWordActivity.UID_WORD, 0);
+		finalScore = intent.getIntExtra(SessionStats.SCORE, 0);
+		finalErrors = intent.getIntExtra(SessionStats.ERRORS, 0);
 
-        EditText score = (EditText) findViewById(R.id.save_score);
-        EditText errors = (EditText) findViewById(R.id.save_errors_text);
-	    DataBaseHelper dbHelper = new DataBaseHelper(this);
+        EditText fScore = (EditText) findViewById(R.id.save_score);
+        EditText fErrors = (EditText) findViewById(R.id.save_errors_text);
 
-	    
-	    try {
-			dbHelper.createDataBase();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    
-	    try {
-	    	dbHelper.openDataBaseRW();
-	   	}catch(SQLException sqle){
-	   		throw sqle;
-	   	}
-	    try {
-	    	int rightCount = dbHelper.getWordsCorrectCount(lastWord);
-			score.setText( new Integer(rightCount).toString());
-			this.finalScore = rightCount;
-	   	}catch(SQLException sqle){
-	   		throw sqle;
-	   	}
-    
-	    try {
-	    	int wrongCount = dbHelper.getWordsIncorrectCount(lastWord);
-	    	errors.setText( new Integer(wrongCount).toString());
-	    	this.finalErrors = wrongCount;
-	   	}catch(SQLException sqle){
-	   		throw sqle;
-	   	}
-	    try {
-	    	dbHelper.close();
-	   	}catch(SQLException sqle){
-	   		throw sqle;
-	   	}
+        fScore.setText( new Integer(finalScore).toString());
+        fErrors.setText( new Integer(finalErrors).toString());
         
         
     }
