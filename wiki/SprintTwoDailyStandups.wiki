@@ -277,3 +277,20 @@ the stats page
   Today:
 
   -- finish up sprint2 & work with lauren to finish the documentation and start the new sprint
+
+  * *Brandon:*
+
+  Yesterday:
+
+  -- I added average word length of missed words on session stats
+
+  -- I added a page to edit stats prior to saving them
+
+  -- I added error types, words missed, and sounds/rules missed on 
+the stats page
+ 
+  Today:
+
+  -- I will Change the color of error counts on the stats page
+
+  -- I will add ability to select the student for a session
