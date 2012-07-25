@@ -203,5 +203,15 @@ the stats page
 
   -- The data provided by the client has a few error... its over 1000 lines of coding, so it was expected to take a few attempts to get it all correct.
 
+ * *Arthur:*
+  Yesterday:
+
+  -- I stopped working on scrolling the buttons because I felt like I could use that time doing something else since I wasn't getting anywhere with that.  I might go back and try to figure it out.
+
+  Today:
+
+  --
+
+
 
 *_Sprint 2 Daily Standup #5 (07/25/2012)_*
