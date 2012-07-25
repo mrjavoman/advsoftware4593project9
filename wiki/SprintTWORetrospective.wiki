@@ -14,6 +14,7 @@
   --Commenting our code a lot better
 
 *Javier*
+  --cleaning our code and make more efficient like only having one create database at the beginning of the application and also comment our code better
 
 *Lauren*
 
@@ -27,6 +28,7 @@
   --Waiting until the end of the sprint to get everything done
 
 *Javier*
+  --right there with Brandon don't wait until the end of the sprint to get stuff done
 
 *Lauren*
 
@@ -40,6 +42,7 @@
   --owning individual tasks and taking responsibility for getting them completed
 
 *Javier*
+  --keep on working hard and communication as much as possible with each other especially now that we are almost in the last sprint
 
 *Lauren*
 
