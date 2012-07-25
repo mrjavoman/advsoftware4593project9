@@ -84,6 +84,20 @@
   Impediments.
   -- I'm having a but when working with list view and using an adaptor to populate the list view
 
+  * *Brandon:*
+  
+  Yesterday:
+
+  -- I took a break from the project
+
+  Today:
+
+  -- I will put the punctuation marks on the end end of words, not leave them as a whole separate button
+  -- I will get the stats page bugs resolved so that it opens
+
+  Impediments:
+
+  -- none at this time
 
 *_Sprint 2 Daily Standup #3 (07/18/2012)_*
 
@@ -139,7 +153,45 @@
   
   -- Knowing what code to add so that the program detects what device is being used
 
+
+  * *Brandon:*
+  
+  Yesterday:
+
+  -- I will put the punctuation marks on the end end of words, not leave them as a whole separate button
+  -- I got the stats page bugs resolved so that it opens
+
+  Today:
+
+  -- I will add words correct and words missed to the stats page
+  -- I will fix the layout of the main menu to accommodate the landscape orientation
+  -- I will enter all of the rules/sounds into to database for story one
+
+  Impediments:
+
+  -- The WSIWYG layout editor in eclipse is extreemly buggy.  It makes UI work very time consuming.
+
+
 *_Sprint 2 Daily Standup #4 (07/23/2012)_*  
+  * *Brandon:*
+  
+  Yesterday:
+
+  -- I added words correct and words missed to the stats page
+  -- I fixed the layout of the main menu to accommodate the landscape orientation
+  -- I entered all of the rules/sounds into to database for stories one, two, and three
+  -- I entered stories two and three into the database
+
+  Today:
+
+  -- I will add average word length of missed words on session stats
+  -- I will add I will add a page to edit stats prior to saving them
+  -- I will add error types, words missed, and sounds/rules missed on the stats page
+
+
+  Impediments:
+
+  -- The data provided by the client has a few error... its over 1000 lines of coding, so it was expected to take a few attempts to get it all correct.
 
 
 *_Sprint 2 Daily Standup #5 (07/25/2012)_*
