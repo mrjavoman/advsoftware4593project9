@@ -1,0 +1,37 @@
+#summary Conduct a Daily Standup at the beginning of each class meeting during Sprint 3
+
+= Introduction =
+
+- "Yesterday": refers to all the days between today and the last class
+
+- "Today": refers to all the days between today and the next class meeting
+
+- "Impediments" are there any impediments in your way?
+
+= Details =
+
+*_Sprint 3 Daily Standup #1 (07/25/2012)_* ... no class
+  
+  * *Everyone:*
+
+  Yesterday:
+
+  -- Submitted their part for Sprint 2 (Sprint 2 Backlog & Charts)
+
+  Today:
+
+  -- Turn in Sprint 2 Deliverables
+
+  -- Email client the updated product (Brandon)
+  
+  -- Conduct a Sprint 3 Planning Meeting & select user stories & write tasks for them & finally assign them
+
+*_Sprint 3 Daily Standup #2 (07/30/2012)_*
+
+*_Sprint 3 Daily Standup #2 (08/01/2012)_*
+
+*_Sprint 3 Daily Standup #2 (08/01/2012)_*
+
+*_Sprint 3 Daily Standup #2 (08/06/2012)_*
+
+*_Sprint 3 Daily Standup #2 (08/08/2012)_*
