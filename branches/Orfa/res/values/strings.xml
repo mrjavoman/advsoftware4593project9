@@ -5,6 +5,7 @@
     <string name="app_name">ORFA</string>
     <string name="Word">Hey you</string>
     
+    <string name="student_prompt">Select a student from the list below</string>
     <string name="story_prompt">Select a story from the list below</string>
     <string name="enter_number"># of desired buttons</string>
     <string name="button_number">Generate</string>
