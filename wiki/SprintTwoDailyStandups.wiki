@@ -286,8 +286,7 @@ the stats page
 
   -- I added a page to edit stats prior to saving them
 
-  -- I added error types, words missed, and sounds/rules missed on 
-the stats page
+  -- I added error types, words missed, and sounds/rules missed on the stats page
  
   Today:
 
