@@ -85,7 +85,7 @@ public class SessionStats extends Activity {
 	    	if(!errorList.isEmpty()){
 	    		numwords = errorList.size() / 2;
 	    		errTypeOne.setText(errorList.get(0));
-	    		errCountOne.setText(errorList.get(1));
+	    		errCountOne.setText("   "+errorList.get(1));
 	    	}else{
 
 	    		errTypeOne.setText("");
@@ -93,28 +93,28 @@ public class SessionStats extends Activity {
 	    	}
 	    	if(numwords > 1){
 	    		errTypeTwo.setText(errorList.get(2));
-	    		errCountTwo.setText(errorList.get(3));
+	    		errCountTwo.setText("   "+errorList.get(3));
 	    	}else{
 	    		errTypeTwo.setText("");
 	    		errCountTwo.setText("");
 	    	}
 	    	if(numwords > 2){
 	    		errTypeThree.setText(errorList.get(4));
-	    		errCountThree.setText(errorList.get(5));
+	    		errCountThree.setText("   "+errorList.get(5));
 			}else{
 	    		errTypeThree.setText("");
 	    		errCountThree.setText("");
 	    	}
 	    	if(numwords > 3){
 	    		errTypeFour.setText(errorList.get(6));
-	    		errCountFour.setText(errorList.get(7));
+	    		errCountFour.setText("   "+errorList.get(7));
 			}else{
 	    		errTypeFour.setText("");
 	    		errCountFour.setText("");
 	    	}
 	    	if(numwords > 4){
 	    		errTypeFive.setText(errorList.get(8));
-	    		errCountFive.setText(errorList.get(9));
+	    		errCountFive.setText("   "+errorList.get(9));
 			}else{
 	    		errTypeFive.setText("");
 	    		errCountFive.setText("");
