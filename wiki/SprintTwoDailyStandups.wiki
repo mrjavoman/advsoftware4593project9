@@ -208,10 +208,16 @@ the stats page
 
   -- I stopped working on scrolling the buttons because I felt like I could use that time doing something else since I wasn't getting anywhere with that.  I might go back and try to figure it out.
 
+  -- I created the option to not display the start message if the user doesn't want it to display (this was requested by the client, only I had a misunderstanding.  He really didn't want to see the stop message.  He has to see the start message. Silly mistake)
+
+  -- I created a button from the main menu called settings to toggle on and off the instructional page if the user wants to see the message again later.
+
   Today:
 
-  --
+  -- I will modify the do not show this message option to work with the stop button instead of the start button, like the client wants.
 
+  Impediments:
 
+  -- Brandon and I had a slight miscommunication problem of what the client wanted as he had to relay the information to me because I could not make the meeting to hear it from the client himself.  Thankfully, this can be easily fixed.  
 
 *_Sprint 2 Daily Standup #5 (07/25/2012)_*
