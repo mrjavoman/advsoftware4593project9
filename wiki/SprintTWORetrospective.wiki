@@ -20,10 +20,12 @@
   -- try to find a better balance between this class, our other class, and life in order to not be in a crazy rush at then end!
 
 *Lizeth*
+  -- balancing our time better & work a lil faster since we have a few weeks left & try to update hours every other day
 
 = _What should we stop doing?_ =
 
 *Arthur*
+  --
 
 *Brandon*
   --Waiting until the end of the sprint to get everything done
@@ -33,13 +35,14 @@
 
 *Lauren*
   -- we should stop stressing about details that don't contribute to the functionality of the program.
-  
 
 *Lizeth*
+  -- Agree with everyone, so lets try to finish our task faster 
 
 = _What should we continue doing?_ =
 
 *Arthur*
+  -- 
 
 *Brandon*
   --owning individual tasks and taking responsibility for getting them completed
@@ -51,3 +54,4 @@
   -- Being responsible and contributing to and communicating well with the group
 
 *Lizeth*
+  -- keep the positive attitude and continue completing the tasks assigned
