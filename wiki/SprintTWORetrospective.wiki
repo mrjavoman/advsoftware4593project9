@@ -11,6 +11,7 @@
 *Arthur*
 
 *Brandon*
+  --Commenting our code a lot better
 
 *Javier*
 
@@ -23,6 +24,7 @@
 *Arthur*
 
 *Brandon*
+  --Waiting until the end of the sprint to get everything done
 
 *Javier*
 
@@ -35,6 +37,7 @@
 *Arthur*
 
 *Brandon*
+  --owning individual tasks and taking responsibility for getting them completed
 
 *Javier*
 
