@@ -177,6 +177,7 @@
 
 
 *_Sprint 2 Daily Standup #4 (07/23/2012)_*  
+
   * *Brandon:*
   
   Yesterday:
@@ -203,7 +204,8 @@ the stats page
 
   -- The data provided by the client has a few error... its over 1000 lines of coding, so it was expected to take a few attempts to get it all correct.
 
- * *Arthur:*
+  * *Arthur:*
+
   Yesterday:
 
   -- I stopped working on scrolling the buttons because I felt like I could use that time doing something else since I wasn't getting anywhere with that.  I might go back and try to figure it out.
@@ -221,7 +223,7 @@ the stats page
   -- Brandon and I had a slight miscommunication problem of what the client wanted as he had to relay the information to me because I could not make the meeting to hear it from the client himself.  Thankfully, this can be easily fixed.  
 
 
-* *Javier:*
+  * *Javier:*
     
   Yesterday:
 
@@ -236,9 +238,23 @@ the stats page
 
   -- It took me a long time to understand how to work with a list view, it requires the use of a custom adapter class which then gets passed into the list view itself, at some point I even decided not to use this approach for building the edit student list and instead use a different list like a radio group button but the new approach also presented its own challenges like the inability to scroll, so I finally decided to just stick with the original approach and make it work.
 
+  * *Lizeth:*
+
+  Yesterday:
+
+  -- Worked on session layout
+ 
+  Today:
+
+  -- save/end student session layout
+
+  Impediments:
+
+  -- Found easier to save/end session when the results of the students session is shown so stopped trying to do the save/end session separately
+
 *_Sprint 2 Daily Standup #5 (07/25/2012)_*
 
-* *Lauren:*
+  * *Lauren:*
 
   Yesterday:
 
@@ -246,8 +262,18 @@ the stats page
 
   Today:
 
-  --Today I will finish up the sprint, work with liz to finish the documentation and start the new sprint
+  -- Today I will finish up the sprint, work with liz to finish the documentation and start the new sprint
 
   Impediments:
 
   -- Android doesnt have a build in way to build graphs so I had to find a library to do it and figure out how it worked
+
+  * *Lizeth:*
+
+  Yesterday:
+
+  -- Worked on part of the program to show students session
+ 
+  Today:
+
+  -- finish up sprint2 & work with lauren to finish the documentation and start the new sprint
