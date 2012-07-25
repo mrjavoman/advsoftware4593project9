@@ -22,7 +22,7 @@
 
   -- Turn in Sprint 2 Deliverables
 
-  -- Email client the updated product (Brandon)
+  -- Email client an update of the product (Brandon)
   
   -- Conduct a Sprint 3 Planning Meeting & select user stories & write tasks for them & finally assign them
 
