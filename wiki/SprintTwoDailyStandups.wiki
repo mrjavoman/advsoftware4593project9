@@ -237,3 +237,17 @@ the stats page
   -- It took me a long time to understand how to work with a list view, it requires the use of a custom adapter class which then gets passed into the list view itself, at some point I even decided not to use this approach for building the edit student list and instead use a different list like a radio group button but the new approach also presented its own challenges like the inability to scroll, so I finally decided to just stick with the original approach and make it work.
 
 *_Sprint 2 Daily Standup #5 (07/25/2012)_*
+
+* *Lauren:*
+
+  Yesterday:
+
+  --I worked on and built the part of the program to display student progress graphically
+
+  Today:
+
+  --Today I will finish up the sprint, work with liz to finish the documentation and start the new sprint
+
+  Impediments:
+
+  -- Android doesnt have a build in way to build graphs so I had to find a library to do it and figure out how it worked
