@@ -93,6 +93,7 @@
   Today:
 
   -- I will put the punctuation marks on the end end of words, not leave them as a whole separate button
+
   -- I will get the stats page bugs resolved so that it opens
 
   Impediments:
@@ -158,13 +159,16 @@
   
   Yesterday:
 
-  -- I will put the punctuation marks on the end end of words, not leave them as a whole separate button
+  -- I put the punctuation marks on the end end of words and resolved the associated bugs that caused
+
   -- I got the stats page bugs resolved so that it opens
 
   Today:
 
   -- I will add words correct and words missed to the stats page
+
   -- I will fix the layout of the main menu to accommodate the landscape orientation
+
   -- I will enter all of the rules/sounds into to database for story one
 
   Impediments:
@@ -178,15 +182,21 @@
   Yesterday:
 
   -- I added words correct and words missed to the stats page
+
   -- I fixed the layout of the main menu to accommodate the landscape orientation
+
   -- I entered all of the rules/sounds into to database for stories one, two, and three
+
   -- I entered stories two and three into the database
 
   Today:
 
   -- I will add average word length of missed words on session stats
+
   -- I will add I will add a page to edit stats prior to saving them
-  -- I will add error types, words missed, and sounds/rules missed on the stats page
+
+  -- I will add error types, words missed, and sounds/rules missed on 
+the stats page
 
 
   Impediments:
