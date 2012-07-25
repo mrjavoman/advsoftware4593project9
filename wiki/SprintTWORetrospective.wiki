@@ -17,6 +17,7 @@
   --cleaning our code and make more efficient like only having one create database at the beginning of the application and also comment our code better
 
 *Lauren*
+  -- try to find a better balance between this class, our other class, and life in order to not be in a crazy rush at then end!
 
 *Lizeth*
 
@@ -31,7 +32,8 @@
   --right there with Brandon don't wait until the end of the sprint to get stuff done
 
 *Lauren*
-  -- try to find a better balance between this class, our other class, and life in order to not be in a crazy rush at then end!
+  -- we should stop stressing about details that don't contribute to the functionality of the program.
+  
 
 *Lizeth*
 
