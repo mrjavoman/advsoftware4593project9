@@ -220,4 +220,20 @@ the stats page
 
   -- Brandon and I had a slight miscommunication problem of what the client wanted as he had to relay the information to me because I could not make the meeting to hear it from the client himself.  Thankfully, this can be easily fixed.  
 
+
+* *Javier:*
+    
+  Yesterday:
+
+  -- solved the list view layout problems I was having and was able to do exactly what i was hoping for, It still lacks some functionality but it is nothing we have not done before
+
+    
+  Today: 
+
+  -- I will implement the extra functionality like having a page for adding a student and creating a method for inserting that student from the database, also implement the code for deleting a student
+
+  Impediments.
+
+  -- It took me a long time to understand how to work with a list view, it requires the use of a custom adapter class, at some point I even decided not to use this approach for building the edit student list and instead use a different list like a radio group button but the new approach also presented its own challenges like the inability to scroll, so I finally decided to just stick with the original approach and make it work.
+
 *_Sprint 2 Daily Standup #5 (07/25/2012)_*
