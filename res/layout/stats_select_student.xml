@@ -1,25 +1,30 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/stats_select_student_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:weightSum="7"
         android:orientation="vertical" >
  
 	   <TextView
-	            android:id="@+id/student_prompt"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="@string/student_prompt" />
-	   <RadioGroup 
-	       android:orientation="vertical"
-	       android:id="@+id/student_group"
-	       android:layout_width="wrap_content"
-	       android:layout_height="wrap_content">
-	       
-	   </RadioGroup>
+	        android:id="@+id/student_prompt"
+	        android:layout_width="wrap_content"
+	   		android:layout_height="0dp"
+	   		android:layout_weight="1"
+	        android:text="@string/student_prompt" />
+
+	   <ScrollView
+	       android:layout_width="match_parent"
+	       android:layout_height="0dp" 
+	       android:layout_weight="5">
+
+	       <RadioGroup
+	           android:id="@+id/student_group"
+	           android:layout_width="wrap_content"
+	   		android:layout_height="0dp"
+	   		android:layout_weight="1"
+	           android:orientation="vertical" >
+	       </RadioGroup>
+	   </ScrollView>
 	   
 	   <Button
 	       	android:id="@+id/select_student"
@@ -28,8 +33,5 @@
 	       	android:text="Select"
 	       	android:onClick="onSelectButton"/>
 
-
-
     </LinearLayout>
-</ScrollView>
     
