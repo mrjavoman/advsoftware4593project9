@@ -90,7 +90,7 @@ public class DisplayButtonsActivity extends Activity {
 		// Beginning Arthur's clock
 		
 				// SharedPreferences
-				SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+				final SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 				//LayoutInflater is helping me insert a checkbox layout inside the AlertBuilder.
 				LayoutInflater inflater = LayoutInflater.from(this);
 		        final View layoutInflator = inflater.inflate(R.layout.settings, null);
@@ -98,21 +98,31 @@ public class DisplayButtonsActivity extends Activity {
 				
 				
 				final Handler h = new Handler();
-				final long time = 15000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
+				final long time = 5000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
 
-				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				final AlertDialog.Builder endBuilder = new AlertDialog.Builder(this);
 				final Runnable runnable = new Runnable() {
 					public void run() {
 						// Building the Alert.
-						builder.setMessage("Time is up! Please select the last word read.")
+						endBuilder.setView(layoutInflator);
+						endBuilder.setMessage("Time is up! Please select the last word read.")
 								
 								.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 											public void onClick(DialogInterface dialog, int which) {
+												String checkBoxResult = "NOT checked";
+								                  if (dontShowAgain.isChecked())  checkBoxResult = "checked";
+									                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+									                    SharedPreferences.Editor editor = settings.edit();
+									                    editor.putString("skipMessage", checkBoxResult);   
+									                    // Commit the edits!
+									                    editor.commit();
 												
 											}
 										});
 						
-						AlertDialog alert = builder.create(); // Creating the Alert.
+						AlertDialog alert = endBuilder.create(); // Creating the Alert.
+					String skipMessage = settings.getString("skipMessage", "checked");
+					if (!skipMessage.equalsIgnoreCase("checked") )
 						alert.show(); // Showing the Alert.
 						sounds.play(sAlert, 1.0f, 1.0f, 0, 0, 1.5f);
 					}
@@ -126,7 +136,7 @@ public class DisplayButtonsActivity extends Activity {
 					public void run(){
 						
 						// Building the Alert
-						startBuilder.setView(layoutInflator);
+						
 						
 						startBuilder.setMessage("Please read this (point) out loud.  If you get stuck," +
                                 " I will tell you the word so you can keep reading.  When I say, \"stop\"" +
@@ -135,27 +145,19 @@ public class DisplayButtonsActivity extends Activity {
                                 "\n\nPress start to begin the session.")
 						.setPositiveButton("Start", new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog, int which) {
-										              String checkBoxResult = "NOT checked";
-									                  if (dontShowAgain.isChecked())  checkBoxResult = "checked";
-										                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-										                    SharedPreferences.Editor editor = settings.edit();
-										                    editor.putString("skipMessage", checkBoxResult);   
-										                    // Commit the edits!
-										                    editor.commit();
-
-									// Delay the "time is up" message for so many milliseconds after "start" is pressed.
+															// Delay the "time is up" message for so many milliseconds after "start" is pressed.
 									h.postDelayed(runnable, time); 
 								}
 							})
 						.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog, int id) {
-									String checkBoxResult = "NOT checked";
+									/*String checkBoxResult = "NOT checked";
 					                  if (dontShowAgain.isChecked())  checkBoxResult = "checked";
 						                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 						                    SharedPreferences.Editor editor = settings.edit();
 						                    editor.putString("skipMessage", checkBoxResult);   
 						                    // Commit the edits!
-						                    editor.commit();
+						                    editor.commit();*/
 									finish();
 								}
 						});
@@ -163,11 +165,7 @@ public class DisplayButtonsActivity extends Activity {
 						alert2.show(); // Showing the Alert.
 					}
 				};
-				/*SharedPreferences.Editor editor = settings.edit();
-                editor.putString("skipMessage", "NOT checked");   
-                editor.commit();*/
-				String skipMessage = settings.getString("skipMessage", "checked");
-				if (!skipMessage.equalsIgnoreCase("checked") )
+
 					h.post(runStartTimerPrompt); // This executes the first prompt to start the timer (above).
 				
 				// end Arthur's clock
