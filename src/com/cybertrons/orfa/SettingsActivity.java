@@ -41,7 +41,6 @@ public class SettingsActivity extends Activity {
         boolean isChecked) { 
         // TODO Auto-generated method stub 
         if (buttonView.isChecked()) { 
-        	Log.d("Orfa","Checked");
         	 SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
      		SharedPreferences.Editor edit = settings.edit();
      		edit.putString("skipMessage", "NOT checked");
@@ -49,7 +48,6 @@ public class SettingsActivity extends Activity {
         } 
         else 
         { 
-        	Log.d("Orfa","NOT checked");
         	SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
      		SharedPreferences.Editor edit = settings.edit();
      		edit.putString("skipMessage", "checked");
