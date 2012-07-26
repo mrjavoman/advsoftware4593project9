@@ -15,13 +15,16 @@ import android.widget.RadioGroup;
 public class StatsActivity extends Activity {
 	
 	public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
+	public static ArrayList<Integer> correctList;
+	public static ArrayList<Integer> incorrectList;
+	private DataBaseHelper dbHelper;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stats_select_student);
     
-	    DataBaseHelper dbHelper = new DataBaseHelper(this);
+	    dbHelper = new DataBaseHelper(this);
 	    
 	    ArrayList<RadioButton> studentList;
 	    
@@ -42,6 +45,10 @@ public class StatsActivity extends Activity {
 	   	}
 	    try {
 	    	studentList = dbHelper.getStudentForStats(this);
+	    	
+	    	
+	    	//correctList = dbHelper.getCorrect(1);
+	    	//incorrectList = dbHelper.getIncorrect(1);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
@@ -56,13 +63,37 @@ public class StatsActivity extends Activity {
         {
         	studentOptions.addView(itr.next());
         }
-
 	}
     
     public void onSelectButton(View view){
-     	int radioButtonID = ((RadioGroup) findViewById(R.id.student_group)).getCheckedRadioButtonId();
-    	Intent intent = new Intent(this, StudentStatsGraphActivity.class);
-    	intent.putExtra(NUMBER, radioButtonID);
-    	startActivity(intent);
+     	int studentID = ((RadioGroup) findViewById(R.id.student_group)).getCheckedRadioButtonId();
+     	
+     	try {
+			dbHelper.createDataBase();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+	    try {
+	    	dbHelper.openDataBase();
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
+	    try {
+	    	StatsActivity.correctList = dbHelper.getCorrect(studentID);
+	    	StatsActivity.incorrectList = dbHelper.getIncorrect(studentID);
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
+	    try {
+	    	dbHelper.close();
+	   	}catch(SQLException sqle){
+	   		throw sqle;
+	   	}
+     	
+     	LineGraph line = new LineGraph();
+    	Intent lineIntent = line.getIntent(this);
+    	startActivity(lineIntent); 
     }
 }

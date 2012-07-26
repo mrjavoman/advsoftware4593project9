@@ -26,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="org.achartengine.GraphicalActivity" 
+            	  android:screenOrientation="landscape"/>
         <activity android:name=".StartStoryAvtivity" 
                   android:screenOrientation="landscape"/>
     	<activity android:name=".EditStudentActivity" 
@@ -37,9 +39,6 @@
     	<activity android:name=".MarkWordActivity" 
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".StatsActivity" 
-    	    	  android:screenOrientation="landscape" />
-    	<activity android:name=".StudentStatsGraphActivity"
-    	     
     	    	  android:screenOrientation="landscape" />
         <activity android:name=".DisplayButtonsActivity" 
             	  android:screenOrientation="landscape" />

@@ -213,6 +213,38 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		return storiesList;
 	}
 	
+	public ArrayList<Integer> getCorrect(int studentID){
+		
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		String aSql = " SELECT score FROM session WHERE id_student = " + studentID;
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+		
+		if(aCursor.moveToFirst()){
+			do{
+				list.add(Integer.parseInt(aCursor.getString(0)));
+			}while(aCursor.moveToNext());
+		}
+		
+		aCursor.close();
+		return list; 
+	}
+	
+	public ArrayList<Integer> getIncorrect(int studentID){
+		
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		String aSql = " SELECT incorrect_count FROM session WHERE id_student = " + studentID;
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+		
+		if(aCursor.moveToFirst()){
+			do{
+				list.add(Integer.parseInt(aCursor.getString(0)));
+			}while(aCursor.moveToNext());
+		}
+		
+		aCursor.close();
+		return list; 
+	}
+	
 	
 	public ArrayList<Button> getStoryWords(int story, Context tContext){
 
