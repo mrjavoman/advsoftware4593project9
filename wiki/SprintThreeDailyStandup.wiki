@@ -42,6 +42,20 @@
 
   -- Just the overall learning process, learning how to do things with the android sdk.
 
+  * *Lizeth:*
+
+  Yesterday:
+
+  -- user manual was assigned
+
+  Today:
+
+  -- wrap the layouts and functions/buttons with classmates so the user manual can be ready on time
+
+  Impediments:
+
+  -- The layouts/functions are not all done yet
+
  * *Arthur:*
 
 Yesterday:
