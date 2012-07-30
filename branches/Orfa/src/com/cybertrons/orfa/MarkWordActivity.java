@@ -58,7 +58,7 @@ public class MarkWordActivity extends Activity {
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
-    	Intent intent = new Intent(this, SessionStats.class);
+    	Intent intent = new Intent(this, SessionStatsActivity.class);
     	intent.putExtra(UID_WORD, uidWord);
     	startActivity(intent);
     }
