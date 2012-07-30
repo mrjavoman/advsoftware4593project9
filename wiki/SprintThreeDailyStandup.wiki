@@ -40,7 +40,20 @@
 
   Impediments:
 
-  -- Just the overall learning process, learning how to do things with the android sdk
+  -- Just the overall learning process, learning how to do things with the android sdk.
+
+* *Arthur*
+
+Yesterday:
+  -- fixed the "do not show message again" checkbox
+
+  --  Spent about 3 hours working on getting the PredicateLayout to scroll
+
+Today:
+  -- Will continue working on getting the predicate layout scrolling.
+
+Impediments:
+  -- The custom layout is an impediment.  We cannot get it to scroll correctly (or at all).
 
 *_Sprint 3 Daily Standup #3 (08/01/2012)_*
 
