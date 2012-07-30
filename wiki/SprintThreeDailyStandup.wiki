@@ -42,7 +42,7 @@
 
   -- Just the overall learning process, learning how to do things with the android sdk.
 
-* *Arthur:*
+ * *Arthur:*
 
 Yesterday:
   -- fixed the "do not show message again" checkbox
