@@ -28,6 +28,20 @@
 
 *_Sprint 3 Daily Standup #2 (07/30/2012)_*
 
+* *Lauren*
+
+  Yesterday:
+
+  -- I worked some more on the graphical progress display 
+
+  Today:
+
+  -- I will work on the scrolling and making the graphical dispaly pretty
+
+  Impediments:
+
+  -- Just the overall learning process, learning how to do things with the android sdk
+
 *_Sprint 3 Daily Standup #3 (08/01/2012)_*
 
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
