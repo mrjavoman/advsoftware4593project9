@@ -55,6 +55,17 @@ Today:
 Impediments:
   -- The custom layout is an impediment.  We cannot get it to scroll correctly (or at all).
 
+ * *Brandon:*
+
+Yesterday:
+  -- I changed the color of error counts on the stats page
+
+  -- I added ability to select the student for a session
+
+Today:
+  -- I will get a session to write to the session database and display in the statistics graph.
+
+
 *_Sprint 3 Daily Standup #3 (08/01/2012)_*
 
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
