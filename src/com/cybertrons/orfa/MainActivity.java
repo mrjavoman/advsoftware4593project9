@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
     }
     
     public void onClickStartSession(View view){
-    	Intent myIntent = new Intent(MainActivity.this, StartStoryAvtivity.class);
+    	Intent myIntent = new Intent(MainActivity.this, SessionStorySelectActivity.class);
     	MainActivity.this.startActivity(myIntent);
     }
     
@@ -60,4 +60,5 @@ public class MainActivity extends Activity {
     	Intent myIntent = new Intent(MainActivity.this, SettingsActivity.class);
     	MainActivity.this.startActivity(myIntent);
     }
+
 }
