@@ -190,6 +190,26 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         aCursor.close();
 		
 		return storiesList;
+	}	
+	public ArrayList<RadioButton> getStudentsList(Context tContext){
+
+		ArrayList<RadioButton> studentsList = new ArrayList<RadioButton>();
+		
+		String aSql = "SELECT uid_student, last_name, first_name FROM student";//a Cursor object stores the results rawQuery
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+        // moveToFirst moves the Cursor to the first row of the results
+        if(aCursor.moveToFirst()){
+            do{
+            	RadioButton btn = new RadioButton(tContext);
+                btn.setId(aCursor.getInt(0));
+                String label = aCursor.getString(1)+" "+aCursor.getString(2);
+                btn.setText(label);                
+            	studentsList.add(btn);
+            }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
+        }
+        aCursor.close();
+		
+		return studentsList;
 	}
 	
 	public ArrayList<RadioButton> getStudentForStats(Context tContext){
