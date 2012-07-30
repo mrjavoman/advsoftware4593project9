@@ -28,7 +28,9 @@
         </activity>
         <activity android:name="org.achartengine.GraphicalActivity" 
             	  android:screenOrientation="landscape"/>
-        <activity android:name=".StartStoryAvtivity" 
+        <activity android:name=".SessionStorySelectActivity" 
+                  android:screenOrientation="landscape"/>
+        <activity android:name=".SessionStudentSelectActivity" 
                   android:screenOrientation="landscape"/>
     	<activity android:name=".EditStudentActivity" 
     	    	  android:screenOrientation="landscape" />
@@ -44,7 +46,7 @@
             	  android:screenOrientation="landscape" />
     	<activity android:name=".DbTesterActivity" 
     	    	  android:screenOrientation="landscape" />
-    	<activity android:name=".SessionStats" 
+    	<activity android:name=".SessionStatsActivity" 
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".SettingsActivity"
     	    	  android:screenOrientation="landscape" />
