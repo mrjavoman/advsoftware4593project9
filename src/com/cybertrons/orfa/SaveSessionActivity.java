@@ -21,8 +21,8 @@ public class SaveSessionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.save_session);
 		Intent intent = getIntent();
-		finalScore = intent.getIntExtra(SessionStats.SCORE, 0);
-		finalErrors = intent.getIntExtra(SessionStats.ERRORS, 0);
+		finalScore = intent.getIntExtra(SessionStatsActivity.SCORE, 0);
+		finalErrors = intent.getIntExtra(SessionStatsActivity.ERRORS, 0);
 
         EditText fScore = (EditText) findViewById(R.id.save_score);
         EditText fErrors = (EditText) findViewById(R.id.save_errors_text);
