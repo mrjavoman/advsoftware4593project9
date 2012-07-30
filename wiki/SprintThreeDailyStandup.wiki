@@ -60,7 +60,7 @@ Impediments:
 Yesterday:
   -- I changed the color of error counts on the stats page
 
-  -- I added ability to select the student for a session
+  -- I added ability to select the student at the beginning of a session
 
 Today:
   -- I will get a session to write to the session database and display in the statistics graph.
