@@ -36,9 +36,9 @@ public final class R {
     public static final class id {
         public static final int Horizontal=0x7f09000f;
         public static final int RLExport=0x7f090005;
-        public static final int RelativeLayout=0x7f090042;
+        public static final int RelativeLayout=0x7f090044;
         public static final int ScrollView02=0x7f090007;
-        public static final int avg_length=0x7f090026;
+        public static final int avg_length=0x7f09002b;
         public static final int bottom=0x7f09000c;
         public static final int buttonAssignSounds=0x7f090016;
         public static final int buttonEditStudent=0x7f090014;
@@ -53,56 +53,58 @@ public final class R {
         public static final int buttonMarkCorrect=0x7f090010;
         public static final int buttonMenuDbTester=0x7f090018;
         public static final int buttonMenuStats=0x7f090017;
-        public static final int buttonSaveSession=0x7f09003b;
+        public static final int buttonSaveSession=0x7f090040;
         public static final int buttonStartSession=0x7f090013;
-        public static final int checkBox1=0x7f09003c;
+        public static final int checkBox1=0x7f090041;
         public static final int checkBox2=0x7f09001a;
-        public static final int committ_session_button=0x7f09001e;
-        public static final int corr_words=0x7f090024;
-        public static final int dispButtons=0x7f09001b;
-        public static final int errType_five=0x7f090039;
-        public static final int errType_five_count=0x7f09003a;
-        public static final int errType_four=0x7f090037;
-        public static final int errType_four_count=0x7f090038;
-        public static final int errType_one=0x7f090031;
-        public static final int errType_one_count=0x7f090032;
-        public static final int errType_three=0x7f090035;
-        public static final int errType_three_count=0x7f090036;
-        public static final int errType_two=0x7f090033;
-        public static final int errType_two_count=0x7f090034;
+        public static final int committ_session_button=0x7f09001f;
+        public static final int corr_words=0x7f090029;
+        public static final int dispButtons=0x7f09001c;
+        public static final int errType_five=0x7f09003e;
+        public static final int errType_five_count=0x7f09003f;
+        public static final int errType_four=0x7f09003c;
+        public static final int errType_four_count=0x7f09003d;
+        public static final int errType_one=0x7f090036;
+        public static final int errType_one_count=0x7f090037;
+        public static final int errType_three=0x7f09003a;
+        public static final int errType_three_count=0x7f09003b;
+        public static final int errType_two=0x7f090038;
+        public static final int errType_two_count=0x7f090039;
         public static final int exp_csv_id=0x7f090006;
-        public static final int first=0x7f090043;
+        public static final int first=0x7f090045;
         public static final int iconLine=0x7f090001;
-        public static final int incorr_rule_five=0x7f090030;
-        public static final int incorr_rule_four=0x7f09002f;
-        public static final int incorr_rule_one=0x7f09002c;
-        public static final int incorr_rule_three=0x7f09002e;
-        public static final int incorr_rule_two=0x7f09002d;
-        public static final int incorr_word_five=0x7f09002b;
-        public static final int incorr_word_four=0x7f09002a;
-        public static final int incorr_word_one=0x7f090027;
-        public static final int incorr_word_three=0x7f090029;
-        public static final int incorr_word_two=0x7f090028;
-        public static final int incorr_words=0x7f090025;
-        public static final int last=0x7f090045;
+        public static final int incorr_rule_five=0x7f090035;
+        public static final int incorr_rule_four=0x7f090034;
+        public static final int incorr_rule_one=0x7f090031;
+        public static final int incorr_rule_three=0x7f090033;
+        public static final int incorr_rule_two=0x7f090032;
+        public static final int incorr_word_five=0x7f090030;
+        public static final int incorr_word_four=0x7f09002f;
+        public static final int incorr_word_one=0x7f09002c;
+        public static final int incorr_word_three=0x7f09002e;
+        public static final int incorr_word_two=0x7f09002d;
+        public static final int incorr_words=0x7f09002a;
+        public static final int last=0x7f090047;
         public static final int lineItem=0x7f090000;
         public static final int mainSettings=0x7f090019;
-        public static final int middle=0x7f090044;
-        public static final int save_errors_text=0x7f09001c;
-        public static final int save_score=0x7f09001d;
-        public static final int scrollView1=0x7f090021;
-        public static final int select_story=0x7f090023;
-        public static final int select_student=0x7f090040;
-        public static final int stats_select_student_layout=0x7f09003d;
-        public static final int story_group=0x7f090022;
-        public static final int story_prompt=0x7f090020;
-        public static final int story_select_layout=0x7f09001f;
-        public static final int student_group=0x7f09003f;
-        public static final int student_prompt=0x7f09003e;
+        public static final int middle=0x7f090046;
+        public static final int mlayout=0x7f09001b;
+        public static final int save_errors_text=0x7f09001d;
+        public static final int save_score=0x7f09001e;
+        public static final int scrollView1=0x7f090022;
+        public static final int select_story=0x7f090024;
+        public static final int select_student=0x7f090028;
+        public static final int stats_select_student_layout=0x7f090042;
+        public static final int story_group=0x7f090023;
+        public static final int story_prompt=0x7f090021;
+        public static final int story_select_layout=0x7f090020;
+        public static final int student_group=0x7f090027;
+        public static final int student_prompt=0x7f090026;
+        public static final int student_select_layout=0x7f090025;
         public static final int textLine=0x7f090002;
         public static final int textView1=0x7f090003;
         public static final int top=0x7f090008;
-        public static final int unimplemented=0x7f090041;
+        public static final int unimplemented=0x7f090043;
         public static final int welcomeText=0x7f090012;
     }
     public static final class layout {
@@ -112,17 +114,19 @@ public final class R {
         public static final int lkj=0x7f030003;
         public static final int main=0x7f030004;
         public static final int main_settings=0x7f030005;
-        public static final int reader=0x7f030006;
-        public static final int save_session=0x7f030007;
-        public static final int select_story=0x7f030008;
-        public static final int session_stats=0x7f030009;
-        public static final int settings=0x7f03000a;
-        public static final int stats_select_student=0x7f03000b;
-        public static final int unimplemented_msg=0x7f03000c;
-        public static final int view_student=0x7f03000d;
-        public static final int word_mark=0x7f03000e;
-        public static final int word_mark_cell=0x7f03000f;
-        public static final int word_mark_tablet=0x7f030010;
+        public static final int predicatelayout=0x7f030006;
+        public static final int reader=0x7f030007;
+        public static final int save_session=0x7f030008;
+        public static final int select_story=0x7f030009;
+        public static final int select_student=0x7f03000a;
+        public static final int session_stats=0x7f03000b;
+        public static final int settings=0x7f03000c;
+        public static final int stats_select_student=0x7f03000d;
+        public static final int unimplemented_msg=0x7f03000e;
+        public static final int view_student=0x7f03000f;
+        public static final int word_mark=0x7f030010;
+        public static final int word_mark_cell=0x7f030011;
+        public static final int word_mark_tablet=0x7f030012;
     }
     public static final class raw {
         public static final int alarmpositive=0x7f040000;
@@ -158,4 +162,33 @@ public final class R {
     public static final class style {
         public static final int AppTheme=0x7f080000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a RowLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RowLayout_android_horizontalSpacing com.cybertrons.orfa:android_horizontalSpacing}</code></td><td></td></tr>
+           <tr><td><code>{@link #RowLayout_android_verticalSpacing com.cybertrons.orfa:android_verticalSpacing}</code></td><td></td></tr>
+           </table>
+           @see #RowLayout_android_horizontalSpacing
+           @see #RowLayout_android_verticalSpacing
+         */
+        public static final int[] RowLayout = {
+            0x01010114, 0x01010115
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.cybertrons.orfa.R.attr#android_horizontalSpacing}
+          attribute's value can be found in the {@link #RowLayout} array.
+          @attr name android:android_horizontalSpacing
+        */
+        public static final int RowLayout_android_horizontalSpacing = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.cybertrons.orfa.R.attr#android_verticalSpacing}
+          attribute's value can be found in the {@link #RowLayout} array.
+          @attr name android:android_verticalSpacing
+        */
+        public static final int RowLayout_android_verticalSpacing = 1;
+    };
 }

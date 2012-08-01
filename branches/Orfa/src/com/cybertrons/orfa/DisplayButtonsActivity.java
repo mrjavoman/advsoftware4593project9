@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 
 public class DisplayButtonsActivity extends Activity {
 
@@ -37,18 +38,21 @@ public class DisplayButtonsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.main);
+		setContentView(R.layout.predicatelayout);
 		
+		PredicateLayout layout = new PredicateLayout(this);
+		
+		// These two lines are the bread and butter that gets the page scrolling!
+		LinearLayout myLayout = (LinearLayout) findViewById(R.id.mlayout);
+		myLayout.addView(layout);
+		
+		// Sounds
 		sounds = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
 		sAlert = sounds.load(getBaseContext(), R.raw.alarmpositive, 1);
-
 
 		// Get the message from the intent
 		Intent intent = getIntent();
 		this.storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
-
-		// LinearLayout buttonList = (LinearLayout) View.inflate(this,
-		// R.layout.reader, null);
-		PredicateLayout layout = new PredicateLayout(this);
 
 		DataBaseHelper dbHelper = new DataBaseHelper(this);
 		try {
@@ -82,94 +86,93 @@ public class DisplayButtonsActivity extends Activity {
 		Iterator<Button> itr = storyWordsList.iterator();
 		while (itr.hasNext()) {
 			layout.addView(itr.next(), new PredicateLayout.LayoutParams(2, 0));			
-			setContentView(layout);			
 		}
-	
+		
 		
 
 		// Beginning Arthur's clock
+
+		// Getting SharedPreferences
+		final SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+		// LayoutInflater is helping me insert a checkbox layout inside the stop message.
+		LayoutInflater inflater = LayoutInflater.from(this);
+		final View layoutInflator = inflater.inflate(R.layout.settings, null);
+		final CheckBox dontShowAgain = (CheckBox) layoutInflator.findViewById(R.id.checkBox1);
 		
-				// SharedPreferences
-				final SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-				//LayoutInflater is helping me insert a checkbox layout inside the AlertBuilder.
-				LayoutInflater inflater = LayoutInflater.from(this);
-		        final View layoutInflator = inflater.inflate(R.layout.settings, null);
-		        final CheckBox dontShowAgain = (CheckBox)layoutInflator.findViewById(R.id.checkBox1);
-				
-				
-				final Handler h = new Handler();
-				final long time = 5000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
+		// The handler is used to delay the second message, which is the basis of the timer.  It does not create a new thread.
+		final Handler h = new Handler();
+		final long time = 5000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
+		
+		// The alert to display that time is up.
+		final AlertDialog.Builder endBuilder = new AlertDialog.Builder(this); // Builder for the stop alert.
+		final Runnable stopTimer = new Runnable() {
+			public void run() {
+				// Building the Alert.
+				endBuilder.setView(layoutInflator);
+				endBuilder.setMessage("Time is up! Please select the last word read.")
 
-				final AlertDialog.Builder endBuilder = new AlertDialog.Builder(this);
-				final Runnable runnable = new Runnable() {
-					public void run() {
-						// Building the Alert.
-						endBuilder.setView(layoutInflator);
-						endBuilder.setMessage("Time is up! Please select the last word read.")
-								
-								.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-											public void onClick(DialogInterface dialog, int which) {
-												String checkBoxResult = "NOT checked";
-								                  if (dontShowAgain.isChecked())  checkBoxResult = "checked";
-									                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-									                    SharedPreferences.Editor editor = settings.edit();
-									                    editor.putString("skipMessage", checkBoxResult);   
-									                    // Commit the edits!
-									                    editor.commit();
-												
-											}
-										});
+				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						String checkBoxResult = "NOT checked";
 						
-						AlertDialog alert = endBuilder.create(); // Creating the Alert.
-					String skipMessage = settings.getString("skipMessage", "checked");
-					if (!skipMessage.equalsIgnoreCase("checked") )
-						alert.show(); // Showing the Alert.
-						sounds.play(sAlert, 1.0f, 1.0f, 0, 0, 1.5f);
+						if (dontShowAgain.isChecked())
+							checkBoxResult = "checked";
+						
+						SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+						SharedPreferences.Editor editor = settings.edit();
+						editor.putString("skipMessage", checkBoxResult);
+						// Commit the edits!
+						editor.commit();
 					}
-				}; // The above AlertDialog alerts the user that time is up.
-				
-				
-				final AlertDialog.Builder startBuilder = new AlertDialog.Builder(this);
-				
+				});
 
-				final Runnable runStartTimerPrompt = new Runnable(){
-					public void run(){
-						
-						// Building the Alert
-						
-						
-						startBuilder.setMessage("Please read this (point) out loud.  If you get stuck," +
-                                " I will tell you the word so you can keep reading.  When I say, \"stop\"" +
-                                " I may ask you to tell me about what you read, so do your best reading.  " +
-                                "Start here (point to the first word of the passage).  Begin.  " +
-                                "\n\nPress start to begin the session.")
-						.setPositiveButton("Start", new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog, int which) {
-															// Delay the "time is up" message for so many milliseconds after "start" is pressed.
-									h.postDelayed(runnable, time); 
-								}
-							})
-						.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog, int id) {
-									/*String checkBoxResult = "NOT checked";
-					                  if (dontShowAgain.isChecked())  checkBoxResult = "checked";
-						                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-						                    SharedPreferences.Editor editor = settings.edit();
-						                    editor.putString("skipMessage", checkBoxResult);   
-						                    // Commit the edits!
-						                    editor.commit();*/
-									finish();
-								}
-						});
-						AlertDialog alert2 = startBuilder.create(); // Creating the Alert.
-						alert2.show(); // Showing the Alert.
-					}
-				};
-
-					h.post(runStartTimerPrompt); // This executes the first prompt to start the timer (above).
+				AlertDialog alert = endBuilder.create(); // Creating the Alert.
+				String skipMessage = settings.getString("skipMessage","checked");
 				
-				// end Arthur's clock
+				// If the checkbox is not checked, show the message.
+				if (!skipMessage.equalsIgnoreCase("checked"))
+					alert.show(); // Showing the Alert.
+				sounds.play(sAlert, 1.0f, 1.0f, 0, 0, 1.5f);
 			}
+		};
+
+		final AlertDialog.Builder startBuilder = new AlertDialog.Builder(this); // Builder for the start alert.
+		final Runnable startTimer = new Runnable() {
+			public void run() {
+
+				// Building the Alert
+				startBuilder
+						.setMessage(
+								"Please read this (point) out loud.  If you get stuck,"
+										+ " I will tell you the word so you can keep reading.  When I say, \"stop\""
+										+ " I may ask you to tell me about what you read, so do your best reading.  "
+										+ "Start here (point to the first word of the passage).  Begin.  "
+										+ "\n\nPress start to begin the session.")
+										
+						.setPositiveButton("Start",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int which) {
+										// "Start" the "timer". This really just delays the stop alert.
+										h.postDelayed(stopTimer, time);
+									}
+								})
+						.setNegativeButton("Cancel",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int id) {
+										// Go back to choosing the story and student.
+										finish();
+									}
+								});
+				AlertDialog alert2 = startBuilder.create(); // Creating the alert.
+				alert2.show(); // Showing the Alert.
+			}
+		};
+		h.post(startTimer); // This starts the timer.
+		
+		// end Arthur's clock
+	}
 	
 	public static View.OnClickListener markWord(final Button button){ // -LJ
 		return new View.OnClickListener() {

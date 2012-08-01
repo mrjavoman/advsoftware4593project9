@@ -64,9 +64,20 @@ public class PredicateLayout extends ViewGroup {
             final View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
-                child.measure(
-                        MeasureSpec.makeMeasureSpec(width, MeasureSpec.AT_MOST),
-                        MeasureSpec.makeMeasureSpec(height, MeasureSpec.AT_MOST));
+                // This code was modified from the original PredicateLayout.  
+                // Start
+                int childHeightMeasureSpec;
+                if (MeasureSpec.getMode(heightMeasureSpec) == MeasureSpec.AT_MOST) {
+                    childHeightMeasureSpec =
+                        MeasureSpec.makeMeasureSpec(height, MeasureSpec.AT_MOST);
+                }
+                else {
+                    childHeightMeasureSpec = 
+                        MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);            
+                }
+                child.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.AT_MOST), 
+                	    childHeightMeasureSpec);
+                // End 
 
                 final int childw = child.getMeasuredWidth();
                 line_height = Math.max(line_height, child.getMeasuredHeight() + lp.vertical_spacing);
