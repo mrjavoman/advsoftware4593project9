@@ -96,6 +96,21 @@ Today:
 
   -- none at the moment - I think we are doing well
 
+  * *Arthur:*
+
+  Yesterday:
+
+  -- I got the scrolling working.  Sounds small, but this was a big setback that we were nervous about.
+     Somebody would have gotten it working, so it doesn't matter if it was me, but it matters that it works!
+
+  Today:
+
+  -- I will finish up the timer and the action that it does if the stop message is not being shown.
+
+  Impediments:
+
+  -- None.  
+
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
