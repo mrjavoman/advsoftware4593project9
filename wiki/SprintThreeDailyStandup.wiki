@@ -82,6 +82,20 @@ Today:
 
 *_Sprint 3 Daily Standup #3 (08/01/2012)_*
 
+  * *Lauren:*
+
+  Yesterday:
+
+  -- I worked on something else 
+
+  Today:
+
+  -- I will work on the making the graphical display more attractive
+
+  Impediments:
+
+  -- none at the moment - I think we are doing well
+
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
