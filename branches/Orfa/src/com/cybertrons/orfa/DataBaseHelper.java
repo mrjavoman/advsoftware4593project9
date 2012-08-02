@@ -521,8 +521,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		Cursor std = null;
 		try {
 			openDataBase();
-			String sql = "select uid_student as _id, first_name as firstName, last_name as LastName from student";
+			String sql = "select uid_student as _id, first_name as firstName, last_name as lastName from student";
 			std = myDataBase.rawQuery(sql,null);
+			std.moveToFirst();
 			close();
 		}catch(SQLException sqlEx){
 			Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
