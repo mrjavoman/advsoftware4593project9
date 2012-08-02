@@ -33,13 +33,14 @@ public class SessionStudentSelectActivity extends Activity {
 	    ArrayList<RadioButton> studentsList;
 	    RadioGroup studentOptions = (RadioGroup) findViewById(R.id.student_group);
 	    
-	    
+/*	    
 	    try {
 			dbHelper.createDataBase();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 	    
 	    try {
 	    	dbHelper.openDataBase();

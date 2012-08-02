@@ -28,14 +28,14 @@ public class SessionStorySelectActivity extends Activity {
 	    
 	    RadioGroup storyOptions = (RadioGroup) findViewById(R.id.story_group);
 	    
-	    
+/*	    
 	    try {
 			dbHelper.createDataBase();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    
+*/	    
 	    try {
 	    	dbHelper.openDataBase();
 	   	}catch(SQLException sqle){

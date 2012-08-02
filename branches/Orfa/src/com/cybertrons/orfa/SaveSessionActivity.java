@@ -28,19 +28,11 @@ public class SaveSessionActivity extends Activity {
         EditText fErrors = (EditText) findViewById(R.id.save_errors_text);
 
         fScore.setText( new Integer(finalScore).toString());
-        fErrors.setText( new Integer(finalErrors).toString());
-        
-        
+        fErrors.setText( new Integer(finalErrors).toString()); 
     }
     public void onCommittSession(View view){
 	    DataBaseHelper dbHelper = new DataBaseHelper(this);
 	    
-	    try {
-			dbHelper.createDataBase();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	    
 	    try {
 	    	dbHelper.openDataBaseRW();

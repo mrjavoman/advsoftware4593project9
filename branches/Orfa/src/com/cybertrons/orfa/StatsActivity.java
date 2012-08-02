@@ -30,25 +30,15 @@ public class StatsActivity extends Activity {
 	    
 	    RadioGroup studentOptions = (RadioGroup) findViewById(R.id.student_group);
 	    
-	    
-	    try {
-			dbHelper.createDataBase();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    
+   
 	    try {
 	    	dbHelper.openDataBase();
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
 	    try {
-	    	studentList = dbHelper.getStudentForStats(this);
-	    	
-	    	
-	    	//correctList = dbHelper.getCorrect(1);
-	    	//incorrectList = dbHelper.getIncorrect(1);
+	    	studentList = dbHelper.getStudentsList(this);
+
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
@@ -57,8 +47,7 @@ public class StatsActivity extends Activity {
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
-        
-        Iterator<RadioButton> itr = studentList.iterator();
+	    Iterator<RadioButton> itr = studentList.iterator();
         while (itr.hasNext())
         {
         	studentOptions.addView(itr.next());
