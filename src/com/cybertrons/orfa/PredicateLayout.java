@@ -41,7 +41,7 @@ public class PredicateLayout extends ViewGroup {
     }
 
     public PredicateLayout(Context context) {
-        super(context);
+        super(context); 
     }
 
     public PredicateLayout(Context context, AttributeSet attrs){

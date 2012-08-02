@@ -64,7 +64,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     		//this.myDataBase = getReadableDatabase();
     		SQLiteDatabase tmpDB = this.getWritableDatabase();
     		tmpDB.close();
- 
+ /*
         	try {
  
     			copyDataBase();
@@ -74,8 +74,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         		throw new Error("Error copying database");
  
         	}
+*/
     	}
- 
     }
  
     /**
@@ -83,7 +83,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
      * @return true if it exists, false if it doesn't
      */
     private boolean checkDataBase(){
- 
     	SQLiteDatabase checkDB = null;
  
     	try{
@@ -101,7 +100,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     		checkDB.close();
  
     	}
- 
     	return checkDB != null ? true : false;
     }
  
@@ -202,7 +200,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             do{
             	RadioButton btn = new RadioButton(tContext);
                 btn.setId(aCursor.getInt(0));
-                String label = aCursor.getString(1)+" "+aCursor.getString(2);
+                String label = aCursor.getString(2)+" "+aCursor.getString(1);
                 btn.setText(label);                
             	studentsList.add(btn);
             }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
@@ -212,25 +210,18 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		return studentsList;
 	}
 	
-	public ArrayList<RadioButton> getStudentForStats(Context tContext){
+	public String getStudent(Context tContext, int uid ){
 
-		ArrayList<RadioButton> storiesList = new ArrayList<RadioButton>();
+		String studentName = "";
 		
-		String aSql = "SELECT uid_student, last_name, first_name FROM student";//a Cursor object stores the results rawQuery
+		String aSql = "SELECT last_name, first_name FROM student WHERE uid_student ="+ uid;
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
         // moveToFirst moves the Cursor to the first row of the results
-        if(aCursor.moveToFirst()){
-            do{
-            	RadioButton btn = new RadioButton(tContext);
-                btn.setId(aCursor.getInt(0));
-                String label = aCursor.getString(2) + " " + aCursor.getString(1);
-                btn.setText(label);                
-            	storiesList.add(btn);
-            }while(aCursor.moveToNext()); // moveToNext() moves the cursor to the next row
-        }
+        if(aCursor.moveToFirst())
+        	studentName = aCursor.getString(1) + " " + aCursor.getString(0);
         aCursor.close();
 		
-		return storiesList;
+		return studentName;
 	}
 	
 	public ArrayList<Integer> getCorrect(int studentID){
@@ -264,8 +255,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		aCursor.close();
 		return list; 
 	}
-	
-	
 	public ArrayList<Button> getStoryWords(int story, Context tContext){
 
 		ArrayList<Button> storyWordsList = new ArrayList<Button>();
@@ -275,7 +264,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				+"uid_current_session AS _id  "
 				+", word  "
 				+", punctuation  "
-				+", name  "
+				+", id_student  "
 				+", errType  "
 				+"FROM current_session "
 				+"WHERE id_story = "+ story;
@@ -328,7 +317,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		
 		
 		myDataBase.execSQL("INSERT INTO current_session (id_word, word, "
-						+"punctuation, id_story, name, errType) "
+						+"punctuation, id_story, id_student, errType) "
 						+"SELECT id_word, word, COALESCE(punctuation, 0) "
 						+"AS punctuation,"+story+", "+student+",0 "
 						+"FROM story_content "
@@ -345,7 +334,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				+"uid_current_session AS _id  "
 				+", word  "
 				+", punctuation  "
-				+", name  "
+				+", id_student  "
 				+", errType  "
 				+"FROM current_session ";
  
@@ -419,7 +408,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         aCursor.close();
         return list; 
 	}
-
 	//This method returns the number of Correct words from a session
 	public int getWordsCorrectCount(int end){
 		int correctCount = 0;
@@ -435,7 +423,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         aCursor.close();
         return correctCount; 
 	}
-
+	
 	public int getWordsIncorrectCount(int end){
 		int incorrectCount = 0;
 		
@@ -527,28 +515,34 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
 	}
 	
-	//return a curosr object with the results of the students table
-		public Cursor getStudents(){
-			
-			Cursor std = null;
-			try {
-				openDataBase();
-				String sql = "select uid_student as _id, first_name as firstName, last_name as LastName from student";
-				std = myDataBase.rawQuery(sql,null);
-				close();
-			}catch(SQLException sqlEx){
-				Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
-			}
-					
-			return std;
+	//return a cursor object with the results of the students table
+	public Cursor getStudents(){
+		
+		Cursor std = null;
+		try {
+			openDataBase();
+			String sql = "select uid_student as _id, first_name as firstName, last_name as LastName from student";
+			std = myDataBase.rawQuery(sql,null);
+			close();
+		}catch(SQLException sqlEx){
+			Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
 		}
+				
+		return std;
+	}
 
-		public void writeSession(int finalErrors, int finalScore, String finalNotes) {
-			int student = 0;
-			
-			myDataBase.execSQL("INSERT INTO session (notes, id_student, incorrect_count, score)"
-	        	+" VALUES ( " + finalNotes + ", "+ student + ", "+ finalErrors  + ", "+ finalScore+ ")");
-			
+	public void writeSession(int finalErrors, int finalScore, String finalNotes) {
+		int student = 8;
+		
+		String aSql = " SELECT id_student "
+				+"      FROM current_session";
+		Cursor aCursor = myDataBase.rawQuery(aSql, null);
+		if(aCursor.moveToFirst()){
+			student = aCursor.getInt(0);
 		}
-
+		aCursor.close();
+		
+		myDataBase.execSQL("INSERT INTO session (notes, id_student, incorrect_count, score)"
+        	+" VALUES ( " + finalNotes + ", "+ student + ", "+ finalErrors  + ", "+ finalScore+ ")");
+	}
 }

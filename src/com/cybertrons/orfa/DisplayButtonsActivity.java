@@ -29,7 +29,8 @@ public class DisplayButtonsActivity extends Activity {
 	private ArrayList<Button> storyWordsList;
 	private SoundPool sounds;
 	private int sAlert;
-	private int storyName = 0;
+	private int storyName;
+	private int student;
 
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -38,10 +39,10 @@ public class DisplayButtonsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.main);
-		setContentView(R.layout.predicatelayout);
+		setContentView(R.layout.predicatelayout);	
 		
 		PredicateLayout layout = new PredicateLayout(this);
-		
+
 		// These two lines are the bread and butter that gets the page scrolling!
 		LinearLayout myLayout = (LinearLayout) findViewById(R.id.mlayout);
 		myLayout.addView(layout);
@@ -52,16 +53,18 @@ public class DisplayButtonsActivity extends Activity {
 
 		// Get the message from the intent
 		Intent intent = getIntent();
-		this.storyName = intent.getIntExtra(MainActivity.NUMBER, 0);
+		this.storyName = intent.getIntExtra(SessionStorySelectActivity.NUMBER, 0);
+		this.student = intent.getIntExtra(SessionStudentSelectActivity.STUDENT, 0);
 
 		DataBaseHelper dbHelper = new DataBaseHelper(this);
+		/*
 		try {
 			dbHelper.createDataBase();
 		}catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+*/
 		try {
 	    	dbHelper.openDataBaseRW();
 	   	}catch(SQLException sqle){
@@ -70,7 +73,7 @@ public class DisplayButtonsActivity extends Activity {
 		
 	    try {
 	    	dbHelper.clearCurrentSessionData();
-	    	dbHelper.populateCurrentSessionData(this.storyName, 1);
+	    	dbHelper.populateCurrentSessionData(this.storyName, student);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
@@ -78,17 +81,16 @@ public class DisplayButtonsActivity extends Activity {
 
 		try {
 			storyWordsList = dbHelper.getStoryWords(this.storyName, this);
+			setTitle("Session In Progress with: "+ dbHelper.getStudent(this, student));
 			dbHelper.close();
 		}catch (SQLException sqle) {
 			throw sqle;
 		}
 
 		Iterator<Button> itr = storyWordsList.iterator();
-		while (itr.hasNext()) {
+		while (itr.hasNext()) {		
 			layout.addView(itr.next(), new PredicateLayout.LayoutParams(2, 0));			
 		}
-		
-		
 
 		// Beginning Arthur's clock
 
@@ -208,3 +210,4 @@ public class DisplayButtonsActivity extends Activity {
 	}
 	
 }
+
