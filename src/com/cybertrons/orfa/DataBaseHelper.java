@@ -531,6 +531,24 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				
 		return std;
 	}
+	
+	//return a cursor object with the results of the sessions table for a given student
+		public Cursor getSession(int std_id){
+			
+			Cursor sessions = null;
+			try {
+				openDataBase();
+				String sql = "SELECT _uid_session AS _id, incorrect_count AS incorrect, score AS score " +
+						"FROM session WHERE id_student = " + std_id;
+				sessions = myDataBase.rawQuery(sql,null);
+				sessions.moveToFirst();
+				close();
+			}catch(SQLException sqlEx){
+				Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
+			}
+					
+			return sessions;
+		}
 
 	public void writeSession(int finalErrors, int finalScore, String finalNotes) {
 		int student = 8;
