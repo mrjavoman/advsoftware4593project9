@@ -28,7 +28,7 @@ public class EditStudentActivity extends ListActivity {
 	
 	private static String[] data = new String[] { "0", "1", "2", "3", "4", "5" };
 	
-	private studentCursorAdapter dataSource;
+	private StudentCursorAdapter dataSource;
 	
 	private DataBaseHelper dbHelper = new DataBaseHelper(this);
 	
@@ -40,7 +40,7 @@ public class EditStudentActivity extends ListActivity {
         setContentView(R.layout.view_student);
                
         Cursor cursorData = dbHelper.getStudents();
-        dataSource = new studentCursorAdapter(this, cursorData);
+        dataSource = new StudentCursorAdapter(this, cursorData);
         
         setListAdapter(dataSource);
        
@@ -49,7 +49,7 @@ public class EditStudentActivity extends ListActivity {
     
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-      // TODO Auto-generated method stub
+   	  // TODO Auto-generated method stub
       super.onListItemClick(l, v, position, id);
       Toast.makeText(this, "Click-" + String.valueOf(position), Toast.LENGTH_SHORT).show();
     }
