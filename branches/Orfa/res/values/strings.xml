@@ -28,6 +28,8 @@
     <string name="check_box">Don\'t show this message again.</string>
     <string name="check_box_main_settings">Display &quot;Time is up!&quot; message at the end of a session.</string>
     <string name="menu_settings">Settings</string>
+    <item format="integer" type="id" name="uid_session">0</item>
+    <item format="integer" type="id" name="uid_student">1</item>
     
 
 </resources>
