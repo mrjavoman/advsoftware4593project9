@@ -3,13 +3,14 @@
     android:id="@+id/RL_edit_student"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
-
+
     <Button
         android:id="@+id/buttonAdd"
-        android:layout_marginTop="10dip"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="10dip"
+        android:onClick="onAddStudentClick"
         android:text="Add New Student" />
 
 	<ListView
