@@ -54,6 +54,12 @@
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".ViewSessionActivity"
     	    	  android:screenOrientation="landscape" />
+    	<activity android:name=".AddStudentActivity"
+    	    	  android:screenOrientation="landscape" />
+    	<activity android:name=".DisplaySessionActivity"
+    	    	  android:screenOrientation="landscape" />
+    	<activity android:name=".EditTheStudentActivity"
+    	    	  android:screenOrientation="landscape" />
     </application>
 
 </manifest>
