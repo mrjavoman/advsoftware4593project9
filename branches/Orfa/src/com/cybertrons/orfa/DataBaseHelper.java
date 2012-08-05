@@ -538,7 +538,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			Cursor sessions = null;
 			try {
 				openDataBase();
-				String sql = "SELECT _uid_session AS _id, incorrect_count AS incorrect, score AS score " +
+				String sql = "SELECT _uid_session AS _id, id_student AS uid_student, incorrect_count AS incorrect, score AS score " +
 						"FROM session WHERE id_student = " + std_id;
 				sessions = myDataBase.rawQuery(sql,null);
 				sessions.moveToFirst();
@@ -549,6 +549,61 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 					
 			return sessions;
 		}
+		
+	public void insertStudent(String first_name, String last_name) {
+		openDataBaseRW();
+		myDataBase.execSQL("INSERT INTO student(uid_student, last_name, first_name)" + 
+		" VALUES ( NULL, '" + last_name + "', '" + first_name + "' )" );
+		close();
+	}
+	
+	/**
+	 * returns an ArrayList with the results of a session 
+	 * joined with the first name and last name of student
+	 **/
+	public ArrayList<String> getStudentSession(int stu_id, int sess_id){
+		
+		openDataBase(); 
+		int i = 0;
+		ArrayList<String> studentSession = new ArrayList<String>();
+		//simple join of session and student table, query will return only one row
+		String query = "SELECT student.first_name, student.last_name, session.incorrect_count, " +
+				"session.score, session.notes FROM student, session " +
+				"WHERE student.uid_student = " + stu_id + " AND session._uid_session = " + sess_id;
+		Cursor aCursor = myDataBase.rawQuery(query, null);
+		//iterate through all of the columns of one row
+		if(aCursor.moveToFirst()){
+			do{
+				studentSession.add(aCursor.getString(i++));
+			}while(i < aCursor.getColumnCount());
+			
+		}
+		aCursor.close(); 
+		close(); //close database and cursor objects
+		
+		return studentSession;
+	}
+	
+	public ArrayList<String> getStudentInfo(int uid){
+		
+		openDataBase(); 
+		int i = 0;
+		ArrayList<String> studentInfo = new ArrayList<String>();
+		//get all the information on a given student
+		String query = "SELECT first_name, last_name FROM student WHERE uid_student ="+ uid;
+		Cursor aCursor = myDataBase.rawQuery(query, null);
+		//iterate through all of the columns of one row
+		if(aCursor.moveToFirst()){
+			do{
+				studentInfo.add(aCursor.getString(i++));
+			}while(i < aCursor.getColumnCount());
+			
+		}
+		aCursor.close(); 
+		close(); //close database and cursor objects
+		
+		return studentInfo;
+	}
 
 	public void writeSession(int finalErrors, int finalScore, String finalNotes) {
 		int student = 8;
@@ -563,5 +618,46 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		
 		myDataBase.execSQL("INSERT INTO session (notes, id_student, incorrect_count, score)"
         	+" VALUES ( " + finalNotes + ", "+ student + ", "+ finalErrors  + ", "+ finalScore+ ")");
+	}
+
+	public void updateStudent(String fname, String lname, int uid) {
+				
+		openDataBaseRW();
+		myDataBase.execSQL(" UPDATE student " +
+				" SET first_name = '" + fname + "', last_name = '" + lname +
+				"' WHERE uid_student = " + uid);
+		close();
+	}
+
+	// deletes a student and all the sesions associated with the student
+	public void deleteStudent(int std_id) {
+		openDataBaseRW();
+		
+		//delete all session on the given student with the given student id
+		String table_name = "session";
+		String where = "id_student = '" + std_id +"' ";
+		String[] whereArgs = null;
+		myDataBase.delete(table_name, where, whereArgs);
+		
+		//delete the student with the given student id
+		table_name = "student";
+		where = "uid_student = '" + std_id +"' ";
+		whereArgs = null;
+		myDataBase.delete(table_name, where, whereArgs);
+		
+		close();
+		
+	}
+
+	// deletes a session given a unique session id
+	public void deleteSession(int sess_id) {
+		
+		openDataBaseRW();
+		String table_name = "session";
+		String where = "_uid_session = '" + sess_id +"' ";
+		String[] whereArgs = null;
+		myDataBase.delete(table_name, where, whereArgs);
+		
+		close();
 	}
 }
