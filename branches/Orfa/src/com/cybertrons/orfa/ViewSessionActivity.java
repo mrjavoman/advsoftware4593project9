@@ -35,6 +35,7 @@ public class ViewSessionActivity extends ListActivity {
 	
 	private int student_id;
 	
+		
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,12 @@ public class ViewSessionActivity extends ListActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.view_session);
         
+        Bundle bundle;
+        
         Intent intent = getIntent();
-        student_id = intent.getIntExtra(StudentCursorAdapter.getStudentId(), 0);
+        bundle = intent.getExtras();
+        student_id = bundle.getInt("cs4953.advsoft.orfa.STUDENT_ID");
+        //student_id = intent.getIntExtra(StudentCursorAdapter.getStudentId(), 0);
                
         Cursor cursorData = dbHelper.getSession(student_id);
         dataSource = new SessionCursorAdapter(this, cursorData);

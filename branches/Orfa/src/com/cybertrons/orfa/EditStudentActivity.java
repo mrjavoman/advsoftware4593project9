@@ -3,6 +3,7 @@ package com.cybertrons.orfa;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -43,15 +44,19 @@ public class EditStudentActivity extends ListActivity {
         dataSource = new StudentCursorAdapter(this, cursorData);
         
         setListAdapter(dataSource);
-       
-        
+  
     }
     
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-   	  // TODO Auto-generated method stub
+   	  // this listener does not work, for list item listener look into adapter class
       super.onListItemClick(l, v, position, id);
       Toast.makeText(this, "Click-" + String.valueOf(position), Toast.LENGTH_SHORT).show();
+    }
+    
+    public void onAddStudentClick(View view){
+    	Intent intent = new Intent(this, AddStudentActivity.class);
+    	startActivity(intent);
     }
 
 }
