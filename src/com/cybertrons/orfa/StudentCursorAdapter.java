@@ -2,12 +2,15 @@ package com.cybertrons.orfa;
 
 import android.R.layout;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,20 +30,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class StudentCursorAdapter extends CursorAdapter implements OnClickListener,SectionIndexer,Filterable, android.widget.AdapterView.OnItemClickListener{
+	
 	private LayoutInflater mLayoutInflater;
 	private Context mContext;
     private AlphabetIndexer alphaIndexer;
     private boolean aLongClick = false;
     private static final String STUDENT_ID = "cs4953.advsoft.orfa.STUDENT_ID";
 	private int std_id;
-	
-	
+	private DataBaseHelper dbHelper;
+	private AlertDialog alert;
+	private Bundle bundle;
 
 	@SuppressWarnings("deprecation")
 	public StudentCursorAdapter(Context context, Cursor c) {
 		super(context, c);
 		mContext = context;
 		mLayoutInflater = LayoutInflater.from(context); 
+		dbHelper = new DataBaseHelper(context);
 	}
 	
 	public void initIndexer(Cursor c){
@@ -49,7 +55,7 @@ public class StudentCursorAdapter extends CursorAdapter implements OnClickListen
 
 	@Override
 	public View newView(Context context, Cursor cursor, ViewGroup parent) {
-		View v = mLayoutInflater.inflate(R.layout.adaptor_content_session, parent, false);
+		View v = mLayoutInflater.inflate(R.layout.adaptor_content, parent, false);
 		return v;
 	}
 
@@ -68,7 +74,7 @@ public class StudentCursorAdapter extends CursorAdapter implements OnClickListen
 
 	@Override
 	public void bindView(View v, Context context, Cursor c) {
-		int uid_session = c.getInt(c.getColumnIndexOrThrow("_id"));
+		int uid_student = c.getInt(c.getColumnIndexOrThrow("_id"));
 		String firstName = c.getString(c.getColumnIndexOrThrow("firstName"));
 		String lastName = c.getString(c.getColumnIndexOrThrow("lastName"));
 		
@@ -92,14 +98,13 @@ public class StudentCursorAdapter extends CursorAdapter implements OnClickListen
 		}
 		
 		RelativeLayout layoutBtn = (RelativeLayout)v.findViewById(R.id.lineItem);
-		layoutBtn.setTag(uid_session);
+		layoutBtn.setTag(uid_student);
 		layoutBtn.setOnClickListener(rowClicked);
 		layoutBtn.setOnLongClickListener(longRowClick);
 
-		Button btnButtonDel = (Button)v.findViewById(R.id.buttonLine);
-		btnButtonDel.setTag(uid_session);
-		btnButtonDel.setOnClickListener(btnButtonDelClicked);
-
+//		Button btnButtonEdit = (Button)v.findViewById(R.id.buttonLine);
+//		btnButtonEdit.setTag(uid_student);
+//		btnButtonEdit.setOnClickListener(btnButtonEditClicked);
 
 		/**
 		 * Decide if we should display the paper clip icon denoting image attachment
@@ -128,8 +133,10 @@ public class StudentCursorAdapter extends CursorAdapter implements OnClickListen
 	        	if(!aLongClick){
 	        		//Toast.makeText(mContext, "student id -" + view.getTag(), Toast.LENGTH_SHORT).show();
 	        		std_id = (Integer) view.getTag();
+	        		bundle = new Bundle();
+	        		bundle.putInt(STUDENT_ID, std_id);
 	        		Intent intent = new Intent(mContext, ViewSessionActivity.class);
-	            	intent.putExtra(getStudentId(), std_id);
+	            	intent.putExtras(bundle);
 	            	mContext.startActivity(intent);
 	        	}
 	        	aLongClick = false;
@@ -142,17 +149,48 @@ public class StudentCursorAdapter extends CursorAdapter implements OnClickListen
 			public boolean onLongClick(View arg0) {
 				// TODO Auto-generated method stub
 				aLongClick = true;
-				Toast.makeText(mContext, "delete using a long click", Toast.LENGTH_SHORT).show();
+				final CharSequence[] items = {"Edit", "Delete"};
+				final View view = arg0;
+				
+				AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+				builder.setTitle("Students Menu");
+				builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+				    public void onClick(DialogInterface dialog, int item) {
+				        //Toast.makeText(mContext, items[item] , Toast.LENGTH_SHORT).show();
+				    	std_id = (Integer) view.getTag();
+				        if(items[item].equals("Edit")){
+				        	Intent intent = new Intent(mContext, EditTheStudentActivity.class);
+			            	intent.putExtra(getStudentId(), std_id);
+			            	mContext.startActivity(intent);
+			            	alert.dismiss();
+				        }
+				        else if(items[item].equals("Delete")){
+				        	dbHelper.deleteStudent(std_id);
+				        	Intent intent = new Intent(mContext, EditStudentActivity.class);
+			            	intent.putExtra(getStudentId(), std_id);
+			            	mContext.startActivity(intent);
+			            	alert.dismiss();
+				        }
+				       
+				    }
+				});
+				alert = builder.create();
+				alert.show();
+				//aLongClick = false; //reset the boolean for normal click
 				return false;
 			}
 	    };
 	
-	 private OnClickListener btnButtonDelClicked = new OnClickListener() {
-	        @Override
-	        public void onClick(View view) {
-	        	Toast.makeText(mContext, "Delete-" + view.getTag(), Toast.LENGTH_SHORT).show();
-	        }
-	    };
+//	 private OnClickListener btnButtonEditClicked = new OnClickListener() {
+//	        @Override
+//	        public void onClick(View view) {
+//	        	Toast.makeText(mContext, "Delete-" + view.getTag(), Toast.LENGTH_SHORT).show();
+//	        	//std_id = (Integer) view.getTag();
+//	        	//Intent intent = new Intent(mContext, EditTheStudentActivity.class);
+//            	//intent.putExtra(getStudentId(), std_id);
+//            	//mContext.startActivity(intent);
+//	        }
+//	    };
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
