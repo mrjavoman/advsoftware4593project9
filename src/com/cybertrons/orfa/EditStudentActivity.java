@@ -1,6 +1,8 @@
 package com.cybertrons.orfa;
 
 
+import java.io.IOException;
+
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -39,24 +41,27 @@ public class EditStudentActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.view_student);
+     	
+     	try {
+			dbHelper.createDataBase();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
                
         Cursor cursorData = dbHelper.getStudents();
         dataSource = new StudentCursorAdapter(this, cursorData);
         
         setListAdapter(dataSource);
-  
+       
+        
     }
     
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-   	  // this listener does not work, for list item listener look into adapter class
+   	  // TODO Auto-generated method stub
       super.onListItemClick(l, v, position, id);
       Toast.makeText(this, "Click-" + String.valueOf(position), Toast.LENGTH_SHORT).show();
-    }
-    
-    public void onAddStudentClick(View view){
-    	Intent intent = new Intent(this, AddStudentActivity.class);
-    	startActivity(intent);
     }
 
 }

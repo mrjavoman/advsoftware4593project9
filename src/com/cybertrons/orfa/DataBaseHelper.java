@@ -9,6 +9,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import android.R;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -33,6 +34,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     private SQLiteDatabase myDataBase = null; 
  
     private final Context myContext;
+    
+    private String querry = null;
  
     /**
      * Constructor
@@ -55,16 +58,15 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	
     	if(dbExist){
     		//do nothing - database already exist
-    		//this.myDataBase = getReadableDatabase();
-    		copyDataBase();
     	}else{
  
     		//By calling this method and empty database will be created into the default system path
-               //of your application so we are gonna be able to overwrite that database with our database.
+    		//of your application so we are gonna be able to overwrite that database with our database.
     		//this.myDataBase = getReadableDatabase();
+    		
     		SQLiteDatabase tmpDB = this.getWritableDatabase();
     		tmpDB.close();
- /*
+ 
         	try {
  
     			copyDataBase();
@@ -74,7 +76,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         		throw new Error("Error copying database");
  
         	}
-*/
+
     	}
     }
  
@@ -538,7 +540,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			Cursor sessions = null;
 			try {
 				openDataBase();
-				String sql = "SELECT _uid_session AS _id, id_student AS uid_student, incorrect_count AS incorrect, score AS score " +
+				String sql = "SELECT _uid_session AS _id, incorrect_count AS incorrect, score AS score " +
 						"FROM session WHERE id_student = " + std_id;
 				sessions = myDataBase.rawQuery(sql,null);
 				sessions.moveToFirst();

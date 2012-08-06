@@ -14,6 +14,9 @@ public class SaveSessionActivity extends Activity {
 	private int finalScore;
 	private int finalErrors;
 	private String finalNotes;
+	private EditText score_field;
+	private EditText errors_field;
+	private EditText notes_field;
 	
     /** Called when the activity is first created. */
     @Override
@@ -21,19 +24,27 @@ public class SaveSessionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.save_session);
 		Intent intent = getIntent();
-		finalScore = intent.getIntExtra(SessionStatsActivity.SCORE, 0);
-		finalErrors = intent.getIntExtra(SessionStatsActivity.ERRORS, 0);
+		this.finalScore = intent.getIntExtra(SessionStatsActivity.SCORE, 0);
+		this.finalErrors = intent.getIntExtra(SessionStatsActivity.ERRORS, 0);
 
-        EditText fScore = (EditText) findViewById(R.id.save_score);
-        EditText fErrors = (EditText) findViewById(R.id.save_errors_text);
+        this.score_field = (EditText) findViewById(R.id.save_score);
+        this.errors_field = (EditText) findViewById(R.id.save_errors_text);
+        this.notes_field = (EditText) findViewById(R.id.save_notes);
 
-        fScore.setText( new Integer(finalScore).toString());
-        fErrors.setText( new Integer(finalErrors).toString()); 
+        score_field.setText( new Integer(finalScore).toString());
+        errors_field.setText( new Integer(finalErrors).toString()); 
     }
     public void onCommittSession(View view){
 	    DataBaseHelper dbHelper = new DataBaseHelper(this);
-	    
-	    
+	    this.finalScore = Integer.parseInt(this.score_field.getText().toString());
+	    this.finalErrors = Integer.parseInt(this.errors_field.getText().toString());
+	    if(this.notes_field.getText().toString() == null){
+	    	this.finalNotes = "";
+	    }
+	    else{
+		    this.finalNotes = this.notes_field.getText().toString();
+		}
+	    		
 	    try {
 	    	dbHelper.openDataBaseRW();
 	   	}catch(SQLException sqle){

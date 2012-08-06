@@ -1,5 +1,6 @@
 package com.cybertrons.orfa;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
@@ -57,7 +58,14 @@ public class SessionStatsActivity extends Activity {
 	   ArrayList<String> errorList = new ArrayList<String>();
 	    
 	    
- 
+	    
+	    try {
+			dbHelper.createDataBase();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
 	    try {
 	    	dbHelper.openDataBase();
 	   	}catch(SQLException sqle){
