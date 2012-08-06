@@ -113,4 +113,19 @@ Today:
 
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
+  * *Lauren:*
+
+  Yesterday:
+
+  -- I worked on the graphical progress display 
+
+  Today:
+
+  -- I will work on the wrapping up anything that needs doing for the end of the sprint
+
+  Impediments:
+
+  -- none at this time
+
+
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
