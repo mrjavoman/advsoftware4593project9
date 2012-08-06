@@ -127,5 +127,20 @@ Today:
 
   -- none at this time
 
+  * *Arthur:*
+
+  Yesterday:
+  
+  -- I finished up the code for wrapping up the text
+
+  Today:
+
+  -- I will put the button to export to a CSV in the settings button.
+
+  Impediments:
+
+  -- none
+
+
 
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
