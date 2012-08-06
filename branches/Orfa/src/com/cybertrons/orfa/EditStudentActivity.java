@@ -63,5 +63,10 @@ public class EditStudentActivity extends ListActivity {
       super.onListItemClick(l, v, position, id);
       Toast.makeText(this, "Click-" + String.valueOf(position), Toast.LENGTH_SHORT).show();
     }
+    
+    public void onAddStudentClick(View view){
+    	Intent intent = new Intent(this, AddStudentActivity.class);
+    	startActivity(intent);
+    }
 
 }
