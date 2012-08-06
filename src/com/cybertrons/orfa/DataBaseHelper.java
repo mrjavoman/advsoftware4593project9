@@ -9,7 +9,6 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import android.R;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -608,7 +607,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	}
 
 	public void writeSession(int finalErrors, int finalScore, String finalNotes) {
-		int student = 8;
+		int student = 0;
 		
 		String aSql = " SELECT id_student "
 				+"      FROM current_session";
@@ -618,8 +617,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		}
 		aCursor.close();
 		
-		myDataBase.execSQL("INSERT INTO session (notes, id_student, incorrect_count, score)"
-        	+" VALUES ( " + finalNotes + ", "+ student + ", "+ finalErrors  + ", "+ finalScore+ ")");
+		myDataBase.execSQL("INSERT INTO session ( id_student, incorrect_count, score, notes)"
+        	+" VALUES ( " + student + ", "+ finalErrors  + ", "+ finalScore+ ", '"+ finalNotes + "')");
 	}
 
 	public void updateStudent(String fname, String lname, int uid) {

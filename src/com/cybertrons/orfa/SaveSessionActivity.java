@@ -13,7 +13,7 @@ public class SaveSessionActivity extends Activity {
 	
 	private int finalScore;
 	private int finalErrors;
-	private String finalNotes;
+	private String finalNotes  = "";
 	private EditText score_field;
 	private EditText errors_field;
 	private EditText notes_field;
@@ -36,10 +36,12 @@ public class SaveSessionActivity extends Activity {
     }
     public void onCommittSession(View view){
 	    DataBaseHelper dbHelper = new DataBaseHelper(this);
+	    
 	    this.finalScore = Integer.parseInt(this.score_field.getText().toString());
 	    this.finalErrors = Integer.parseInt(this.errors_field.getText().toString());
-	    if(this.notes_field.getText().toString() == null){
-	    	this.finalNotes = "";
+	    
+	    if( this.notes_field.getText().toString().equals("") ){
+	    	this.finalNotes = "N/A";
 	    }
 	    else{
 		    this.finalNotes = this.notes_field.getText().toString();
