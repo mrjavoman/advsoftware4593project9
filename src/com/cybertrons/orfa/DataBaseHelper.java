@@ -540,7 +540,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			Cursor sessions = null;
 			try {
 				openDataBase();
-				String sql = "SELECT _uid_session AS _id, incorrect_count AS incorrect, score AS score " +
+				String sql = "SELECT _uid_session AS _id, id_student AS uid_student, incorrect_count AS incorrect, score AS score " +
 						"FROM session WHERE id_student = " + std_id;
 				sessions = myDataBase.rawQuery(sql,null);
 				sessions.moveToFirst();
