@@ -18,14 +18,10 @@ public class MarkWordActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        
 		// Get the message from the intent
 		Intent intent = getIntent();
 		uidWord = intent.getIntExtra(DisplayButtonsActivity.WORD, 0);
         setContentView(R.layout.word_mark);
-//        setContentView(R.layout.word_mark_cell); //runs with cell screen
-//		setContentView(R.layout.word_mark_tablet); //runs with tablet screen
         
     }
 	

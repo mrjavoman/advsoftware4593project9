@@ -12,8 +12,7 @@
     <application
         android:icon="@drawable/orfa_icon"
         android:label="@string/app_name"
-        android:screenOrientation = "landscape"
-        android:theme="@style/AppTheme" >
+        android:screenOrientation = "landscape" android:theme="@style/AppTheme">
         
         <activity
             android:name=".MainActivity"
