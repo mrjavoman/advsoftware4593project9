@@ -287,16 +287,16 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 	
                 	Button btn = new Button(tContext);
                     btn.setId(aCursor.getInt(0));
-                	btn.setBackgroundColor(Color.WHITE);
+                	btn.setBackgroundColor(Color.TRANSPARENT);
                     previousButton++;
                 	storyWordsList.add(btn);
                 }else{
                 	Button btn = new Button(tContext);
                     btn.setId(aCursor.getInt(0));
                     btn.setText(aCursor.getString(1)); //+ " " + new Integer(aCursor.getInt(0)).toString() +" " + btn.getId());
-                    btn.setTextColor(Color.BLACK);
+                    btn.setTextColor(Color.WHITE);
                 	btn.setOnClickListener(DisplayButtonsActivity.markWord(btn));
-                	btn.setBackgroundColor(Color.WHITE);
+                	btn.setBackgroundColor(Color.TRANSPARENT);
                     previousButton++;
                 	storyWordsList.add(btn);
                 }
@@ -348,7 +348,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		while (itr.hasNext()) {
 			int errorCode = aCursor.getInt(4);
 			switch(errorCode){
-            case 0:  itr.next().setTextColor(Color.BLACK);
+            case 0:  itr.next().setTextColor(Color.WHITE);
             break;
             case 1:  itr.next().setTextColor(Color.GREEN);
             break;
