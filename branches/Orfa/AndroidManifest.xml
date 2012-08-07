@@ -38,7 +38,8 @@
     	<activity android:name=".AssignSoundsActivity" 
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".MarkWordActivity" 
-    	    	  android:screenOrientation="landscape" />
+    	    	  android:screenOrientation="landscape"
+    	    	  android:theme="@android:style/Theme.Dialog"/>
     	<activity android:name=".StatsActivity" 
     	    	  android:screenOrientation="landscape" />
         <activity android:name=".DisplayButtonsActivity" 
