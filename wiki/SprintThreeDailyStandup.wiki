@@ -58,25 +58,30 @@
 
  * *Arthur:*
 
-Yesterday:
+  Yesterday:
+
   -- fixed the "do not show message again" checkbox
 
   --  Spent about 3 hours working on getting the PredicateLayout to scroll
 
-Today:
+  Today:
+
   -- Will continue working on getting the predicate layout scrolling.
 
-Impediments:
+  Impediments:
+
   -- The custom layout is an impediment.  We cannot get it to scroll correctly (or at all).
 
  * *Brandon:*
 
-Yesterday:
+  Yesterday:
+
   -- I changed the color of error counts on the stats page
 
   -- I added ability to select the student at the beginning of a session
 
-Today:
+  Today:
+
   -- I will get a session to write to the session database and display in the statistics graph.
 
 
@@ -115,15 +120,16 @@ Today:
  * *Brandon:*
 
   Yesterday:
+
   -- I fixed the errors with the session writing to the database
 
   Today:
+
   -- I will schedule a meeting with the client
 
   Impediments:
+
   --None
-
-
 
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
@@ -155,18 +161,20 @@ Today:
 
   -- none
 
-
  * *Brandon:*
 
   Yesterday:
+
   -- I found a good background for the activity pages and put it on the main menu for the rest of the group to review
 
   Today:
+
   -- I will add the background to the rest of the pages
 
   -- Begin actively finding bugs in the program
 
   Impediments:
+
   --None
 
  * *Lizeth:*
@@ -200,7 +208,6 @@ Today:
 
   -- Small bug when shifting away from the activity that the timer is in, after the timer has already been started.
 
-
  * *Brandon:*
 
   Yesterday:
@@ -232,4 +239,5 @@ Today:
   -- export the doc file to a pdf
 
   Impediments:
+
   --none
