@@ -255,7 +255,7 @@
 
   -- export the doc file to a pdf
 
-  -- work on finishing up the backlog charts with Lauren
+  -- work on finishing up the backlog charts & finish the sprint
 
   Impediments:
 
