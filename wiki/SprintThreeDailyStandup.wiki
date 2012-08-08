@@ -144,3 +144,17 @@ Today:
 
 
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
+
+  * *Arthur:*
+
+  Yesterday:
+  
+  -- I tested the changes Brandon made on the layout of the app and also read about android tasks and how to implement them to fix a bug in the app.
+
+  Today:
+
+  -- Continue testing the app and seeing how it works together.  Also, I will fix the bug in the app with Android Tasks.
+
+  Impediments:
+
+  -- Small bug when shifting away from the activity that the timer is in, after the timer has already been started.
