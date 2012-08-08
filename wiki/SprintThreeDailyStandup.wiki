@@ -111,6 +111,20 @@ Today:
 
   -- None.  
 
+
+ * *Brandon:*
+
+Yesterday:
+  -- I fixed the errors with the session writing to the database
+
+Today:
+  -- I will schedule a meeting with the client
+
+Impediments:
+  --None
+
+
+
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
   * *Lauren:*
