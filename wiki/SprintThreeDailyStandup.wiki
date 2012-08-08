@@ -171,6 +171,8 @@
 
   Impediments.
 
+  -- none 
+
 
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
@@ -246,6 +248,8 @@
   -- correct some bugs that were introduced in the last code merge
 
   Impediments.
+
+  -- none 
 
 
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
