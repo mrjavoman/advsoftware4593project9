@@ -200,6 +200,7 @@
   Today:
 
   -- gather screenshots 
+
   -- start working on creating a word doc for user manual 
  
   Impediments:
