@@ -114,13 +114,13 @@ Today:
 
  * *Brandon:*
 
-Yesterday:
+  Yesterday:
   -- I fixed the errors with the session writing to the database
 
-Today:
+  Today:
   -- I will schedule a meeting with the client
 
-Impediments:
+  Impediments:
   --None
 
 
@@ -156,6 +156,18 @@ Impediments:
   -- none
 
 
+ * *Brandon:*
+
+  Yesterday:
+  -- I found a good background for the activity pages and put it on the main menu for the rest of the group to review
+
+  Today:
+  -- I will add the background to the rest of the pages
+
+  -- Begin actively finding bugs in the program
+
+  Impediments:
+  --None
 
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
 
@@ -172,3 +184,19 @@ Impediments:
   Impediments:
 
   -- Small bug when shifting away from the activity that the timer is in, after the timer has already been started.
+
+
+ * *Brandon:*
+
+  Yesterday:
+  -- I researched Android Tasks, because they will need to be implemented to clear the backstack on the add/remove users and sessions activity
+
+  -- Found a bug on the end session page when a user enters a note containing a single quote.  It will require a simple character replace method to correct it
+
+  Today:
+  -- I fix the bug on the save sessions note field
+
+  -- provide more high-res screenshots for the documentation
+
+  Impediments:
+  --None
