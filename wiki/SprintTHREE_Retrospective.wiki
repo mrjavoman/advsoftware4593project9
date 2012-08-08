@@ -10,7 +10,7 @@
 
 *Arthur*
 
-*Brandon*
+*Brandon*  Implementing the Task flags in the android manifest file to eleminate the problems we are having with the back button going too far.
 
 
 *Javier*
@@ -26,7 +26,7 @@
 
 *Arthur*
 
-*Brandon*
+*Brandon* Writing uncommented code
 
 
 *Javier*
@@ -42,7 +42,7 @@
 
 *Arthur*
 
-*Brandon*
+*Brandon*  Meeting all of our deadlines and working efficiently as a team.
 
 
 *Javier*
