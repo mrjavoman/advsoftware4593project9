@@ -260,3 +260,17 @@
   Impediments:
 
   --none
+
+  * *Lauren:*
+
+  Yesterday:
+
+  -- I played with the graphical progress display 
+
+  Today:
+
+  -- I work on finishing up the sprint
+
+  Impediments:
+
+  -- none at this time
