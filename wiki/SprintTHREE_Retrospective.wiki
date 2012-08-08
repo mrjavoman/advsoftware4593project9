@@ -16,6 +16,8 @@ We should start testing on different android devices and fixing any bugs that co
 
 
 *Javier*
+
+begin to optimize the code for final release
  
 
 *Lauren* We should be careful when committing new code and make sure that everything still works properly after it has been combined.
@@ -32,6 +34,8 @@ We should stop implementing new features and instead focus on perfecting the one
 
 
 *Javier*
+
+implement new functionalities and just concentrate on optimizing the project for final release
  
 
 *Lauren* I agree with Brandon, uncommented code is a bad habit.
@@ -48,7 +52,7 @@ Working on and editting the User Manual if it needs more editting
 *Brandon*  Meeting all of our deadlines and working efficiently as a team.
 
 
-*Javier*
+*Javier*  keep testing the application and so that we can find what we need to optimize for final release
  
 
 *Lauren*  We should continue to communicate well and work together as a good team.
