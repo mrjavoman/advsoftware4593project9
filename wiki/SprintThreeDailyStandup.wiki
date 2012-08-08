@@ -84,6 +84,19 @@
 
   -- I will get a session to write to the session database and display in the statistics graph.
 
+* *Javier:*
+    
+  Yesterday:
+
+  -- worked on finishing the list view layout for edit students
+
+    
+  Today: 
+
+  -- will add extra functionality to the export csv so that it uses email to export the csv file
+
+  Impediments.
+
 
 *_Sprint 3 Daily Standup #3 (08/01/2012)_*
 
@@ -144,6 +157,20 @@
   Impediments:
 
   -- none 
+
+* *Javier:*
+    
+  Yesterday:
+
+  --finish list view layout for edit students and edit sessions
+
+    
+  Today: 
+
+  -- will add the ability to send csv file through email
+
+  Impediments.
+
 
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
@@ -206,6 +233,20 @@
   Impediments:
 
   -- none
+
+* *Javier:*
+    
+  Yesterday:
+
+  -- finished the ability to send csv file through email
+
+    
+  Today: 
+
+  -- correct some bugs that were introduced in the last code merge
+
+  Impediments.
+
 
 *_Sprint 3 Daily Standup #5 (08/08/2012)_*
 
@@ -274,3 +315,18 @@
   Impediments:
 
   -- none at this time
+
+* *Javier:*
+    
+  Yesterday:
+
+  -- worked on optimizing the code that we have
+
+    
+  Today: 
+
+  -- will continue to optimize the code for final presentation
+
+  Impediments.
+
+  -- none
