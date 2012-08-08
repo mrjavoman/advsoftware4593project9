@@ -9,6 +9,8 @@
 = _What should we start doing?_ =
 
 *Arthur*
+We should start testing on different android devices and fixing any bugs that come up to make this as simple and problem free as we can for the end user.
+
 
 *Brandon*  Implementing the Task flags in the android manifest file to eleminate the problems we are having with the back button going too far.
 
@@ -25,6 +27,7 @@
 = _What should we stop doing?_ =
 
 *Arthur*
+We should stop implementing new features and instead focus on perfecting the ones that we already have.
 
 *Brandon* Writing uncommented code
 
@@ -41,6 +44,7 @@
 =_What should we continue doing?_=
 
 *Arthur*
+Working on and editting the User Manual if it needs more editting
 
 *Brandon*  Meeting all of our deadlines and working efficiently as a team.
 
