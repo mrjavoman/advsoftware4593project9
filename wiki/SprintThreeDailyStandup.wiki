@@ -97,6 +97,8 @@
 
   Impediments.
 
+  -- none 
+
 
 *_Sprint 3 Daily Standup #3 (08/01/2012)_*
 
