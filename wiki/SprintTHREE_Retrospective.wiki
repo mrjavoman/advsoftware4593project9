@@ -18,7 +18,7 @@ We should start testing on different android devices and fixing any bugs that co
 *Javier*
  
 
-*Lauren*
+*Lauren* We should be careful when committing new code and make sure that everything still works properly after it has been combined.
  
 
 *Lizeth*
@@ -35,7 +35,7 @@ We should stop implementing new features and instead focus on perfecting the one
 *Javier*
  
 
-*Lauren*
+*Lauren* I agree with Brandon, uncommented code is a bad habit.
  
 
 *Lizeth*
@@ -52,7 +52,7 @@ Working on and editting the User Manual if it needs more editting
 *Javier*
  
 
-*Lauren*
+*Lauren*  We should continue to communicate well and work together as a good team.
  
 
 *Lizeth*
