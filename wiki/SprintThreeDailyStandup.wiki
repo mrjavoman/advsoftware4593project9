@@ -131,6 +131,20 @@
 
   --None
 
+ * *Lizeth:*
+
+  Yesterday:
+
+  -- talked to group to know the best way to do the user manual
+
+  Today:
+
+  -- start taking screenshots of working layouts of the app
+
+  Impediments:
+
+  -- none 
+
 *_Sprint 3 Daily Standup #4 (08/06/2012)_*
 
   * *Lauren:*
@@ -231,12 +245,16 @@
   Yesterday:
 
   -- worked on gathering all screenshots 
+
   --started working on creating a word doc with the text instructions and relevant screen shots
 
   Today:
 
   -- Finish user manual word doc
+
   -- export the doc file to a pdf
+
+  -- work on finishing up the backlog charts with Lauren
 
   Impediments:
 
