@@ -21,8 +21,7 @@ We should start testing on different android devices and fixing any bugs that co
 *Lauren* We should be careful when committing new code and make sure that everything still works properly after it has been combined.
  
 
-*Lizeth*
- 
+*Lizeth* We should start fixing any bugs left in the application 
 
 = _What should we stop doing?_ =
 
@@ -38,7 +37,7 @@ We should stop implementing new features and instead focus on perfecting the one
 *Lauren* I agree with Brandon, uncommented code is a bad habit.
  
 
-*Lizeth*
+*Lizeth* We should start making the application 'prettier'
  
 
 =_What should we continue doing?_=
@@ -55,5 +54,5 @@ Working on and editting the User Manual if it needs more editting
 *Lauren*  We should continue to communicate well and work together as a good team.
  
 
-*Lizeth*
+*Lizeth* We should continue turning our deliverables in time
  
