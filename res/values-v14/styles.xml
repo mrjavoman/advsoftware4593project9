@@ -1,5 +1,8 @@
 <resources>
 
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar" />
-
+    <style name="AppTheme" parent="android:style/Theme.Holo">
+        
+       <item name="android:windowBackground">@drawable/leatherholes</item>
+    
+    </style>
 </resources>
