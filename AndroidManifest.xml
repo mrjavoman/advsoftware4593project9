@@ -32,7 +32,8 @@
         <activity android:name=".SessionStudentSelectActivity" 
                   android:screenOrientation="landscape"/>
     	<activity android:name=".EditStudentActivity" 
-    	    	  android:screenOrientation="landscape" />
+    	    	  android:screenOrientation="landscape" 
+    	    	  android:launchMode="singleTop"/>
     	<activity android:name=".ImportStoryActivity" 
     			  android:screenOrientation="landscape" />
     	<activity android:name=".AssignSoundsActivity" 
