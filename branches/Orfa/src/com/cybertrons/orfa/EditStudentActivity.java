@@ -56,6 +56,22 @@ public class EditStudentActivity extends ListActivity {
        
         
     }
+	public void onResume(){
+		super.onResume();
+		
+		try {
+			dbHelper.createDataBase();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		Cursor cursorData = dbHelper.getStudents();
+		dataSource = new StudentCursorAdapter(this, cursorData);
+
+		setListAdapter(dataSource);
+		
+	}
     
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
