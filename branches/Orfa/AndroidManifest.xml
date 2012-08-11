@@ -56,7 +56,7 @@
     	<activity android:name=".ViewSessionActivity"
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".AddStudentActivity"
-    	    	  android:screenOrientation="landscape" />
+    	    	  android:screenOrientation="landscape" android:noHistory="true"/>
     	<activity android:name=".DisplaySessionActivity"
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".EditTheStudentActivity"
