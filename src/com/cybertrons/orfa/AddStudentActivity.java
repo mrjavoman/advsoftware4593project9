@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
+
+//This class is called when you select "View Sessions" and the click on "Add Student"
+//button.  The class that calls in is EditStudentActivity
 public class AddStudentActivity extends Activity{
 	
 	private EditText firstName;
@@ -27,9 +30,7 @@ public class AddStudentActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.add_student);
-        
-        
-        
+
         button = (View) findViewById(R.id.newStSubmit);
         firstName = (EditText)findViewById(R.id.newStFNtxt);
 		lastName = (EditText)findViewById(R.id.newStLNtxt);
@@ -58,6 +59,11 @@ public class AddStudentActivity extends Activity{
 						
 				dbHelper.insertStudent(fname, lname);
 				Intent intent = new Intent(mContext, EditStudentActivity.class);
+				
+				//this forces android to use the already existing instance of EditStudentActivity
+				//so there isn't an unnecessary instance of EditStudentActivity in the back stack
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				
             	startActivity(intent);
 				
 			}

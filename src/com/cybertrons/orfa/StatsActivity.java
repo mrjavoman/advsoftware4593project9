@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+//This class is used to generate a list of of students and launch their
+//sessions graph.  The class is called when a user clicks on "view statistics"
+//from the main menu
 public class StatsActivity extends Activity {
 	
 	public final static String NUMBER = "cs4953.advsoft.orfa.MESSAGE";
