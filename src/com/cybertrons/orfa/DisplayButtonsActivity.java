@@ -1,6 +1,5 @@
 package com.cybertrons.orfa;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -19,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class DisplayButtonsActivity extends Activity {
 
@@ -103,7 +103,7 @@ public class DisplayButtonsActivity extends Activity {
 		
 		// The handler is used to delay the second message, which is the basis of the timer.  It does not create a new thread.
 		final Handler h = new Handler();
-		final long time = 60000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
+		final long time = 5000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
 		
 		// The alert to display that time is up.
 		final AlertDialog.Builder endBuilder = new AlertDialog.Builder(this); // Builder for the stop alert.
@@ -174,8 +174,12 @@ public class DisplayButtonsActivity extends Activity {
 		h.post(startTimer); // This starts the timer.
 		
 		// end Arthur's clock
+		
+		
+		
 	}
 	
+
 	public static View.OnClickListener markWord(final Button button){ // -LJ
 		return new View.OnClickListener() {
 	        public void onClick(View v) {
