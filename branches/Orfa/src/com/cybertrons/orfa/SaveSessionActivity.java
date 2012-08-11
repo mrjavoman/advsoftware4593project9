@@ -52,9 +52,9 @@ public class SaveSessionActivity extends Activity {
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
-	    /*TODO
-	     * still need to handle when the user enter's a single quote in the text.  Have to escape the 
-	     */
+	    
+	    this.finalNotes = this.finalNotes.replace("'", "''");
+	    
 	    try {
 			dbHelper.writeSession(finalErrors, finalScore, finalNotes);
 	   	}catch(SQLException sqle){

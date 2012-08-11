@@ -28,9 +28,9 @@
         <activity android:name="org.achartengine.GraphicalActivity" 
             	  android:screenOrientation="landscape"/>
         <activity android:name=".SessionStorySelectActivity" 
-                  android:screenOrientation="landscape"/>
+                  android:screenOrientation="landscape" android:noHistory="true"/>
         <activity android:name=".SessionStudentSelectActivity" 
-                  android:screenOrientation="landscape"/>
+                  android:screenOrientation="landscape" android:noHistory="true"/>
     	<activity android:name=".EditStudentActivity" 
     	    	  android:screenOrientation="landscape" 
     	    	  android:launchMode="singleTop"/>
