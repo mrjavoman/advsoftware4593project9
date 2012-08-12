@@ -38,7 +38,6 @@ public class DisplayButtonsActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.main);
 		setContentView(R.layout.predicatelayout);	
 		
 		PredicateLayout layout = new PredicateLayout(this);
@@ -178,8 +177,29 @@ public class DisplayButtonsActivity extends Activity {
 		
 		
 	}
-	
 
+	/*
+	public static View.OnClickListener markWord(final Button button){
+		return new View.OnClickListener() {
+	        public void onClick(final View v) {
+	        	int buttonID = v.getId();
+		
+				final CharSequence[] items = {"Omit", "Word Order", "Mispronounce" ,"Hesitate", "Self Correct", "No Error", "Last Word"};
+		
+				AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+				builder.setTitle("Select an Error");
+				builder.setItems(items, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int item) {
+						Toast.makeText(v.getContext(), items[item], Toast.LENGTH_SHORT).show();
+						}
+				});
+				AlertDialog alert = builder.create();
+				alert.show();
+	        }
+	    };
+	}
+*/
+	
 	public static View.OnClickListener markWord(final Button button){ // -LJ
 		return new View.OnClickListener() {
 	        public void onClick(View v) {

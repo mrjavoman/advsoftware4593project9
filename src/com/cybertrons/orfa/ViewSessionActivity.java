@@ -58,6 +58,17 @@ public class ViewSessionActivity extends ListActivity {
         
     }
     
+    public void onResume(){
+		super.onResume();
+		
+        Cursor cursorData = dbHelper.getSession(student_id);
+        dataSource = new SessionCursorAdapter(this, cursorData);
+        
+        setListAdapter(dataSource);
+		
+		
+    }
+    
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
       // TODO Auto-generated method stub
