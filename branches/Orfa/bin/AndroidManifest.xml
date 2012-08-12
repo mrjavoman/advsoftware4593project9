@@ -12,8 +12,7 @@
     <application
         android:icon="@drawable/orfa_icon"
         android:label="@string/app_name"
-        android:screenOrientation = "landscape"
-        android:theme="@style/AppTheme" >
+        android:screenOrientation = "landscape" android:theme="@style/AppTheme">
         
         <activity
             android:name=".MainActivity"
@@ -29,17 +28,19 @@
         <activity android:name="org.achartengine.GraphicalActivity" 
             	  android:screenOrientation="landscape"/>
         <activity android:name=".SessionStorySelectActivity" 
-                  android:screenOrientation="landscape"/>
+                  android:screenOrientation="landscape" android:noHistory="true"/>
         <activity android:name=".SessionStudentSelectActivity" 
-                  android:screenOrientation="landscape"/>
+                  android:screenOrientation="landscape" android:noHistory="true"/>
     	<activity android:name=".EditStudentActivity" 
-    	    	  android:screenOrientation="landscape" />
+    	    	  android:screenOrientation="landscape" 
+    	    	  android:launchMode="singleTop"/>
     	<activity android:name=".ImportStoryActivity" 
     			  android:screenOrientation="landscape" />
     	<activity android:name=".AssignSoundsActivity" 
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".MarkWordActivity" 
-    	    	  android:screenOrientation="landscape" />
+    	    	  android:screenOrientation="landscape"
+    	    	  android:theme="@android:style/Theme.Dialog"/>
     	<activity android:name=".StatsActivity" 
     	    	  android:screenOrientation="landscape" />
         <activity android:name=".DisplayButtonsActivity" 
@@ -52,6 +53,15 @@
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".SaveSessionActivity"
     	    	  android:screenOrientation="landscape" />
+    	<activity android:name=".ViewSessionActivity"
+    	    	  android:screenOrientation="landscape"  
+    	    	  android:launchMode="singleTop"/>
+    	<activity android:name=".AddStudentActivity"
+    	    	  android:screenOrientation="landscape" android:noHistory="true"/>
+    	<activity android:name=".DisplaySessionActivity"
+    	    	  android:screenOrientation="landscape" />
+    	<activity android:name=".EditTheStudentActivity"
+    	    	  android:screenOrientation="landscape" android:noHistory="true"/>
     </application>
 
 </manifest>
