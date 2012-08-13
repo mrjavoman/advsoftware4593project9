@@ -16,7 +16,7 @@ public class EditTheStudentActivity extends Activity{
 
 	private EditText firstName;
 	private EditText lastName;
-	private View button;
+	
 	private DataBaseHelper dbHelper = new DataBaseHelper(this);
 	private String fname;
 	private String lname; 
@@ -28,7 +28,6 @@ public class EditTheStudentActivity extends Activity{
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_student);
         
-        button = (View) findViewById(R.id.editStSubmit);
         firstName = (EditText) findViewById(R.id.editStFNtxt);
         lastName = (EditText)findViewById(R.id.editStLNtxt);
         

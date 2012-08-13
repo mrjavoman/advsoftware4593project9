@@ -170,7 +170,7 @@ public class SessionCursorAdapter extends CursorAdapter implements OnClickListen
 				    	   Intent intent = new Intent(mContext, ViewSessionActivity.class);
 			               intent.putExtras(bundle);
 			               mContext.startActivity(intent);
-			               alert.dismiss();
+			               dialog.dismiss();
 				       }
 				    }
 				});
