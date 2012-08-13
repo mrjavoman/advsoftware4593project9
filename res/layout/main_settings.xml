@@ -9,6 +9,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/check_box_main_settings" />
-    
+
+    <Button
+        android:id="@+id/export"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onExportCSV"
+        android:text="Export Database" />
 
 </LinearLayout>
