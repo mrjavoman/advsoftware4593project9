@@ -162,14 +162,14 @@ public class StudentCursorAdapter extends CursorAdapter implements OnClickListen
 				        	Intent intent = new Intent(mContext, EditTheStudentActivity.class);
 			            	intent.putExtra(getStudentId(), std_id);
 			            	mContext.startActivity(intent);
-			            	alert.dismiss();
+			            	dialog.dismiss();
 				        }
 				        else if(items[item].equals("Delete")){
 				        	dbHelper.deleteStudent(std_id);
 				        	Intent intent = new Intent(mContext, EditStudentActivity.class);
 			            	intent.putExtra(getStudentId(), std_id);
 			            	mContext.startActivity(intent);
-			            	alert.dismiss();
+			            	dialog.dismiss();
 				        }
 				       
 				    }

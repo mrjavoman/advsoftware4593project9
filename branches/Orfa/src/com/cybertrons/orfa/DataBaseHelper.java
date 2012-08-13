@@ -475,44 +475,69 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return list;
 	}
 	
-	//Export a csv file with table sqlite table contents
-	public void writeCSV() {
+	// Export a csv file with table sqlite table contents
+	// return boolean value to indicate if write is successful
+	public boolean writeCSV(String dir) {
 
-		File exportDir = new File(Environment.getExternalStorageDirectory(), "");        
-		if (!exportDir.exists()) {
-			exportDir.mkdirs();
+		boolean fileWritten = false;
+		File exportDir = null;
+		//LayoutInflater inflater = LayoutInflater.from(this);
+		//View layoutInflator = inflater.inflate(R.layout.settings, null);
+		if(dir.equals("sd")){
+			exportDir = new File(Environment.getExternalStorageDirectory(), ""); 
+		}else{
+			exportDir = new File(myContext.getDir("files",Context.MODE_WORLD_READABLE), ""); 
 		}
-		File file = new File(exportDir, "dibblesDB.csv");
-	
-		try {
-			file.createNewFile();                
-			CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
-			Cursor curCSV = myDataBase.rawQuery("SELECT * FROM student",null);
-			csvWrite.writeNext(curCSV.getColumnNames());
-			while(curCSV.moveToNext())	{
-				String arrStr[] ={curCSV.getString(0),curCSV.getString(1),
-						curCSV.getString(2)};
+
+		// if no SD card is present or app can't write to it
+		// display a message accordingly
+		if(dir.equals("sd") && !exportDir.canWrite()){
+			 fileWritten = false;
+		}
+		else{ // build the csv file to the specified location
+
+			if (!exportDir.exists()) {
+				exportDir.mkdirs();
+			}
+			File file = new File(exportDir, "ORFA_DB.csv");
+			boolean isReadable = file.setReadable(true, false);
+			if(isReadable){
+				
+			}
+
+			try {
+				file.createNewFile();                
+				CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
+				Cursor curCSV = myDataBase.rawQuery("SELECT * FROM student",null);
+				csvWrite.writeNext(curCSV.getColumnNames());
+				while(curCSV.moveToNext())	{
+					String arrStr[] ={curCSV.getString(0),curCSV.getString(1),
+							curCSV.getString(2)};
+					csvWrite.writeNext(arrStr);
+				}
+				String arrStr[] = {""};
 				csvWrite.writeNext(arrStr);
+				curCSV = myDataBase.rawQuery("SELECT * FROM session",null);
+				csvWrite.writeNext(curCSV.getColumnNames());
+				while(curCSV.moveToNext())	{
+					String arrStr2[] ={curCSV.getString(0),curCSV.getString(1),
+							curCSV.getString(2),curCSV.getString(3),curCSV.getString(4)};
+					csvWrite.writeNext(arrStr2);
+				}
+
+				csvWrite.close();
+				curCSV.close();
+				fileWritten = true;
 			}
-			String arrStr[] = {""};
-			csvWrite.writeNext(arrStr);
-			curCSV = myDataBase.rawQuery("SELECT * FROM session",null);
-			csvWrite.writeNext(curCSV.getColumnNames());
-			while(curCSV.moveToNext())	{
-				String arrStr2[] ={curCSV.getString(0),curCSV.getString(1),
-						curCSV.getString(2),curCSV.getString(3),curCSV.getString(4),curCSV.getString(5)};
-				csvWrite.writeNext(arrStr2);
+			catch(SQLException sqlEx) {
+				Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
 			}
-					
-			csvWrite.close();
-			curCSV.close();
+			catch (IOException e) {
+				Log.e("Database Helper Class", e.getMessage(), e);
+			}
 		}
-		catch(SQLException sqlEx) {
-			Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
-		}
-		catch (IOException e) {
-			Log.e("Database Helper Class", e.getMessage(), e);
-		}
+		
+		return  fileWritten;
 
 	}
 	
