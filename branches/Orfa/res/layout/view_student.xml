@@ -11,7 +11,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dip"
         android:onClick="onAddStudentClick"
-        android:text="Add New Student" />
+        android:text="Add New Student"
+        	android:background="@drawable/btn_blue"
+        	style="@style/ButtonText"/>
 
 	<ListView
 	    android:id="@+id/android:list"

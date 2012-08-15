@@ -14,7 +14,7 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="Incorrect:"
-	    android:textColor="#FFFFFF"
+	    android:textColor="@color/textBlue"
 	    android:textSize="24sp" />
 
 	<TextView
@@ -23,7 +23,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_marginLeft="10dip"
 	    android:layout_toRightOf="@+id/TextViewInc"
-	    android:textColor="#FFFFFF"
+	    android:textColor="@color/red"
 	    android:textSize="24sp" />
 
 	<TextView
@@ -41,7 +41,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_toRightOf="@id/separator"
 	    android:text="Score:"
-	    android:textColor="#FFFFFF"
+	    android:textColor="@color/textBlue"
 	    android:textSize="24sp" />
 
 	<TextView

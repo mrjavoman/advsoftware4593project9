@@ -339,19 +339,22 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				+", errType  "
 				+"FROM current_session ";
  
-		//a Cursor object stores the results rawQuery
+
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
-        // moveToFirst moves the Cursor to the first row of the results
         aCursor.moveToFirst();
          
 		Iterator<Button> itr = storyWordsList.iterator();
 		while (itr.hasNext()) {
+			//get the error code from current session table
 			int errorCode = aCursor.getInt(4);
 			switch(errorCode){
+			//no  error
             case 0:  itr.next().setTextColor(Color.WHITE);
             break;
+            //last word read
             case 1:  itr.next().setTextColor(Color.GREEN);
             break;
+            //self-correct
             case 2:  itr.next().setTextColor(Color.YELLOW);
             break;
             case 3:  itr.next().setTextColor(Color.RED);
@@ -377,7 +380,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				+" 		FROM current_session"
 				+" 		WHERE errType >= 3"
 				+" 		ORDER BY LENGTH(word) DESC"
-				+" 		LIMIT 5";
+				+" 		LIMIT 10";
 			
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
 		if(aCursor.moveToFirst()){
@@ -399,16 +402,19 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				+"     WHERE errType >=3"
 				+"     GROUP BY sounds.sound"
 				+"     ORDER BY cnt DESC, LENGTH(sound) DESC"
-				+"     LIMIT 5";
+				+"     LIMIT 10";
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
 		if(aCursor.moveToFirst()){
             do{
             	list.add(aCursor.getString(0));
+            	list.add(Integer.toString(aCursor.getInt(1)));
             }while(aCursor.moveToNext());
 		}
         aCursor.close();
         return list; 
 	}
+	
+	
 	//This method returns the number of Correct words from a session
 	public int getWordsCorrectCount(int end){
 		int correctCount = 0;

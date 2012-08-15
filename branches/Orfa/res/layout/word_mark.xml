@@ -14,7 +14,9 @@
 	        android:layout_width="158dp"
     		android:layout_height="wrap_content"
 	        android:onClick="onClickErrorOmit"
-	        android:text="@string/error1" />
+	        android:text="@string/error1"
+        	android:background="@drawable/btn_blue"
+        	style="@style/markWordsButtonText"/>
 
 	    <Button
 	        android:id="@+id/buttonErrorWordOrder"
@@ -22,7 +24,9 @@
     		android:layout_height="wrap_content"
 	        android:layout_marginLeft="25dp"
 	        android:onClick="onClickErrorWordOrder"
-	        android:text="@string/error2" />
+	        android:text="@string/error2"
+        	android:background="@drawable/btn_blue"
+        	style="@style/markWordsButtonText"/>
 	
 	    <Button
 	        android:id="@+id/buttonErrorMispronounce"
@@ -30,7 +34,9 @@
     		android:layout_height="wrap_content"
 	        android:layout_marginLeft="25dp"
 	        android:onClick="onClickErrorMispronounce"
-	        android:text="@string/error3" />
+	        android:text="@string/error3"
+        	android:background="@drawable/btn_blue"
+        	style="@style/markWordsButtonText"/>
 	</LinearLayout>
     <LinearLayout 
 	    android:layout_width="wrap_content"
@@ -43,7 +49,9 @@
 	        android:layout_width="158dp"
     		android:layout_height="wrap_content"
 		    android:onClick="onClickErrorHesitate"
-		    android:text="@string/error4" />
+		    android:text="@string/error4"
+        	android:background="@drawable/btn_blue"
+        	style="@style/markWordsButtonText"/>
 	
 	    <Button
 	        android:id="@+id/buttonErrorSelfCorrect"
@@ -51,14 +59,16 @@
     		android:layout_height="wrap_content"
 	        android:layout_marginLeft="25dp"
 	        android:onClick="onClickErrorSelfCorrect"
-	        android:text="@string/error5" />
+	        android:text="@string/error5"
+        	android:background="@drawable/btn_blue"
+        	style="@style/markWordsButtonText"/>
 
     </LinearLayout>
 
     <LinearLayout
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_marginTop="10dp" >
+	    android:layout_marginTop="8dp" >
 	
 	    <Button
 	        android:id="@+id/buttonMarkCorrect"
@@ -66,16 +76,20 @@
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="bottom|left"
 	        android:onClick="onClickMarkCorrect"
-	        android:text="@string/clear_incorrect" />
+	        android:text="@string/clear_incorrect"
+        	android:background="@drawable/btn_blue"
+        	style="@style/markWordsButtonText"/>
 
 		<Button
 		    android:id="@+id/buttonLastRead"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-	        android:layout_marginLeft="25dp"
+	        android:layout_marginLeft="1dp"
 	        android:layout_gravity="bottom|right"
 		    android:onClick="onClickLastRead"
-		    android:text="@string/last_read" />
+		    android:text="@string/last_read"
+        	android:background="@drawable/btn_blue"
+        	style="@style/markWordsButtonText"/>
 
 		</LinearLayout>
 

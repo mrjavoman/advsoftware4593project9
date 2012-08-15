@@ -8,5 +8,9 @@
     <color name="orange4">#ff9933</color>
     <color name="orange5">#ff9900</color>
     <color name="transparent">#80000000</color>
+    <color name="lightBlue">#336699</color>
+    <color name="darkBlue">#002447</color>
+    <color name="textBlue">#4169e1</color>
+    <color name="red">#CD2626</color>
     
 </resources>

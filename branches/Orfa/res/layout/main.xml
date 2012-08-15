@@ -12,13 +12,14 @@
         android:layout_marginTop="30dp"
         android:text="@string/menu_welcome"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/textBlue"/>
     
     <LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
     	android:gravity="center_horizontal"
-	    	android:layout_marginTop="20dp"
+	    android:layout_marginTop="20dp"
     	android:orientation="horizontal" >
 
 	    <Button
@@ -28,7 +29,9 @@
 	        android:layout_marginLeft="10dp"
 	        android:onClick="onClickStartSession"
 	        android:text="@string/menu_start_session"
-	        android:minWidth="150dp" />
+	        android:minWidth="150dp"
+        	android:background="@drawable/btn_blue"
+        	style="@style/ButtonText"/>
 	
 	    <Button
 	        android:id="@+id/buttonEditStudent"
@@ -37,7 +40,9 @@
 	        android:layout_marginLeft="10dp"
 	        android:onClick="onClickEditStudent"
 	        android:text="@string/menu_edit_Student"
-	        android:minWidth="150dp" />
+	        android:minWidth="150dp"
+        	android:background="@drawable/btn_blue"
+        	style="@style/ButtonText"/>
 	    
 	
 	    <Button
@@ -47,7 +52,9 @@
 	        android:layout_marginLeft="10dp"
 	        android:onClick="onClickStats"
 	        android:text="@string/menu_stats"
-	        android:minWidth="150dp" />
+	        android:minWidth="150dp"
+        	android:background="@drawable/btn_blue"
+        	style="@style/ButtonText"/>
 
 	    </LinearLayout>
 	    
@@ -65,7 +72,9 @@
 		        android:layout_height="wrap_content"
 		        android:onClick="onClickSettings"
 		        android:text="@string/menu_settings"
-		        android:minWidth="150dp" />    
+		        android:minWidth="150dp"
+        		android:background="@drawable/btn_blue"
+        		style="@style/ButtonText"/>    
 	    </LinearLayout>
 	    
 </LinearLayout>
