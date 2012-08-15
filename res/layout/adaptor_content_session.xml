@@ -8,14 +8,28 @@
 
 	<ImageView android:id="@+id/iconLine" android:layout_width="48dip"
 		android:layout_height="48dip" android:layout_alignParentLeft="true" />
+    <TextView
+        android:id="@+id/sessDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:textColor="#4169e1"
+        android:textSize="24sp" />
 
 	<TextView
 	    android:id="@+id/TextViewInc"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="Incorrect:"
-	    android:textColor="@color/textBlue"
+	    android:textColor="#FFFFFF"
 	    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/aSessDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/sessDate"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
 	<TextView
 	    android:id="@+id/textLine"
@@ -23,8 +37,16 @@
 	    android:layout_height="wrap_content"
 	    android:layout_marginLeft="10dip"
 	    android:layout_toRightOf="@+id/TextViewInc"
-	    android:textColor="@color/red"
+	    android:textColor="#FFFFFF"
 	    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/separator1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/aSessDate"
+        android:text="    "
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
 	<TextView
 	    android:id="@+id/separator"
@@ -34,6 +56,14 @@
 	    android:text="    "
 	    android:textColor="#FFFFFF"
 	    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/TextViewInc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/separator1"
+        android:text="Incorrect:"
+        android:textColor="#4169e1"
+        android:textSize="24sp" />
 
 	<TextView
 	    android:id="@+id/TextViewScore"
@@ -41,8 +71,16 @@
 	    android:layout_height="wrap_content"
 	    android:layout_toRightOf="@id/separator"
 	    android:text="Score:"
-	    android:textColor="@color/textBlue"
+	    android:textColor="#FFFFFF"
 	    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_toRightOf="@+id/TextViewInc"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
 	<TextView
 	    android:id="@+id/textView1"
@@ -52,5 +90,31 @@
 	    android:layout_toRightOf="@+id/TextViewScore"
 	    android:textColor="#FFFFFF"
 	    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/separator2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textLine"
+        android:text="    "
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/TextViewScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/separator2"
+        android:text="Score:"
+        android:textColor="#4169e1"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/TextViewScore"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
 </RelativeLayout>
