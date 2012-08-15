@@ -79,11 +79,17 @@ public class SessionCursorAdapter extends CursorAdapter implements OnClickListen
 		int uid_student = c.getInt(c.getColumnIndexOrThrow("uid_student"));
 		String incorrect = c.getString(c.getColumnIndexOrThrow("incorrect"));
 		String score = c.getString(c.getColumnIndexOrThrow("score"));
-		
+		String date = c.getString(c.getColumnIndexOrThrow("date"));
+		//String [] dateStrings = date.split("\\s+");
 
 		/**
 		 * Next set the title of the entry.
 		 */
+		
+		TextView sess_date = (TextView) v.findViewById(R.id.aSessDate);
+		if (sess_date != null) {
+			sess_date.setText(date);
+		}
 
 		TextView incorrect_cnt = (TextView) v.findViewById(R.id.textLine);
 		if (incorrect_cnt != null) {
