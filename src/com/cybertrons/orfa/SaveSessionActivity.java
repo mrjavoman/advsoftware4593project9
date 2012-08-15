@@ -67,6 +67,7 @@ public class SaveSessionActivity extends Activity {
 	   	}
         
     	Intent intent = new Intent(this, MainActivity.class);
+    	intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
     	startActivity(intent);
     }
  

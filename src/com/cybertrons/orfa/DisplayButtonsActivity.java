@@ -15,10 +15,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 public class DisplayButtonsActivity extends Activity {
 
@@ -31,6 +31,9 @@ public class DisplayButtonsActivity extends Activity {
 	private int sAlert;
 	private int storyName;
 	private int student;
+	private Runnable stopTimer;
+	private Runnable startTimer;
+	private Handler h;
 
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -101,12 +104,12 @@ public class DisplayButtonsActivity extends Activity {
 		final CheckBox dontShowAgain = (CheckBox) layoutInflator.findViewById(R.id.checkBox1);
 		
 		// The handler is used to delay the second message, which is the basis of the timer.  It does not create a new thread.
-		final Handler h = new Handler();
+		this.h = new Handler();
 		final long time = 5000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
 		
 		// The alert to display that time is up.
 		final AlertDialog.Builder endBuilder = new AlertDialog.Builder(this); // Builder for the stop alert.
-		final Runnable stopTimer = new Runnable() {
+		this.stopTimer = new Runnable() {
 			public void run() {
 				// Building the Alert.
 				endBuilder.setView(layoutInflator);
@@ -138,7 +141,7 @@ public class DisplayButtonsActivity extends Activity {
 		};
 
 		final AlertDialog.Builder startBuilder = new AlertDialog.Builder(this); // Builder for the start alert.
-		final Runnable startTimer = new Runnable() {
+		this.startTimer = new Runnable() {
 			public void run() {
 
 				// Building the Alert
@@ -155,7 +158,14 @@ public class DisplayButtonsActivity extends Activity {
 									public void onClick(DialogInterface dialog,
 											int which) {
 										// "Start" the "timer". This really just delays the stop alert.
-										h.postDelayed(stopTimer, time);
+										try {
+											h.postDelayed(stopTimer, time);
+									    } catch (WindowManager.BadTokenException e) {
+									        // TODO: handle exception
+									    } catch (Exception e) {
+									        // TODO: handle exception
+									    }
+										
 									}
 								})
 						.setNegativeButton("Cancel",
@@ -229,8 +239,12 @@ public class DisplayButtonsActivity extends Activity {
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
-		
-
+	}
+	
+	public void onDestroy(){
+		super.onDestroy();
+		this.h.removeCallbacks(this.startTimer);
+		this.h.removeCallbacks(this.stopTimer);
 	}
 	
 }
