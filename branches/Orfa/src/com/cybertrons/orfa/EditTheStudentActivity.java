@@ -20,7 +20,6 @@ public class EditTheStudentActivity extends Activity{
 	private DataBaseHelper dbHelper = new DataBaseHelper(this);
 	private String fname;
 	private String lname; 
-	private Context mContext;
 	private int student_id;
 	
 	@Override
@@ -42,40 +41,14 @@ public class EditTheStudentActivity extends Activity{
 	}
 	
 	public void onSubmitClick(View view){
-		final AlertDialog.Builder addStudentBldr = new AlertDialog.Builder(this);
-		LayoutInflater inflater = LayoutInflater.from(this);
-		final View layoutInflator = inflater.inflate(R.layout.settings, null);
-				
+						
 		fname = firstName.getText().toString();
 		lname = lastName.getText().toString();
 		
-		mContext = this;
-		
-		addStudentBldr.setView(layoutInflator);
-		addStudentBldr.setMessage("Student " + fname + " " + lname + " , do you want to commit the student information?");
-
-		addStudentBldr.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-						
-				dbHelper.updateStudent(fname, lname, student_id);
-				Intent intent = new Intent(mContext, EditStudentActivity.class);
-            	startActivity(intent);
+		dbHelper.updateStudent(fname, lname, student_id);
+		Intent intent = new Intent(this, EditStudentActivity.class);
+    	startActivity(intent);
 				
-			}
-		});
-		
-		addStudentBldr.setNegativeButton("Cancel",
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog,
-							int id) {
-						// Go back to choosing the story and student.
-						//finish();
-						dialog.dismiss();
-					}
-				});
-		
-		AlertDialog alert2 = addStudentBldr.create(); // Creating the alert.
-		alert2.show(); // Showing the Alert.
 	}
 }
 
