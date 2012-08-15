@@ -39,19 +39,17 @@
         android:layout_gravity="center"
         android:orientation="horizontal"
         android:weightSum="3" >
-
+
         <TextView
             android:id="@+id/dispSess_name"
-            android:layout_width="222dp"
+            android:layout_width="218dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.03"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
         <TextView
             android:id="@+id/dispSess_date"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </LinearLayout>
