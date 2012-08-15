@@ -43,44 +43,19 @@ public class AddStudentActivity extends Activity{
 
 	public void onSubmitClick(View view){
 
-		final AlertDialog.Builder addStudentBldr = new AlertDialog.Builder(this);
-		LayoutInflater inflater = LayoutInflater.from(this);
-		final View layoutInflator = inflater.inflate(R.layout.settings, null);
-		
 		fname = firstName.getText().toString();
 		lname = lastName.getText().toString();
 		mContext = this;
+							
+		dbHelper.insertStudent(fname, lname);
+		Intent intent = new Intent(mContext, EditStudentActivity.class);
 		
-		addStudentBldr.setView(layoutInflator);
-		addStudentBldr.setMessage("Student " + fname + " " + lname + " will be added, are you sure?");
-
-		addStudentBldr.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-						
-				dbHelper.insertStudent(fname, lname);
-				Intent intent = new Intent(mContext, EditStudentActivity.class);
-				
-				//this forces android to use the already existing instance of EditStudentActivity
-				//so there isn't an unnecessary instance of EditStudentActivity in the back stack
-				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				
-            	startActivity(intent);
-				
-			}
-		});
+		//this forces android to use the already existing instance of EditStudentActivity
+		//so there isn't an unnecessary instance of EditStudentActivity in the back stack
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		
-		addStudentBldr.setNegativeButton("Cancel",
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog,
-							int id) {
-						// Go back to choosing the story and student.
-						//finish();
-						dialog.dismiss();
-					}
-				});
-		
-		AlertDialog alert2 = addStudentBldr.create(); // Creating the alert.
-		alert2.show(); // Showing the Alert.
+    	startActivity(intent);
+				
 	}
 	
 	void updateButtonState() {
