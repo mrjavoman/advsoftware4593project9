@@ -31,6 +31,11 @@ public class DisplaySessionActivity extends Activity{
 			first_name.setText(studentSess.get(0) + " " + studentSess.get(1));
 		}
 		
+		TextView date = (TextView) findViewById(R.id.dispSess_date);
+		if (date != null) {
+			date.setText(studentSess.get(4));
+		}
+		
 		TextView incorrect = (TextView) findViewById(R.id.txt_incorr_words);
 		if (incorrect != null) {
 			incorrect.setText(studentSess.get(2));
@@ -43,7 +48,7 @@ public class DisplaySessionActivity extends Activity{
 		
 		TextView notes = (TextView) findViewById(R.id.txtSessNotes);
 		if (notes != null) {
-			notes.setText(studentSess.get(4));
+			notes.setText(studentSess.get(5));
 		}
 		
 	}
