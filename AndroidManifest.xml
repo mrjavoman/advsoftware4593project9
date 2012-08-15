@@ -16,7 +16,7 @@
         
         <activity
             android:name=".MainActivity"
-            android:label="@string/menu_welcome" 
+            android:label="@string/app_name" 
             android:screenOrientation="landscape"  
     	    android:launchMode="singleTop"
          >
@@ -58,11 +58,14 @@
     	    	  android:screenOrientation="landscape"  
     	    	  android:launchMode="singleTop"/>
     	<activity android:name=".AddStudentActivity"
-    	    	  android:screenOrientation="landscape" android:noHistory="true"/>
+    	    	  android:screenOrientation="landscape" 
+    	    	  android:noHistory="true"/>
     	<activity android:name=".DisplaySessionActivity"
     	    	  android:screenOrientation="landscape" />
     	<activity android:name=".EditTheStudentActivity"
-    	    	  android:screenOrientation="landscape" android:noHistory="true"/>
+    	    	  android:screenOrientation="landscape"   
+    	    	  android:launchMode="singleTop"
+    	    	  android:noHistory="true"/>
     </application>
 
 </manifest>

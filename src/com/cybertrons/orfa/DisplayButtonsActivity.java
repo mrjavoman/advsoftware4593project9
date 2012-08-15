@@ -105,7 +105,7 @@ public class DisplayButtonsActivity extends Activity {
 		
 		// The handler is used to delay the second message, which is the basis of the timer.  It does not create a new thread.
 		this.h = new Handler();
-		final long time = 5000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
+		final long time = 60000; // time in milliseconds to delay the timer. 1000 milliseconds = 1 second.
 		
 		// The alert to display that time is up.
 		final AlertDialog.Builder endBuilder = new AlertDialog.Builder(this); // Builder for the stop alert.

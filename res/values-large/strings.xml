@@ -9,7 +9,7 @@
     <string name="story_prompt">Select a story from the list below</string>
     <string name="enter_number"># of desired buttons</string>
     <string name="button_number">Generate</string>
-    <string name="menu_welcome">An electronic DIBELS assessment tool</string>
+    <string name="menu_welcome">ORFA</string>
     <string name="menu_start_session">Start New Session</string>
     <string name="menu_edit_Student">View Sessions</string>
     <string name="menu_import_story">Import Story</string>
@@ -28,21 +28,21 @@
     <string name="check_box">Don\'t show this message again.</string>
     <string name="check_box_main_settings">Display &quot;Time is up!&quot; message at the end of a session.</string>
     <string name="menu_settings">Settings</string>
-    <item format="integer" type="id" name="uid_session">0</item>
-    <item format="integer" type="id" name="uid_student">1</item>
-        <style name="ButtonText">
-	    <item name="android:layout_width">fill_parent</item>
-	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:textColor">#ffffff</item>
-	    <item name="android:gravity">center</item>
-	    <item name="android:layout_margin">3dp</item>
-	    <item name="android:textSize">12dp</item>
-	    <item name="android:textStyle">bold</item>
-	    <item name="android:shadowColor">#000000</item>
-	    <item name="android:shadowDx">1</item>
-	    <item name="android:shadowDy">1</item>
-	    <item name="android:shadowRadius">2</item>
-	</style>
+    <item format="integer" type="id" name="uid_session">0</item><item name="uid_student" format="integer" type="id">1</item>
+
+    <style name="ButtonText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
 
     <style name="markWordsButtonText">
         <item name="android:layout_width">fill_parent</item>

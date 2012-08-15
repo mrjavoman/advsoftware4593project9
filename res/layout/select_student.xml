@@ -22,14 +22,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
                </RadioGroup>
-		</ScrollView>
-	<Button
-		android:id="@+id/select_student"
-		android:layout_width="wrap_content"
-		android:layout_height="0dp"
-		android:onClick="onSelectButton"
-		android:text="Select"
-    	android:layout_weight="1" />
-
+		</ScrollView><Button
+        android:id="@+id/select_student"
+        style="@style/ButtonText"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_blue"
+        android:onClick="onSelectButton"
+        android:text="Select" />
 
 </LinearLayout>

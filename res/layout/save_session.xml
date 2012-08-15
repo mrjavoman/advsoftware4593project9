@@ -71,9 +71,11 @@
     
     <Button
         android:id="@+id/committ_session_button"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Committ and Close"
-	    android:onClick="onCommittSession" />
+	    android:onClick="onCommittSession"
+        	android:background="@drawable/btn_blue"
+        	style="@style/ButtonText"/>
 
 </LinearLayout>
