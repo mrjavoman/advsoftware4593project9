@@ -57,6 +57,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	
     	if(dbExist){
     		//do nothing - database already exist
+    		
     	}else{
  
     		//By calling this method and empty database will be created into the default system path
@@ -506,11 +507,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				exportDir.mkdirs();
 			}
 			File file = new File(exportDir, "ORFA_DB.csv");
-			boolean isReadable = file.setReadable(true, false);
-			if(isReadable){
-				
-			}
-
+			
 			try {
 				file.createNewFile();                
 				CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
@@ -570,7 +567,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			Cursor sessions = null;
 			try {
 				openDataBase();
-				String sql = "SELECT _uid_session AS _id, id_student AS uid_student, incorrect_count AS incorrect, score AS score " +
+				String sql = "SELECT _uid_session AS _id, id_student AS uid_student, " +
+						"incorrect_count AS incorrect, " +
+						"score AS score, date AS date  " +
 						"FROM session WHERE id_student = " + std_id;
 				sessions = myDataBase.rawQuery(sql,null);
 				sessions.moveToFirst();
@@ -600,7 +599,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		ArrayList<String> studentSession = new ArrayList<String>();
 		//simple join of session and student table, query will return only one row
 		String query = "SELECT student.first_name, student.last_name, session.incorrect_count, " +
-				"session.score, session.notes FROM student, session " +
+				"session.score, session.date, session.notes FROM student, session " +
 				"WHERE student.uid_student = " + stu_id + " AND session._uid_session = " + sess_id;
 		Cursor aCursor = myDataBase.rawQuery(query, null);
 		//iterate through all of the columns of one row
@@ -637,7 +636,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		return studentInfo;
 	}
 
-	public void writeSession(int finalErrors, int finalScore, String finalNotes) {
+	public void writeSession(int finalErrors, int finalScore, String finalNotes, String date) {
 		int student = 0;
 		
 		String aSql = " SELECT id_student "
@@ -648,8 +647,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		}
 		aCursor.close();
 		
-		myDataBase.execSQL("INSERT INTO session ( id_student, incorrect_count, score, notes)"
-        	+" VALUES ( " + student + ", "+ finalErrors  + ", "+ finalScore+ ", '"+ finalNotes + "')");
+		myDataBase.execSQL("INSERT INTO session ( id_student, incorrect_count, score, date, notes)"
+        	+" VALUES ( " + student + ", "+ finalErrors  + ", "+ finalScore+", '"+ date + "', '"+ finalNotes + "')");
 	}
 
 	public void updateStudent(String fname, String lname, int uid) {
