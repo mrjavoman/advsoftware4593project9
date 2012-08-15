@@ -1,6 +1,8 @@
 package com.cybertrons.orfa;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -52,11 +54,15 @@ public class SaveSessionActivity extends Activity {
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
-	    
 	    this.finalNotes = this.finalNotes.replace("'", "''");
 	    
+	    Calendar currentDate = Calendar.getInstance();
+	    //SimpleDateFormat formatter=  new SimpleDateFormat("MMM/dd/yyyy HH:mm:ss");
+	    SimpleDateFormat formatter=  new SimpleDateFormat("MMM/dd/yyyy");
+	    String dateNow = formatter.format(currentDate.getTime());
+	    
 	    try {
-			dbHelper.writeSession(finalErrors, finalScore, finalNotes);
+			dbHelper.writeSession(finalErrors, finalScore, finalNotes, dateNow);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
