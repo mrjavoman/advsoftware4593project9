@@ -530,14 +530,12 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				csvWrite.writeNext(curCSV.getColumnNames());
 				while(curCSV.moveToNext())	{
 					String arrStr[] ={"",curCSV.getString(2),
-							curCSV.getString(1)};
+							curCSV.getString(1), "date", "incorrect", "score", "notes"};
 					csvWrite.writeNext(arrStr);
-					String arrStrColumnSess[] = {"", "date", "incorrect", "score", "notes"};
 					String query = "SELECT * FROM session WHERE id_student = " + curCSV.getInt(0) ;
 					Cursor curCSV2 = myDataBase.rawQuery(query,null);
-					csvWrite.writeNext(arrStrColumnSess);
 					while(curCSV2.moveToNext())	{
-						String arrStr2[] ={"",
+						String arrStr2[] ={"","","",
 								curCSV2.getString(4),curCSV2.getString(2),curCSV2.getString(3),curCSV2.getString(5)};
 						csvWrite.writeNext(arrStr2);
 					}
