@@ -9,7 +9,7 @@
     <string name="story_prompt">Select a story from the list below</string>
     <string name="enter_number"># of desired buttons</string>
     <string name="button_number">Generate</string>
-    <string name="menu_welcome">ORFA</string>
+    <string name="menu_welcome">An electronic DIBELS assessment tool</string>
     <string name="menu_start_session">Start New Session</string>
     <string name="menu_edit_Student">View Sessions</string>
     <string name="menu_import_story">Import Story</string>

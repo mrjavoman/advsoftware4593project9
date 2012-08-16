@@ -49,6 +49,8 @@ public class SessionStudentSelectActivity extends Activity {
 	   	}
 	    try {
 	    	studentsList = dbHelper.getStudentsList(this);
+	    	if(studentsList.size() >= 1)
+	    		studentsList.get(0).setChecked(true);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
