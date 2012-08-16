@@ -146,5 +146,34 @@ public class SettingsActivity extends Activity {
 		alert.show();
     }
     
+    public void onDefaultDatabase(View view){
+    	
+       	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		//final AlertDialog.Builder exportBldr = new AlertDialog.Builder(this);
+		builder.setTitle("Database Default");
+		
+		builder.setMessage("You are about to reset the database to its default state " +
+				"this will erase all the information on the students from the aplication \n " +
+				"are you sure you want to do that?");
+		builder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+		public void onClick(DialogInterface dialog,int id) {
+			// if this button is clicked, close dialog
+			dbHelper.readSQLFile();
+			dialog.dismiss();
+		}
+	  }); 
+		builder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog,int id) {
+				// if this button is clicked, close dialog
+				dialog.dismiss();
+			}
+	  }); 
+	// create alert dialog
+	AlertDialog alertDialog = builder.create();
+	// show it
+	alertDialog.show();
+    	
+    }
+    
    
 }
