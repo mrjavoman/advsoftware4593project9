@@ -30,7 +30,7 @@ public class AddStudentActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.add_student);
-
+        
         button = (View) findViewById(R.id.newStSubmit);
         firstName = (EditText)findViewById(R.id.newStFNtxt);
 		lastName = (EditText)findViewById(R.id.newStLNtxt);
@@ -43,8 +43,8 @@ public class AddStudentActivity extends Activity{
 
 	public void onSubmitClick(View view){
 
-		fname = firstName.getText().toString();
-		lname = lastName.getText().toString();
+		fname = firstName.getText().toString().replace("'", "''");
+		lname = lastName.getText().toString().replace("'", "''");
 		mContext = this;
 							
 		dbHelper.insertStudent(fname, lname);

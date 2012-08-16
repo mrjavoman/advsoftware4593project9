@@ -58,7 +58,8 @@
     	    	  android:screenOrientation="landscape"  
     	    	  android:launchMode="singleTop"/>
     	<activity android:name=".AddStudentActivity"
-    	    	  android:screenOrientation="landscape" 
+    	    	  android:screenOrientation="landscape"   
+    	    	  android:launchMode="singleTop"
     	    	  android:noHistory="true"/>
     	<activity android:name=".DisplaySessionActivity"
     	    	  android:screenOrientation="landscape" />

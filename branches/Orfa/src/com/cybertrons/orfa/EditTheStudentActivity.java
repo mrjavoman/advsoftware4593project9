@@ -42,8 +42,8 @@ public class EditTheStudentActivity extends Activity{
 	
 	public void onSubmitClick(View view){
 						
-		fname = firstName.getText().toString();
-		lname = lastName.getText().toString();
+		fname = firstName.getText().toString().replace("'", "''");
+		lname = lastName.getText().toString().replace("'", "''");
 		
 		dbHelper.updateStudent(fname, lname, student_id);
 		Intent intent = new Intent(this, EditStudentActivity.class);

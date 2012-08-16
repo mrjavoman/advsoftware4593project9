@@ -46,7 +46,7 @@ public class SaveSessionActivity extends Activity {
 	    	this.finalNotes = "N/A";
 	    }
 	    else{
-		    this.finalNotes = this.notes_field.getText().toString();
+		    this.finalNotes = this.notes_field.getText().toString().replace("'", "''");
 		}
 	    		
 	    try {
@@ -54,7 +54,6 @@ public class SaveSessionActivity extends Activity {
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
-	    this.finalNotes = this.finalNotes.replace("'", "''");
 	    
 	    Calendar currentDate = Calendar.getInstance();
 	    //SimpleDateFormat formatter=  new SimpleDateFormat("MMM/dd/yyyy HH:mm:ss");
