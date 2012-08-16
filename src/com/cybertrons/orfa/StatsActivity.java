@@ -48,6 +48,8 @@ public class StatsActivity extends Activity {
 	   	}
 	    try {
 	    	studentList = dbHelper.getStudentsList(this);
+	    	if(studentList.size() >= 1)
+	    		studentList.get(0).setChecked(true);
 
 	   	}catch(SQLException sqle){
 	   		throw sqle;
