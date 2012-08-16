@@ -69,9 +69,10 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
         	try {
  
-    			copyDataBase();
+    			//copyDataBase();
+        		readSQLFile();
  
-    		} catch (IOException e) {
+    		} catch (Exception e) {
  
         		throw new Error("Error copying database");
  
@@ -134,6 +135,20 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     	myInput.close();
  
     }
+    
+    public void readSQLFile(){
+    	
+    	openDataBaseRW();
+    	try {
+			SQLiteDBDeploy.deploy(myDataBase, myContext, "dbdump.zip");
+			
+			// if you like to download file from remote site comment above line and uncomment below line.
+			//SQLiteDBDeploy.deploy(sqlLiteDb,"http://ingenious-camel.googlecode.com/svn/trunk/SQLiteDBDeployer/assets/northwind.zip");			
+		} catch (IOException e) {
+			throw new Error(e.getMessage());
+		}
+    	close();
+    }
  
     public void openDataBase() throws SQLException{
  
@@ -195,7 +210,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
 		ArrayList<RadioButton> studentsList = new ArrayList<RadioButton>();
 		
-		String aSql = "SELECT uid_student, last_name, first_name FROM student";//a Cursor object stores the results rawQuery
+		String aSql = "SELECT uid_student, last_name, first_name FROM student ORDER BY first_name";//a Cursor object stores the results rawQuery
 		Cursor aCursor = myDataBase.rawQuery(aSql, null);
         // moveToFirst moves the Cursor to the first row of the results
         if(aCursor.moveToFirst()){
@@ -511,21 +526,24 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 			try {
 				file.createNewFile();                
 				CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
-				Cursor curCSV = myDataBase.rawQuery("SELECT * FROM student",null);
+				Cursor curCSV = myDataBase.rawQuery("SELECT * FROM student ORDER BY first_name",null);
 				csvWrite.writeNext(curCSV.getColumnNames());
 				while(curCSV.moveToNext())	{
-					String arrStr[] ={curCSV.getString(0),curCSV.getString(1),
-							curCSV.getString(2)};
+					String arrStr[] ={"",curCSV.getString(2),
+							curCSV.getString(1)};
 					csvWrite.writeNext(arrStr);
-				}
-				String arrStr[] = {""};
-				csvWrite.writeNext(arrStr);
-				curCSV = myDataBase.rawQuery("SELECT * FROM session",null);
-				csvWrite.writeNext(curCSV.getColumnNames());
-				while(curCSV.moveToNext())	{
-					String arrStr2[] ={curCSV.getString(0),curCSV.getString(1),
-							curCSV.getString(2),curCSV.getString(3),curCSV.getString(4)};
-					csvWrite.writeNext(arrStr2);
+					String arrStrColumnSess[] = {"", "date", "incorrect", "score", "notes"};
+					String query = "SELECT * FROM session WHERE id_student = " + curCSV.getInt(0) ;
+					Cursor curCSV2 = myDataBase.rawQuery(query,null);
+					csvWrite.writeNext(arrStrColumnSess);
+					while(curCSV2.moveToNext())	{
+						String arrStr2[] ={"",
+								curCSV2.getString(4),curCSV2.getString(2),curCSV2.getString(3),curCSV2.getString(5)};
+						csvWrite.writeNext(arrStr2);
+					}
+					
+					String arrStrSpace[] = {""};
+					csvWrite.writeNext(arrStrSpace);
 				}
 
 				csvWrite.close();
@@ -550,7 +568,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		Cursor std = null;
 		try {
 			openDataBase();
-			String sql = "select uid_student as _id, first_name as firstName, last_name as lastName from student";
+			String sql = "select uid_student as _id, first_name as firstName, " +
+					"last_name as lastName FROM student " +
+					"ORDER BY firstName";
 			std = myDataBase.rawQuery(sql,null);
 			std.moveToFirst();
 			close();
