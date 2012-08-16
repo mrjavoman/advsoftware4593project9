@@ -47,6 +47,7 @@ public class EditTheStudentActivity extends Activity{
 		
 		dbHelper.updateStudent(fname, lname, student_id);
 		Intent intent = new Intent(this, EditStudentActivity.class);
+    	intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
     	startActivity(intent);
 				
 	}
