@@ -18,5 +18,14 @@
         android:text="Export Database" 
        	android:background="@drawable/btn_blue"
        	style="@style/ButtonText"/>
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/ButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_blue"
+        android:onClick="onDefaultDatabase"
+        android:text="Default Database" />
 
 </LinearLayout>
