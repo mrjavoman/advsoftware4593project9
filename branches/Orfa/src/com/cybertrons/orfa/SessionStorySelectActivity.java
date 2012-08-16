@@ -43,6 +43,8 @@ public class SessionStorySelectActivity extends Activity {
 	   	}
 	    try {
 	    	storiesList = dbHelper.getStories(this);
+	    	if(storiesList.size() >= 1)
+	    		storiesList.get(0).setChecked(true);
 	   	}catch(SQLException sqle){
 	   		throw sqle;
 	   	}
