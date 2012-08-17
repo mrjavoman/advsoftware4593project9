@@ -1,4 +1,4 @@
-#summary Conduct a Daily Standup at the beginning of each class meeting during Sprint
+#summary Conduct a Daily Standup at the beginning of each class meeting during Sprint 4
 
 = Introduction =
 
@@ -11,6 +11,31 @@
 = Details =
 
 *_Sprint 4 Daily Standup #1 (08/08/2012)_* 
+  
+  * *Everyone:*
+
+  Yesterday:
+  Today:
+  Impediments:
+
+*_Sprint 4 Daily Standup #2 (08/13/2012)_* 
+  
+  * *Everyone:*
+
+  Yesterday:
+  Today:
+  Impediments:
+
+*_Sprint 4 Daily Standup #3 (08/15/2012)_* 
+  
+  * *Everyone:*
+
+  Yesterday:
+  Today:
+  Impediments:
+
+
+*_Sprint 4 Daily Standup #4 (08/18/2012)_* 
   
   * *Everyone:*
 
