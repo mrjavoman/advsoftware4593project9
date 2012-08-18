@@ -106,11 +106,11 @@
   
   * *Arthur:*
 
-  Yesterday:
+  Yesterday: I worked on fixing the bug with Brandon and we both figured it out.  
 
-  Today:
+  Today: Will continue to work on bug fixes if any come up.  I will try the app with my wife Anna and see if it's easily understandable
 
-  Impediments:
+  Impediments: none
 
   * *Lauren:*
 
