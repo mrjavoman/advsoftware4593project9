@@ -22,11 +22,11 @@
   
   * *Arthur:*
 
-  Yesterday:
+  Yesterday: I tested the app to check for any bug.  Brandon found a bug with my timer.  It fails to end the process after the timer has begun and will crash the app if you click back on the android phone or tablet.
 
-  Today:
+  Today: I will fix the bug in the timer.
 
-  Impediments:
+  Impediments: Small bug on the timer.  Not really an impediment though.
 
   * *Lauren:*
 
