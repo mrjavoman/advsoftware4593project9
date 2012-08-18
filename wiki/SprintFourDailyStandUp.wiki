@@ -148,9 +148,9 @@
   
   * *Arthur:*
 
-  Yesterday:
+  Yesterday: Added students and student sessions to the tablet to get ready for presentation.  Presented to app.
 
-  Today:
+  Today: finished.
 
   Impediments:
 
