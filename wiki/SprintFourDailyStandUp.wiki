@@ -38,11 +38,11 @@
 
   * *Lizeth:*
 
-  Yesterday:
+  Yesterday: worked on finishing up the sprint documentation
 
-  Today:
+  Today: worked on graphs, submitted deliverables for sprint 3 & will work on fixing any errors in the User Manual
 
-  Impediments:  
+  Impediments:  none
 
   * *Javier:*
 
@@ -80,11 +80,11 @@
 
   * *Lizeth:*
 
-  Yesterday:
+  Yesterday: finisihed up sprint 3 and documentation
 
-  Today:
+  Today: Add new images that Brandon will send me and add new instructions in 'General Description' and to 'Settings' menu in the User Manual
 
-  Impediments:  
+  Impediments:  none
 
   * *Javier:*
 
@@ -122,11 +122,11 @@
 
   * *Lizeth:*
 
-  Yesterday:
+  Yesterday: Fix and add new instructions & images to User Manual 
 
-  Today:
+  Today: making the User Manual 'pretty'
 
-  Impediments:  
+  Impediments:  none
 
   * *Javier:*
 
@@ -164,11 +164,11 @@
 
   * *Lizeth:*
 
-  Yesterday:
+  Yesterday: Finished User Manual
 
-  Today:
-
-  Impediments:  
+  Today: worked on documentation, submitted User Manual and Backlog
+ 
+  Impediments:  none
 
   * *Javier:*
 
