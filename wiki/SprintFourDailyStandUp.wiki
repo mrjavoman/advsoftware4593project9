@@ -64,11 +64,11 @@
   
   * *Arthur:*
 
-  Yesterday:
+  Yesterday: I worked on fixing the bug.  I did a lot of research about tasks and what we need to do with the tasks in order for the app to function properly the way we want it to.
 
-  Today:
+  Today: Will continue to work on the bug for the timer.
 
-  Impediments:
+  Impediments: none
 
   * *Lauren:*
 
