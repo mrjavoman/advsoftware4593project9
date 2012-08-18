@@ -46,11 +46,11 @@
 
   * *Javier:*
 
-  Yesterday:
+  Yesterday: got rid of message boxes when adding and editing a student, they were not necessary and made the application feel slower
 
-  Today:
+  Today: will fix the export database, it is missing some functionality
 
-  Impediments:
+  Impediments: none
 
 *_Sprint 4 Daily Standup #2 (08/13/2012)_* 
   
@@ -88,11 +88,11 @@
 
   * *Javier:*
 
-  Yesterday:
+  Yesterday: Fixed the database export button, some of the code was already implemented but it was lacking some functionality
 
-  Today:
+  Today: will add a date to each save session and display it in session activity also will modify the format of the exported csv file so that it is more meaningful to the user
 
-  Impediments:
+  Impediments: none
 
 *_Sprint 4 Daily Standup #3 (08/15/2012)_* 
   
@@ -130,11 +130,11 @@
 
   * *Javier:*
 
-  Yesterday:
+  Yesterday: added a date field to each session saved and made the csv format more readable
 
-  Today:
+  Today: will add a button to reset the database to default state and will display the list of students throughout the application in sorted order by first name
 
-  Impediments:
+  Impediments: none
 
 *_Sprint 4 Daily Standup #4 (08/18/2012)_* 
   
@@ -172,8 +172,8 @@
 
   * *Javier:*
 
-  Yesterday:
+  Yesterday: implemented a button that resets the database which reads an sql file and recreates the database with no students or sessions saved
 
-  Today:
+  Today: will be ready for any last minute fixes that may be needed before the final due date in the semester
 
-  Impediments:
+  Impediments: none
