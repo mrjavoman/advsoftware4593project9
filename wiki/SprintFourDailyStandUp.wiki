@@ -30,11 +30,11 @@
 
   * *Lauren:*
 
-  Yesterday:
+  Yesterday:Finished up last sprint
 
-  Today:
+  Today: Try to identify existing bugs in the program.
 
-  Impediments:
+  Impediments: none
 
   * *Lizeth:*
 
@@ -72,11 +72,11 @@
 
   * *Lauren:*
 
-  Yesterday:
+  Yesterday:Finished up sprint 3 documentation with liz
 
-  Today:
+  Today: Testing on the application
 
-  Impediments:
+  Impediments: none
 
   * *Lizeth:*
 
@@ -114,11 +114,11 @@
 
   * *Lauren:*
 
-  Yesterday:
+  Yesterday: Tested the product.
 
-  Today:
+  Today: Help liz with anything she needs for finishing up the user manual and presentation slides
 
-  Impediments:
+  Impediments: none
 
   * *Lizeth:*
 
@@ -156,11 +156,11 @@
 
   * *Lauren:*
 
-  Yesterday:
+  Yesterday: Presented project
 
-  Today:
+  Today: Done!
 
-  Impediments:
+  Impediments: none
 
   * *Lizeth:*
 
