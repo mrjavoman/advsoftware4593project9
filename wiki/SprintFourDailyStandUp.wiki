@@ -166,7 +166,7 @@
 
   Yesterday: Finished User Manual
 
-  Today: worked on documentation, submitted User Manual and Backlog
+  Today: worked on documentation & charts, submitted User Manual and Backlog
  
   Impediments:  none
 
