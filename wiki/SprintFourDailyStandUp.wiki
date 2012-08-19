@@ -15,10 +15,15 @@
   * *Brandon:*
 
   Yesterday:
+  Changed the look of the mark word activity to look like a dialog instead of an activity
+  Added the fake leather background to all activites in the application
+  Added the ability to save notes
 
   Today:
+  I will correct the rule coding errors that the client had sent with the sessions coding in last sprint
+  I will the lower case i to uppercase in the words database table
 
-  Impediments:
+  Impediments: none
   
   * *Arthur:*
 
