@@ -15,13 +15,18 @@
   * *Brandon:*
 
   Yesterday:
-  Changed the look of the mark word activity to look like a dialog instead of an activity
-  Added the fake leather background to all activites in the application
-  Added the ability to save notes
+
+    Changed the look of the mark word activity to look like a dialog instead of an activity
+
+    Added the fake leather background to all activites in the application
+
+    Added the ability to save notes
 
   Today:
+
   I will correct the rule coding errors that the client had sent with the sessions coding in last sprint
-  I will the lower case i to uppercase in the words database table
+
+  I will change the lower case i to uppercase in the words database table
 
   Impediments: none
   
@@ -63,9 +68,27 @@
 
   Yesterday:
 
+    I corrected some rule coding errors that the client had sent with the sessions coding in last sprint
+
+    I changed the lower case i to uppercase in the words database table
+
+    Fixed a bug that was allowing a deleted session to show up when a user pressed the back button
+
+    Fixed a bug that was crashing the program when a single quote is entered in the comments field of the save session activity.
+
+    Fixed a bug that was allowing a deleted students to show up when a user pressed the back button
+
   Today:
 
-  Impediments:
+    I will fix the bug where the timer remains running after the session was navigated away from
+
+    I will fix the bug where the start session dialog text won't displaying properly in OS version 2.3
+
+    I will make the buttons blue instead of grey
+
+    I will add five more words, five more rules, and rule counts to the session stats page
+
+  Impediments:  none
   
   * *Arthur:*
 
@@ -105,9 +128,25 @@
 
   Yesterday:
 
+    I fixed the bug that was allowing the timer to remain running after the session was navigated away from
+
+    I fixed the bug where the start session dialog text wasn't displaying properly in OS version 2.3
+
+    I made the buttons blue instead of grey
+
+    I added five more words, five more rules, and rule counts to the session stats page
+
   Today:
 
-  Impediments:
+    I will fix the bug when editing a student and pressing back, the old screen is in the back stack
+
+    I will fix the bug in Edit Student & Add student activites where a single quote entered in the name field crashed the program
+
+    I will fix the bug so that you cannot start a session without a story or a student selected
+
+    I will fix the bug so that you cannot open the graphs without selecting a student
+
+  Impediments:  none
   
   * *Arthur:*
 
@@ -147,9 +186,19 @@
 
   Yesterday:
 
+    I fixed the bug so that after editing a student the old screen isn't in the back stack
+
+    I fixed the bug in Edit Student & Add student activites where a single quote entered in the name field crashed the program
+
+     I fixed the bug so that you cannot start a session without a story or a student selected
+
+     I fixed the bug so that you cannot open the graphs without selecting a student
+
   Today:
 
-  Impediments:
+    I will present the project to the class and the clients
+
+  Impediments:  none
   
   * *Arthur:*
 
