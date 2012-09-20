@@ -10,12 +10,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Button;
@@ -30,7 +32,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
     private static String DB_NAME = "test";
  
-    private SQLiteDatabase myDataBase = null; 
+    private static SQLiteDatabase myDataBase = null; 
  
     private final Context myContext;
     
@@ -499,6 +501,62 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	
 	// Export a csv file with table sqlite table contents
 	// return boolean value to indicate if write is successful
+	public static void createCachedFile(Context context, String fileName,
+	            String content) throws IOException {
+	 
+/*
+//---------------------------------------------------------------------------------	 
+	    FileOutputStream fos = new FileOutputStream(cacheFile);
+	    OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF8");
+	    PrintWriter pw = new PrintWriter(osw);
+	 
+	    pw.println(content);
+	 
+	    pw.flush();
+	    pw.close();
+	    
+//--------------------------------------------------------------------------------	    
+*/	    
+		File cacheFile = new File(context.getCacheDir() + File.separator + fileName);
+		cacheFile.createNewFile();
+
+		try {                
+			CSVWriter csvWrite = new CSVWriter(new FileWriter(cacheFile));
+
+			String aSql = " SELECT "
+					+" first_name "
+					+" , last_name "
+					+" , incorrect_count AS incorrrect "
+					+" , score AS correct "
+					+" , date "
+					+" , notes "
+					+" FROM session "
+					+" LEFT JOIN student on id_student = uid_student ";
+
+				Cursor curCSV = myDataBase.rawQuery(aSql,null);
+
+			csvWrite.writeNext(curCSV.getColumnNames());
+
+			while(curCSV.moveToNext())	{
+				String arrStr[] ={curCSV.getString(0),curCSV.getString(1),curCSV.getString(2),
+						curCSV.getString(3),curCSV.getString(4),curCSV.getString(5)};
+				csvWrite.writeNext(arrStr);
+			}
+
+			csvWrite.close();
+			curCSV.close();
+
+		}
+		catch(SQLException sqlEx) {
+			Log.e("Database Helper Class", sqlEx.getMessage(), sqlEx);
+		}
+		//		catch (IOException e) {
+		//			Log.e("Database Helper Class", e.getMessage(), e);
+		//		}
+	}
+
+	// Export a csv file with table sqlite table contents
+	// return boolean value to indicate if write is successful
 	public boolean writeCSV(String dir) {
 
 		boolean fileWritten = false;
@@ -559,6 +617,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		return  fileWritten;
 
 	}
+
 	
 	//return a cursor object with the results of the students table
 	public Cursor getStudents(){
@@ -708,5 +767,34 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		myDataBase.delete(table_name, where, whereArgs);
 		
 		close();
+	}
+
+	public static Intent getSendEmailIntent(Context context, String email,
+			String subject, String body, String fileName) {
+
+		final Intent emailIntent = new Intent(
+				android.content.Intent.ACTION_SEND);
+
+		//Explicitly only use Gmail to send
+		emailIntent.setClassName("com.google.android.gm","com.google.android.gm.ComposeActivityGmail");
+
+		emailIntent.setType("plain/text");
+
+		//Add the recipients
+		emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+				new String[] { email });
+
+		emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+
+		emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, body);
+
+		//Add the attachment by specifying a reference to our custom ContentProvider
+		//and the specific file of interest
+		emailIntent.putExtra(
+				Intent.EXTRA_STREAM,
+				Uri.parse("content://" + CachedFileProvider.AUTHORITY + "/"
+						+ fileName));
+
+		return emailIntent;
 	}
 }
