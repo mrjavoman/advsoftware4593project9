@@ -1,20 +1,20 @@
 package com.cybertrons.orfa;
 
-import java.io.File;
+import java.io.IOException;
 
-import android.net.Uri;
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
+import android.database.SQLException;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Toast;
 
 	
 
@@ -67,6 +67,35 @@ public class SettingsActivity extends Activity {
         } 
         }); 
     }
+    
+    public void onExportCSV(View view){
+    	
+		
+    	try {
+    		dbHelper.openDataBaseRW();
+    	}catch(SQLException sqle){
+    		throw sqle;
+    	}
+
+    	try {
+    		DataBaseHelper.createCachedFile(SettingsActivity.this,
+    				"ORFA_DB.csv", "This is a test");
+
+    		startActivity(DataBaseHelper.getSendEmailIntent(
+    				SettingsActivity.this,"brandon@dominiontx.com", "Test CSV",
+    				"The attached file contains all of the sessions in the ORFA application database", "ORFA_DB.csv"));
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	} catch (ActivityNotFoundException e) {
+    		Toast.makeText(SettingsActivity.this,
+    				"Gmail is not available on this device.",
+    				Toast.LENGTH_SHORT).show();
+    	}
+    }   
+    
+    
+    
+ /*
     
   //export a csv file to the sd card or through e-mail
     public void onExportCSV(View view){
@@ -144,8 +173,8 @@ public class SettingsActivity extends Activity {
 		});
 		AlertDialog alert = builder.create();
 		alert.show();
-    }
-    
+    }*/
+ 
     public void onDefaultDatabase(View view){
     	
        	AlertDialog.Builder builder = new AlertDialog.Builder(this);

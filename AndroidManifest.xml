@@ -14,6 +14,9 @@
         android:label="@string/app_name"
         android:screenOrientation = "landscape" android:theme="@style/AppTheme">
         
+        
+        <provider android:name="CachedFileProvider" android:authorities="com.cybertrons.orfa.provider"></provider>
+        
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" 
