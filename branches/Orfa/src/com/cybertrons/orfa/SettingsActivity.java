@@ -82,7 +82,7 @@ public class SettingsActivity extends Activity {
     				"ORFA_DB.csv", "This is a test");
 
     		startActivity(DataBaseHelper.getSendEmailIntent(
-    				SettingsActivity.this,"brandon@dominiontx.com", "Test CSV",
+    				SettingsActivity.this,"address@gmail.com", "Test CSV",
     				"The attached file contains all of the sessions in the ORFA application database", "ORFA_DB.csv"));
     	} catch (IOException e) {
     		e.printStackTrace();
